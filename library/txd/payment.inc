@@ -1,0 +1,27 @@
+PaymentTD[playerid][0] = CreatePlayerTextDraw(playerid, 51.000000, 227.000000, "_");
+PlayerTextDrawFont(playerid, PaymentTD[playerid][0], 0);
+PlayerTextDrawLetterSize(playerid, PaymentTD[playerid][0], 0.600000, 2.350003);
+PlayerTextDrawTextSize(playerid, PaymentTD[playerid][0], 298.500000, 103.500000);
+PlayerTextDrawSetOutline(playerid, PaymentTD[playerid][0], 1);
+PlayerTextDrawSetShadow(playerid, PaymentTD[playerid][0], 0);
+PlayerTextDrawAlignment(playerid, PaymentTD[playerid][0], 2);
+PlayerTextDrawColor(playerid, PaymentTD[playerid][0], -1);
+PlayerTextDrawBackgroundColor(playerid, PaymentTD[playerid][0], 255);
+PlayerTextDrawBoxColor(playerid, PaymentTD[playerid][0], 269488383);
+PlayerTextDrawUseBox(playerid, PaymentTD[playerid][0], 1);
+PlayerTextDrawSetProportional(playerid, PaymentTD[playerid][0], 1);
+PlayerTextDrawSetSelectable(playerid, PaymentTD[playerid][0], 0);
+
+PaymentTD[playerid][1] = CreatePlayerTextDraw(playerid, 52.000000, 228.000000, "750$");
+PlayerTextDrawFont(playerid, PaymentTD[playerid][1], 3);
+PlayerTextDrawLetterSize(playerid, PaymentTD[playerid][1], 0.370833, 2.000000);
+PlayerTextDrawTextSize(playerid, PaymentTD[playerid][1], 400.000000, 96.500000);
+PlayerTextDrawSetOutline(playerid, PaymentTD[playerid][1], 0);
+PlayerTextDrawSetShadow(playerid, PaymentTD[playerid][1], 0);
+PlayerTextDrawAlignment(playerid, PaymentTD[playerid][1], 2);
+PlayerTextDrawColor(playerid, PaymentTD[playerid][1], 0xF0A45DFF);
+PlayerTextDrawBackgroundColor(playerid, PaymentTD[playerid][1], 255);
+PlayerTextDrawBoxColor(playerid, PaymentTD[playerid][1], 1687547391);
+PlayerTextDrawUseBox(playerid, PaymentTD[playerid][1], 0);
+PlayerTextDrawSetProportional(playerid, PaymentTD[playerid][1], 1);
+PlayerTextDrawSetSelectable(playerid, PaymentTD[playerid][1], 0);
