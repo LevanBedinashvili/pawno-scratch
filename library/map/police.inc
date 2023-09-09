@@ -1,4 +1,3 @@
-new tmpobjid;
 tmpobjid = CreateDynamicObject(3976, 1571.599975, -1675.750000, 35.679698, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00, 300.00); 
 SetDynamicObjectMaterial(tmpobjid, 0, 9514, "711_sfw", "brick", 0x00000000);
 SetDynamicObjectMaterial(tmpobjid, 1, 9514, "711_sfw", "brick", 0x00000000);

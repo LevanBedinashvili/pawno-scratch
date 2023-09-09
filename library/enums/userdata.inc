@@ -33,6 +33,8 @@ enum Player {
 	pJailed,
 	pJailTime,
 	pWantedLevel,
+	SalonCar,
+    SalonTime,
 };
 new UserData[MAX_PLAYERS][Player];
 #define Name(%1) UserData[%1][pName]

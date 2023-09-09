@@ -7,104 +7,2613 @@ SA-MP Dedicated Server
 ----------------------
 v0.3.7-R2, (C)2005-2015 SA-MP Team
 
-[17:21:59] 
-[17:21:59] Server Plugins
-[17:21:59] --------------
-[17:21:59]  Loading plugin: crashdetect
-[17:21:59]   CrashDetect plugin 4.19.4
-[17:21:59]   Loaded.
-[17:21:59]  Loading plugin: mysql
-[17:21:59]  >> plugin.mysql: R41-4 successfully loaded.
-[17:21:59]   Loaded.
-[17:21:59]  Loading plugin: pawncmd
-[17:21:59] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
-[17:21:59]   Loaded.
-[17:21:59]  Loading plugin: pawn-memory
-[17:21:59] ========================
-[17:21:59] = Memory access plugin =
-[17:21:59] =       Made by BigETI =
-[17:21:59] = Loaded!              =
-[17:21:59] ========================
-[17:21:59]   Loaded.
-[17:21:59]  Loading plugin: SKY
-[17:21:59] 
-[17:21:59]  ===============================
-[17:21:59]    
-[17:21:59]    < SKY - 2.2.2 >
-[17:21:59]    
-[17:21:59]    (c) 2008 - Present | YSF Maintainers
-[17:21:59]    (c) 2015 | Oscar "Slice" Broman
-[17:21:59]    
-[17:21:59]    Server Version: 0.3.7 R2
-[17:21:59]    Operating System: Windows
-[17:21:59]    Built on: Jan 20 2020 at 22:21:16
-[17:21:59]    
-[17:21:59]  ===============================
-[17:21:59] 
-[17:21:59]   Loaded.
-[17:21:59]  Loading plugin: sscanf
-[17:21:59] 
+[22:48:32] 
+[22:48:32] Server Plugins
+[22:48:32] --------------
+[22:48:32]  Loading plugin: crashdetect
+[22:48:32]   CrashDetect plugin 4.19.4
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: mysql
+[22:48:32]  >> plugin.mysql: R41-4 successfully loaded.
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: pawncmd
+[22:48:32] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: pawn-memory
+[22:48:32] ========================
+[22:48:32] = Memory access plugin =
+[22:48:32] =       Made by BigETI =
+[22:48:32] = Loaded!              =
+[22:48:32] ========================
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: SKY
+[22:48:32] 
+[22:48:32]  ===============================
+[22:48:32]    
+[22:48:32]    < SKY - 2.2.2 >
+[22:48:32]    
+[22:48:32]    (c) 2008 - Present | YSF Maintainers
+[22:48:32]    (c) 2015 | Oscar "Slice" Broman
+[22:48:32]    
+[22:48:32]    Server Version: 0.3.7 R2
+[22:48:32]    Operating System: Windows
+[22:48:32]    Built on: Jan 20 2020 at 22:21:16
+[22:48:32]    
+[22:48:32]  ===============================
+[22:48:32] 
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: sscanf
+[22:48:32] 
 
-[17:21:59]  ===============================
+[22:48:32]  ===============================
 
-[17:21:59]       sscanf plugin loaded.     
+[22:48:32]       sscanf plugin loaded.     
 
-[17:21:59]          Version:  2.8.1        
+[22:48:32]          Version:  2.8.1        
 
-[17:21:59]    (c) 2012 Alex "Y_Less" Cole  
+[22:48:32]    (c) 2012 Alex "Y_Less" Cole  
 
-[17:21:59]  ===============================
+[22:48:32]  ===============================
 
-[17:21:59]   Loaded.
-[17:21:59]  Loading plugin: streamer
-[17:21:59] 
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: streamer
+[22:48:32] 
 
 *** Streamer Plugin v2.9.4 by Incognito loaded ***
 
-[17:21:59]   Loaded.
-[17:21:59]  Loading plugin: pawnraknet
-[17:21:59] Pawn.RakNet plugin v1.2.0 by urShadow loaded
-[17:21:59]   Loaded.
-[17:21:59]  Loading plugin: sampvoice
-[17:21:59] [sv:dbg:network:init] : module initializing...
-[17:21:59] [dbg:raknet:init] : module initializing...
-[17:21:59] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
-[17:21:59] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
-[17:21:59] [dbg:raknet:init] : module initialized
-[17:21:59] [sv:dbg:network:init] : module initialized
-[17:21:59]  -------------------------------------------    
-[17:21:59]    ___                __   __    _              
-[17:21:59]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
-[17:21:59]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
-[17:21:59]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
-[17:21:59]                   |_|                           
-[17:21:59]  -------------------------------------------    
-[17:21:59]            SampVoice by MOR loaded              
-[17:21:59]  -------------------------------------------    
-[17:21:59]   Loaded.
-[17:21:59]  Loaded 9 plugins.
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: pawnraknet
+[22:48:32] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: sampvoice
+[22:48:32] [sv:dbg:network:init] : module initializing...
+[22:48:32] [dbg:raknet:init] : module initializing...
+[22:48:32] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[22:48:32] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[22:48:32] [dbg:raknet:init] : module initialized
+[22:48:32] [sv:dbg:network:init] : module initialized
+[22:48:32]  -------------------------------------------    
+[22:48:32]    ___                __   __    _              
+[22:48:32]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[22:48:32]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[22:48:32]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[22:48:32]                   |_|                           
+[22:48:32]  -------------------------------------------    
+[22:48:32]            SampVoice by MOR loaded              
+[22:48:32]  -------------------------------------------    
+[22:48:32]   Loaded.
+[22:48:32]  Loaded 9 plugins.
 
-[17:21:59] 
-[17:21:59] Filterscripts
-[17:21:59] ---------------
-[17:21:59]   Loaded 0 filterscripts.
+[22:48:32] 
+[22:48:32] Filterscripts
+[22:48:32] ---------------
+[22:48:32]   Loaded 0 filterscripts.
 
-[17:21:59] [sv:dbg:main:AmxLoad] : net game pointer (value:02519CA8) received
-[17:21:59] [sv:dbg:network:bind] : voice server running on port 51640
-[17:21:59] <> Database connected successful
-[17:22:00] Number of vehicle models: 22
-[17:22:00] <> Houses loaded: 57 | Time: 0 (ms)
-[17:22:00] <> Business loaded: 4 | Time: 0 (ms)
-[17:22:00] <> Fractions loaded: 15 | Time: 0 (ms)
-[17:22:08] [connection] 192.168.50.44:50558 requests connection cookie.
-[17:22:09] [connection] incoming connection: 192.168.50.44:50558 id: 0
-[17:22:10] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
-[17:22:10] <> Bedinashvili_Levani - joined to server
-[17:24:37]  -------------------------------------------
-[17:24:37]            SampVoice unloading...           
-[17:24:37]  -------------------------------------------
-[17:24:37] [dbg:raknet:free] : module releasing...
-[17:24:37] [sv:dbg:network:connect] : disconnecting player (0) ...
-[17:24:37] [dbg:raknet:free] : module released
-[17:24:37] [sv:dbg:network:free] : module releasing...
-[17:24:37] [sv:dbg:network:free] : module released
+[22:48:32] [sv:dbg:main:AmxLoad] : net game pointer (value:02519CA8) received
+[22:48:32] [sv:dbg:network:bind] : voice server running on port 57631
+[22:48:32] <> Database connected successful
+[22:48:32] Number of vehicle models: 25
+[22:48:32] <> Houses loaded: 57 | Time: 1 (ms)
+[22:48:32] <> Business loaded: 4 | Time: 0 (ms)
+[22:48:32] <> Fractions loaded: 15 | Time: 0 (ms)
+[22:48:39] [connection] 192.168.50.44:58235 requests connection cookie.
+[22:48:40] [connection] incoming connection: 192.168.50.44:58235 id: 0
+[22:48:40] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[22:48:40] [sv:dbg:network:connect] : player (0) assigned key (bf21db5e)
+[22:48:40] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[22:48:40] <> Bedinashvili_Levani - joined to server
+[22:48:43] [sv:dbg:network:receive] : player (0) identified (port:63929)
+[23:26:55] [sv:dbg:network:connect] : disconnecting player (0) ...
+[23:26:55] <> Bedinashvili_Levani - left form server
+[23:26:55] [part] Bedinashvili_Levani has left the server (0:1)
+[23:27:49]  -------------------------------------------
+[23:27:49]            SampVoice unloading...           
+[23:27:49]  -------------------------------------------
+[23:27:49] [dbg:raknet:free] : module releasing...
+[23:27:49] [dbg:raknet:free] : module released
+[23:27:49] [sv:dbg:network:free] : module releasing...
+[23:27:49] [sv:dbg:network:free] : module released
+[23:27:49] [debug] Server received interrupt signal
+[23:27:49] [debug] Native backtrace:
+[23:27:49] [debug] #0 771e2d9c in ?? () in C:\Windows\SYSTEM32\ntdll.dll
+[23:27:49] [debug] #1 75236f6f in ?? () in C:\Windows\System32\KERNELBASE.dll
+[23:27:49] [debug] #2 0048d53c in ?? () in samp-server.exe
+[23:27:49] [debug] #3 0049b4a1 in ?? () in samp-server.exe
+[23:27:49] [debug] #4 0049b4b1 in ?? () in samp-server.exe
+[23:27:49] --- Server Shutting Down.
+[23:27:49] plugin.mysql: Unloading plugin...
+[23:27:49] plugin.mysql: Plugin unloaded.
+[23:27:49] Pawn.CMD plugin v3.2.0 by urShadow has been unloaded
+[23:27:49] ========================
+[23:27:49] = Memory access plugin =
+[23:27:49] =       Made by BigETI =
+[23:27:49] = Unloaded!            =
+[23:27:49] ========================
+[23:27:49] 
+
+[23:27:49]  ===============================
+
+[23:27:49]      sscanf plugin unloaded.    
+
+[23:27:49]  ===============================
+
+[23:27:49] 
+
+*** Streamer Plugin v2.9.4 by Incognito unloaded ***
+
+[23:27:49] Pawn.RakNet plugin v1.2.0 by urShadow unloaded
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:27:53] 
+[23:27:53] Server Plugins
+[23:27:53] --------------
+[23:27:53]  Loading plugin: crashdetect
+[23:27:53]   CrashDetect plugin 4.19.4
+[23:27:53]   Loaded.
+[23:27:53]  Loading plugin: mysql
+[23:27:53]  >> plugin.mysql: R41-4 successfully loaded.
+[23:27:53]   Loaded.
+[23:27:53]  Loading plugin: pawncmd
+[23:27:53] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[23:27:53]   Loaded.
+[23:27:53]  Loading plugin: pawn-memory
+[23:27:53] ========================
+[23:27:53] = Memory access plugin =
+[23:27:53] =       Made by BigETI =
+[23:27:53] = Loaded!              =
+[23:27:53] ========================
+[23:27:53]   Loaded.
+[23:27:53]  Loading plugin: SKY
+[23:27:53] 
+[23:27:53]  ===============================
+[23:27:53]    
+[23:27:53]    < SKY - 2.2.2 >
+[23:27:53]    
+[23:27:53]    (c) 2008 - Present | YSF Maintainers
+[23:27:53]    (c) 2015 | Oscar "Slice" Broman
+[23:27:53]    
+[23:27:53]    Server Version: 0.3.7 R2
+[23:27:53]    Operating System: Windows
+[23:27:53]    Built on: Jan 20 2020 at 22:21:16
+[23:27:53]    
+[23:27:53]  ===============================
+[23:27:53] 
+[23:27:53]   Loaded.
+[23:27:53]  Loading plugin: sscanf
+[23:27:53] 
+
+[23:27:53]  ===============================
+
+[23:27:53]       sscanf plugin loaded.     
+
+[23:27:53]          Version:  2.8.1        
+
+[23:27:53]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:27:53]  ===============================
+
+[23:27:53]   Loaded.
+[23:27:53]  Loading plugin: streamer
+[23:27:53] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:27:53]   Loaded.
+[23:27:53]  Loading plugin: pawnraknet
+[23:27:53] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[23:27:53]   Loaded.
+[23:27:53]  Loading plugin: sampvoice
+[23:27:53] [sv:dbg:network:init] : module initializing...
+[23:27:53] [dbg:raknet:init] : module initializing...
+[23:27:53] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[23:27:53] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[23:27:53] [dbg:raknet:init] : module initialized
+[23:27:53] [sv:dbg:network:init] : module initialized
+[23:27:53]  -------------------------------------------    
+[23:27:53]    ___                __   __    _              
+[23:27:53]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[23:27:53]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[23:27:53]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[23:27:53]                   |_|                           
+[23:27:53]  -------------------------------------------    
+[23:27:53]            SampVoice by MOR loaded              
+[23:27:53]  -------------------------------------------    
+[23:27:53]   Loaded.
+[23:27:53]  Loaded 9 plugins.
+
+[23:27:53] 
+[23:27:53] Filterscripts
+[23:27:53] ---------------
+[23:27:53]   Loaded 0 filterscripts.
+
+[23:27:53] [sv:dbg:main:AmxLoad] : net game pointer (value:02509CA8) received
+[23:27:53] [sv:dbg:network:bind] : voice server running on port 49330
+[23:27:53] <> Database connected successful
+[23:27:53] Number of vehicle models: 22
+[23:27:53] <> Houses loaded: 57 | Time: 1 (ms)
+[23:27:53] <> Business loaded: 4 | Time: 0 (ms)
+[23:27:53] <> Fractions loaded: 15 | Time: 0 (ms)
+[23:28:13] [connection] 192.168.50.44:55145 requests connection cookie.
+[23:28:14] [connection] incoming connection: 192.168.50.44:55145 id: 0
+[23:28:14] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[23:28:14] [sv:dbg:network:connect] : player (0) assigned key (7f10c407)
+[23:28:14] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[23:28:14] <> Bedinashvili_Levani - joined to server
+[23:28:16] [sv:dbg:network:receive] : player (0) identified (port:56639)
+[23:40:40] [sv:dbg:network:connect] : disconnecting player (0) ...
+[23:40:40] <> Bedinashvili_Levani - left form server
+[23:40:40] [part] Bedinashvili_Levani has left the server (0:1)
+[23:40:41]  -------------------------------------------
+[23:40:41]            SampVoice unloading...           
+[23:40:41]  -------------------------------------------
+[23:40:42] [dbg:raknet:free] : module releasing...
+[23:40:42] [dbg:raknet:free] : module released
+[23:40:42] [sv:dbg:network:free] : module releasing...
+[23:40:42] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:40:46] 
+[23:40:46] Server Plugins
+[23:40:46] --------------
+[23:40:46]  Loading plugin: crashdetect
+[23:40:46]   CrashDetect plugin 4.19.4
+[23:40:46]   Loaded.
+[23:40:46]  Loading plugin: mysql
+[23:40:46]  >> plugin.mysql: R41-4 successfully loaded.
+[23:40:46]   Loaded.
+[23:40:46]  Loading plugin: pawncmd
+[23:40:46] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[23:40:46]   Loaded.
+[23:40:46]  Loading plugin: pawn-memory
+[23:40:46] ========================
+[23:40:46] = Memory access plugin =
+[23:40:46] =       Made by BigETI =
+[23:40:46] = Loaded!              =
+[23:40:46] ========================
+[23:40:46]   Loaded.
+[23:40:46]  Loading plugin: SKY
+[23:40:46] 
+[23:40:46]  ===============================
+[23:40:46]    
+[23:40:46]    < SKY - 2.2.2 >
+[23:40:46]    
+[23:40:46]    (c) 2008 - Present | YSF Maintainers
+[23:40:46]    (c) 2015 | Oscar "Slice" Broman
+[23:40:46]    
+[23:40:46]    Server Version: 0.3.7 R2
+[23:40:46]    Operating System: Windows
+[23:40:46]    Built on: Jan 20 2020 at 22:21:16
+[23:40:46]    
+[23:40:46]  ===============================
+[23:40:46] 
+[23:40:46]   Loaded.
+[23:40:46]  Loading plugin: sscanf
+[23:40:46] 
+
+[23:40:46]  ===============================
+
+[23:40:46]       sscanf plugin loaded.     
+
+[23:40:46]          Version:  2.8.1        
+
+[23:40:46]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:40:46]  ===============================
+
+[23:40:46]   Loaded.
+[23:40:46]  Loading plugin: streamer
+[23:40:46] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:40:46]   Loaded.
+[23:40:46]  Loading plugin: pawnraknet
+[23:40:46] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[23:40:46]   Loaded.
+[23:40:46]  Loading plugin: sampvoice
+[23:40:46] [sv:dbg:network:init] : module initializing...
+[23:40:46] [dbg:raknet:init] : module initializing...
+[23:40:46] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[23:40:46] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[23:40:46] [dbg:raknet:init] : module initialized
+[23:40:46] [sv:dbg:network:init] : module initialized
+[23:40:46]  -------------------------------------------    
+[23:40:46]    ___                __   __    _              
+[23:40:46]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[23:40:46]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[23:40:46]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[23:40:46]                   |_|                           
+[23:40:46]  -------------------------------------------    
+[23:40:46]            SampVoice by MOR loaded              
+[23:40:46]  -------------------------------------------    
+[23:40:46]   Loaded.
+[23:40:46]  Loaded 9 plugins.
+
+[23:40:46] 
+[23:40:46] Filterscripts
+[23:40:46] ---------------
+[23:40:46]   Loaded 0 filterscripts.
+
+[23:40:46] [sv:dbg:main:AmxLoad] : net game pointer (value:006B9CA8) received
+[23:40:46] [sv:dbg:network:bind] : voice server running on port 59338
+[23:40:46] <> Database connected successful
+[23:40:46] Number of vehicle models: 22
+[23:40:46] <> Houses loaded: 57 | Time: 1 (ms)
+[23:40:46] <> Business loaded: 4 | Time: 0 (ms)
+[23:40:46] <> Fractions loaded: 15 | Time: 0 (ms)
+[23:40:53] [connection] 192.168.50.44:62497 requests connection cookie.
+[23:40:54] [connection] incoming connection: 192.168.50.44:62497 id: 0
+[23:40:54] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[23:40:54] [sv:dbg:network:connect] : player (0) assigned key (c6ee676f)
+[23:40:54] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[23:40:54] <> Bedinashvili_Levani - joined to server
+[23:40:54] [sv:dbg:network:receive] : player (0) identified (port:63018)
+[23:41:15] [sv:dbg:network:connect] : disconnecting player (0) ...
+[23:41:15] <> Bedinashvili_Levani - left form server
+[23:41:15] [part] Bedinashvili_Levani has left the server (0:1)
+[23:41:18]  -------------------------------------------
+[23:41:18]            SampVoice unloading...           
+[23:41:18]  -------------------------------------------
+[23:41:18] [dbg:raknet:free] : module releasing...
+[23:41:18] [dbg:raknet:free] : module released
+[23:41:18] [sv:dbg:network:free] : module releasing...
+[23:41:18] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:43:42] 
+[23:43:42] Server Plugins
+[23:43:42] --------------
+[23:43:42]  Loading plugin: crashdetect
+[23:43:42]   CrashDetect plugin 4.19.4
+[23:43:42]   Loaded.
+[23:43:42]  Loading plugin: mysql
+[23:43:42]  >> plugin.mysql: R41-4 successfully loaded.
+[23:43:42]   Loaded.
+[23:43:42]  Loading plugin: pawncmd
+[23:43:42] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[23:43:42]   Loaded.
+[23:43:42]  Loading plugin: pawn-memory
+[23:43:42] ========================
+[23:43:42] = Memory access plugin =
+[23:43:42] =       Made by BigETI =
+[23:43:42] = Loaded!              =
+[23:43:42] ========================
+[23:43:42]   Loaded.
+[23:43:42]  Loading plugin: SKY
+[23:43:42] 
+[23:43:42]  ===============================
+[23:43:42]    
+[23:43:42]    < SKY - 2.2.2 >
+[23:43:42]    
+[23:43:42]    (c) 2008 - Present | YSF Maintainers
+[23:43:42]    (c) 2015 | Oscar "Slice" Broman
+[23:43:42]    
+[23:43:42]    Server Version: 0.3.7 R2
+[23:43:42]    Operating System: Windows
+[23:43:42]    Built on: Jan 20 2020 at 22:21:16
+[23:43:42]    
+[23:43:42]  ===============================
+[23:43:42] 
+[23:43:42]   Loaded.
+[23:43:42]  Loading plugin: sscanf
+[23:43:42] 
+
+[23:43:42]  ===============================
+
+[23:43:42]       sscanf plugin loaded.     
+
+[23:43:42]          Version:  2.8.1        
+
+[23:43:42]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:43:42]  ===============================
+
+[23:43:42]   Loaded.
+[23:43:42]  Loading plugin: streamer
+[23:43:42] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:43:42]   Loaded.
+[23:43:42]  Loading plugin: pawnraknet
+[23:43:42] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[23:43:42]   Loaded.
+[23:43:42]  Loading plugin: sampvoice
+[23:43:42] [sv:dbg:network:init] : module initializing...
+[23:43:42] [dbg:raknet:init] : module initializing...
+[23:43:42] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[23:43:42] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[23:43:42] [dbg:raknet:init] : module initialized
+[23:43:42] [sv:dbg:network:init] : module initialized
+[23:43:42]  -------------------------------------------    
+[23:43:42]    ___                __   __    _              
+[23:43:42]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[23:43:42]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[23:43:42]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[23:43:42]                   |_|                           
+[23:43:42]  -------------------------------------------    
+[23:43:42]            SampVoice by MOR loaded              
+[23:43:42]  -------------------------------------------    
+[23:43:42]   Loaded.
+[23:43:42]  Loaded 9 plugins.
+
+[23:43:42] 
+[23:43:42] Filterscripts
+[23:43:42] ---------------
+[23:43:42]   Loaded 0 filterscripts.
+
+[23:43:42] [sv:dbg:main:AmxLoad] : net game pointer (value:024E9CA8) received
+[23:43:42] [sv:dbg:network:bind] : voice server running on port 54021
+[23:43:42] <> Database connected successful
+[23:43:42] Number of vehicle models: 22
+[23:43:42] <> Houses loaded: 57 | Time: 1 (ms)
+[23:43:42] <> Business loaded: 4 | Time: 0 (ms)
+[23:43:42] <> Fractions loaded: 15 | Time: 0 (ms)
+[23:43:49] [connection] 192.168.50.44:49387 requests connection cookie.
+[23:43:50] [connection] incoming connection: 192.168.50.44:49387 id: 0
+[23:43:50] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[23:43:50] [sv:dbg:network:connect] : player (0) assigned key (ab261ddb)
+[23:43:50] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[23:43:50] <> Bedinashvili_Levani - joined to server
+[23:43:50] [sv:dbg:network:receive] : player (0) identified (port:51928)
+[23:45:20] [sv:dbg:network:connect] : disconnecting player (0) ...
+[23:45:20] <> Bedinashvili_Levani - left form server
+[23:45:20] [part] Bedinashvili_Levani has left the server (0:1)
+[23:45:20]  -------------------------------------------
+[23:45:20]            SampVoice unloading...           
+[23:45:20]  -------------------------------------------
+[23:45:21] [dbg:raknet:free] : module releasing...
+[23:45:21] [dbg:raknet:free] : module released
+[23:45:21] [sv:dbg:network:free] : module releasing...
+[23:45:21] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:45:23] 
+[23:45:23] Server Plugins
+[23:45:23] --------------
+[23:45:23]  Loading plugin: crashdetect
+[23:45:23]   CrashDetect plugin 4.19.4
+[23:45:23]   Loaded.
+[23:45:23]  Loading plugin: mysql
+[23:45:23]  >> plugin.mysql: R41-4 successfully loaded.
+[23:45:23]   Loaded.
+[23:45:23]  Loading plugin: pawncmd
+[23:45:23] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[23:45:23]   Loaded.
+[23:45:23]  Loading plugin: pawn-memory
+[23:45:23] ========================
+[23:45:23] = Memory access plugin =
+[23:45:23] =       Made by BigETI =
+[23:45:23] = Loaded!              =
+[23:45:23] ========================
+[23:45:23]   Loaded.
+[23:45:23]  Loading plugin: SKY
+[23:45:23] 
+[23:45:23]  ===============================
+[23:45:23]    
+[23:45:23]    < SKY - 2.2.2 >
+[23:45:23]    
+[23:45:23]    (c) 2008 - Present | YSF Maintainers
+[23:45:23]    (c) 2015 | Oscar "Slice" Broman
+[23:45:23]    
+[23:45:23]    Server Version: 0.3.7 R2
+[23:45:23]    Operating System: Windows
+[23:45:23]    Built on: Jan 20 2020 at 22:21:16
+[23:45:23]    
+[23:45:23]  ===============================
+[23:45:23] 
+[23:45:23]   Loaded.
+[23:45:23]  Loading plugin: sscanf
+[23:45:23] 
+
+[23:45:23]  ===============================
+
+[23:45:23]       sscanf plugin loaded.     
+
+[23:45:23]          Version:  2.8.1        
+
+[23:45:23]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:45:23]  ===============================
+
+[23:45:23]   Loaded.
+[23:45:23]  Loading plugin: streamer
+[23:45:23] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:45:23]   Loaded.
+[23:45:23]  Loading plugin: pawnraknet
+[23:45:23] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[23:45:23]   Loaded.
+[23:45:23]  Loading plugin: sampvoice
+[23:45:23] [sv:dbg:network:init] : module initializing...
+[23:45:23] [dbg:raknet:init] : module initializing...
+[23:45:23] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[23:45:23] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[23:45:23] [dbg:raknet:init] : module initialized
+[23:45:23] [sv:dbg:network:init] : module initialized
+[23:45:23]  -------------------------------------------    
+[23:45:23]    ___                __   __    _              
+[23:45:23]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[23:45:23]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[23:45:23]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[23:45:23]                   |_|                           
+[23:45:23]  -------------------------------------------    
+[23:45:23]            SampVoice by MOR loaded              
+[23:45:23]  -------------------------------------------    
+[23:45:23]   Loaded.
+[23:45:23]  Loaded 9 plugins.
+
+[23:45:23] 
+[23:45:23] Filterscripts
+[23:45:23] ---------------
+[23:45:23]   Loaded 0 filterscripts.
+
+[23:45:23] [sv:dbg:main:AmxLoad] : net game pointer (value:00699CA8) received
+[23:45:23] [sv:dbg:network:bind] : voice server running on port 55065
+[23:45:23] <> Database connected successful
+[23:45:23] Number of vehicle models: 22
+[23:45:23] <> Houses loaded: 57 | Time: 1 (ms)
+[23:45:23] <> Business loaded: 4 | Time: 0 (ms)
+[23:45:23] <> Fractions loaded: 15 | Time: 0 (ms)
+[23:45:31] [connection] 192.168.50.44:54557 requests connection cookie.
+[23:45:32] [connection] incoming connection: 192.168.50.44:54557 id: 0
+[23:45:32] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[23:45:32] [sv:dbg:network:connect] : player (0) assigned key (928e7773)
+[23:45:32] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[23:45:32] <> Bedinashvili_Levani - joined to server
+[23:45:33] [sv:dbg:network:receive] : player (0) identified (port:54559)
+[23:45:51]  -------------------------------------------
+[23:45:51]            SampVoice unloading...           
+[23:45:51]  -------------------------------------------
+[23:45:52] [dbg:raknet:free] : module releasing...
+[23:45:52] [sv:dbg:network:connect] : disconnecting player (0) ...
+[23:45:52] [dbg:raknet:free] : module released
+[23:45:52] [sv:dbg:network:free] : module releasing...
+[23:45:52] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:45:58] 
+[23:45:58] Server Plugins
+[23:45:58] --------------
+[23:45:58]  Loading plugin: crashdetect
+[23:45:58]   CrashDetect plugin 4.19.4
+[23:45:58]   Loaded.
+[23:45:58]  Loading plugin: mysql
+[23:45:58]  >> plugin.mysql: R41-4 successfully loaded.
+[23:45:58]   Loaded.
+[23:45:58]  Loading plugin: pawncmd
+[23:45:58] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[23:45:58]   Loaded.
+[23:45:58]  Loading plugin: pawn-memory
+[23:45:58] ========================
+[23:45:58] = Memory access plugin =
+[23:45:58] =       Made by BigETI =
+[23:45:58] = Loaded!              =
+[23:45:58] ========================
+[23:45:58]   Loaded.
+[23:45:58]  Loading plugin: SKY
+[23:45:58] 
+[23:45:58]  ===============================
+[23:45:58]    
+[23:45:58]    < SKY - 2.2.2 >
+[23:45:58]    
+[23:45:58]    (c) 2008 - Present | YSF Maintainers
+[23:45:58]    (c) 2015 | Oscar "Slice" Broman
+[23:45:58]    
+[23:45:58]    Server Version: 0.3.7 R2
+[23:45:58]    Operating System: Windows
+[23:45:58]    Built on: Jan 20 2020 at 22:21:16
+[23:45:58]    
+[23:45:58]  ===============================
+[23:45:58] 
+[23:45:58]   Loaded.
+[23:45:58]  Loading plugin: sscanf
+[23:45:58] 
+
+[23:45:58]  ===============================
+
+[23:45:58]       sscanf plugin loaded.     
+
+[23:45:58]          Version:  2.8.1        
+
+[23:45:58]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:45:58]  ===============================
+
+[23:45:58]   Loaded.
+[23:45:58]  Loading plugin: streamer
+[23:45:58] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:45:58]   Loaded.
+[23:45:58]  Loading plugin: pawnraknet
+[23:45:58] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[23:45:58]   Loaded.
+[23:45:58]  Loading plugin: sampvoice
+[23:45:58] [sv:dbg:network:init] : module initializing...
+[23:45:58] [dbg:raknet:init] : module initializing...
+[23:45:58] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[23:45:58] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[23:45:58] [dbg:raknet:init] : module initialized
+[23:45:58] [sv:dbg:network:init] : module initialized
+[23:45:58]  -------------------------------------------    
+[23:45:58]    ___                __   __    _              
+[23:45:58]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[23:45:58]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[23:45:58]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[23:45:58]                   |_|                           
+[23:45:58]  -------------------------------------------    
+[23:45:58]            SampVoice by MOR loaded              
+[23:45:58]  -------------------------------------------    
+[23:45:58]   Loaded.
+[23:45:58]  Loaded 9 plugins.
+
+[23:45:58] 
+[23:45:58] Filterscripts
+[23:45:58] ---------------
+[23:45:58]   Loaded 0 filterscripts.
+
+[23:45:58] [sv:dbg:main:AmxLoad] : net game pointer (value:021B9CA8) received
+[23:45:58] [sv:dbg:network:bind] : voice server running on port 53525
+[23:45:58] <> Database connected successful
+[23:45:58] Number of vehicle models: 22
+[23:45:58] <> Houses loaded: 57 | Time: 1 (ms)
+[23:45:58] <> Business loaded: 4 | Time: 0 (ms)
+[23:45:58] <> Fractions loaded: 15 | Time: 0 (ms)
+[23:46:09] [connection] 192.168.50.44:63283 requests connection cookie.
+[23:46:10] [connection] incoming connection: 192.168.50.44:63283 id: 0
+[23:46:10] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[23:46:10] [sv:dbg:network:connect] : player (0) assigned key (e16cd47f)
+[23:46:10] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[23:46:10] <> Bedinashvili_Levani - joined to server
+[23:46:13] [sv:dbg:network:receive] : player (0) identified (port:53134)
+[23:51:27] [sv:dbg:network:connect] : disconnecting player (0) ...
+[23:51:27] <> Bedinashvili_Levani - left form server
+[23:51:27] [part] Bedinashvili_Levani has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:51:32] 
+[23:51:32] Server Plugins
+[23:51:32] --------------
+[23:51:32]  Loading plugin: crashdetect
+[23:51:32]   CrashDetect plugin 4.19.4
+[23:51:32]   Loaded.
+[23:51:32]  Loading plugin: mysql
+[23:51:32]  >> plugin.mysql: R41-4 successfully loaded.
+[23:51:32]   Loaded.
+[23:51:32]  Loading plugin: pawncmd
+[23:51:32] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[23:51:32]   Loaded.
+[23:51:32]  Loading plugin: pawn-memory
+[23:51:32] ========================
+[23:51:32] = Memory access plugin =
+[23:51:32] =       Made by BigETI =
+[23:51:32] = Loaded!              =
+[23:51:32] ========================
+[23:51:32]   Loaded.
+[23:51:32]  Loading plugin: SKY
+[23:51:32] 
+[23:51:32]  ===============================
+[23:51:32]    
+[23:51:32]    < SKY - 2.2.2 >
+[23:51:32]    
+[23:51:32]    (c) 2008 - Present | YSF Maintainers
+[23:51:32]    (c) 2015 | Oscar "Slice" Broman
+[23:51:32]    
+[23:51:32]    Server Version: 0.3.7 R2
+[23:51:32]    Operating System: Windows
+[23:51:32]    Built on: Jan 20 2020 at 22:21:16
+[23:51:32]    
+[23:51:32]  ===============================
+[23:51:32] 
+[23:51:32]   Loaded.
+[23:51:32]  Loading plugin: sscanf
+[23:51:32] 
+
+[23:51:32]  ===============================
+
+[23:51:32]       sscanf plugin loaded.     
+
+[23:51:32]          Version:  2.8.1        
+
+[23:51:32]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:51:32]  ===============================
+
+[23:51:32]   Loaded.
+[23:51:32]  Loading plugin: streamer
+[23:51:32] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:51:32]   Loaded.
+[23:51:32]  Loading plugin: pawnraknet
+[23:51:32] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[23:51:32]   Loaded.
+[23:51:32]  Loading plugin: sampvoice
+[23:51:32] [sv:dbg:network:init] : module initializing...
+[23:51:32] [dbg:raknet:init] : module initializing...
+[23:51:32] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[23:51:32] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[23:51:32] [dbg:raknet:init] : module initialized
+[23:51:32] [sv:dbg:network:init] : module initialized
+[23:51:32]  -------------------------------------------    
+[23:51:32]    ___                __   __    _              
+[23:51:32]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[23:51:32]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[23:51:32]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[23:51:32]                   |_|                           
+[23:51:32]  -------------------------------------------    
+[23:51:32]            SampVoice by MOR loaded              
+[23:51:32]  -------------------------------------------    
+[23:51:32]   Loaded.
+[23:51:32]  Loaded 9 plugins.
+
+[23:51:32] 
+[23:51:32] Filterscripts
+[23:51:32] ---------------
+[23:51:32]   Loaded 0 filterscripts.
+
+[23:51:32] [sv:dbg:main:AmxLoad] : net game pointer (value:023B9CA8) received
+[23:51:32] [sv:dbg:network:bind] : voice server running on port 56435
+[23:51:32] <> Database connected successful
+[23:51:32] Number of vehicle models: 22
+[23:51:32] <> Houses loaded: 57 | Time: 1 (ms)
+[23:51:32] <> Business loaded: 4 | Time: 0 (ms)
+[23:51:32] <> Fractions loaded: 15 | Time: 0 (ms)
+[23:51:35]  -------------------------------------------
+[23:51:35]            SampVoice unloading...           
+[23:51:35]  -------------------------------------------
+[23:51:35] [dbg:raknet:free] : module releasing...
+[23:51:35] [dbg:raknet:free] : module released
+[23:51:35] [sv:dbg:network:free] : module releasing...
+[23:51:35] [sv:dbg:network:free] : module released
+[23:51:36]  -------------------------------------------
+[23:51:36]            SampVoice unloading...           
+[23:51:36]  -------------------------------------------
+[23:51:36] [dbg:raknet:free] : module releasing...
+[23:51:36] [dbg:raknet:free] : module released
+[23:51:36] [sv:dbg:network:free] : module releasing...
+[23:51:36] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:51:37] 
+[23:51:37] Server Plugins
+[23:51:37] --------------
+[23:51:37]  Loading plugin: crashdetect
+[23:51:37]   CrashDetect plugin 4.19.4
+[23:51:37]   Loaded.
+[23:51:37]  Loading plugin: mysql
+[23:51:37]  >> plugin.mysql: R41-4 successfully loaded.
+[23:51:37]   Loaded.
+[23:51:37]  Loading plugin: pawncmd
+[23:51:37] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[23:51:37]   Loaded.
+[23:51:37]  Loading plugin: pawn-memory
+[23:51:37] ========================
+[23:51:37] = Memory access plugin =
+[23:51:37] =       Made by BigETI =
+[23:51:37] = Loaded!              =
+[23:51:37] ========================
+[23:51:37]   Loaded.
+[23:51:37]  Loading plugin: SKY
+[23:51:37] 
+[23:51:37]  ===============================
+[23:51:37]    
+[23:51:37]    < SKY - 2.2.2 >
+[23:51:37]    
+[23:51:37]    (c) 2008 - Present | YSF Maintainers
+[23:51:37]    (c) 2015 | Oscar "Slice" Broman
+[23:51:37]    
+[23:51:37]    Server Version: 0.3.7 R2
+[23:51:37]    Operating System: Windows
+[23:51:37]    Built on: Jan 20 2020 at 22:21:16
+[23:51:37]    
+[23:51:37]  ===============================
+[23:51:37] 
+[23:51:37]   Loaded.
+[23:51:37]  Loading plugin: sscanf
+[23:51:37] 
+
+[23:51:37]  ===============================
+
+[23:51:37]       sscanf plugin loaded.     
+
+[23:51:37]          Version:  2.8.1        
+
+[23:51:37]    (c) 2012 Alex "Y_Less" Cole  
+
+[23:51:37]  ===============================
+
+[23:51:37]   Loaded.
+[23:51:37]  Loading plugin: streamer
+[23:51:37] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[23:51:37]   Loaded.
+[23:51:37]  Loading plugin: pawnraknet
+[23:51:37] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[23:51:37]   Loaded.
+[23:51:37]  Loading plugin: sampvoice
+[23:51:37] [sv:dbg:network:init] : module initializing...
+[23:51:37] [dbg:raknet:init] : module initializing...
+[23:51:37] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[23:51:37] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[23:51:37] [dbg:raknet:init] : module initialized
+[23:51:37] [sv:dbg:network:init] : module initialized
+[23:51:37]  -------------------------------------------    
+[23:51:37]    ___                __   __    _              
+[23:51:37]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[23:51:37]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[23:51:37]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[23:51:37]                   |_|                           
+[23:51:37]  -------------------------------------------    
+[23:51:37]            SampVoice by MOR loaded              
+[23:51:37]  -------------------------------------------    
+[23:51:37]   Loaded.
+[23:51:37]  Loaded 9 plugins.
+
+[23:51:37] 
+[23:51:37] Filterscripts
+[23:51:37] ---------------
+[23:51:37]   Loaded 0 filterscripts.
+
+[23:51:37] [sv:dbg:main:AmxLoad] : net game pointer (value:022D9CA8) received
+[23:51:37] [sv:dbg:network:bind] : voice server running on port 50674
+[23:51:37] <> Database connected successful
+[23:51:37] Number of vehicle models: 22
+[23:51:37] <> Houses loaded: 57 | Time: 1 (ms)
+[23:51:37] <> Business loaded: 4 | Time: 0 (ms)
+[23:51:37] <> Fractions loaded: 15 | Time: 0 (ms)
+[23:51:43] [connection] 192.168.50.44:59672 requests connection cookie.
+[23:51:44] [connection] incoming connection: 192.168.50.44:59672 id: 0
+[23:51:44] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[23:51:44] [sv:dbg:network:connect] : player (0) assigned key (6779930a)
+[23:51:44] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[23:51:44] <> Bedinashvili_Levani - joined to server
+[23:51:44] [sv:dbg:network:receive] : player (0) identified (port:59872)
+[00:02:59] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:02:59] <> Bedinashvili_Levani - left form server
+[00:02:59] [part] Bedinashvili_Levani has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:03:05] 
+[00:03:05] Server Plugins
+[00:03:05] --------------
+[00:03:05]  Loading plugin: crashdetect
+[00:03:05]   CrashDetect plugin 4.19.4
+[00:03:05]   Loaded.
+[00:03:05]  Loading plugin: mysql
+[00:03:05]  >> plugin.mysql: R41-4 successfully loaded.
+[00:03:05]   Loaded.
+[00:03:05]  Loading plugin: pawncmd
+[00:03:05] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:03:05]   Loaded.
+[00:03:05]  Loading plugin: pawn-memory
+[00:03:05] ========================
+[00:03:05] = Memory access plugin =
+[00:03:05] =       Made by BigETI =
+[00:03:05] = Loaded!              =
+[00:03:05] ========================
+[00:03:05]   Loaded.
+[00:03:05]  Loading plugin: SKY
+[00:03:05] 
+[00:03:05]  ===============================
+[00:03:05]    
+[00:03:05]    < SKY - 2.2.2 >
+[00:03:05]    
+[00:03:05]    (c) 2008 - Present | YSF Maintainers
+[00:03:05]    (c) 2015 | Oscar "Slice" Broman
+[00:03:05]    
+[00:03:05]    Server Version: 0.3.7 R2
+[00:03:05]    Operating System: Windows
+[00:03:05]    Built on: Jan 20 2020 at 22:21:16
+[00:03:05]    
+[00:03:05]  ===============================
+[00:03:05] 
+[00:03:05]   Loaded.
+[00:03:05]  Loading plugin: sscanf
+[00:03:05] 
+
+[00:03:05]  ===============================
+
+[00:03:05]       sscanf plugin loaded.     
+
+[00:03:05]          Version:  2.8.1        
+
+[00:03:05]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:03:05]  ===============================
+
+[00:03:05]   Loaded.
+[00:03:05]  Loading plugin: streamer
+[00:03:05] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:03:05]   Loaded.
+[00:03:05]  Loading plugin: pawnraknet
+[00:03:05] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:03:05]   Loaded.
+[00:03:05]  Loading plugin: sampvoice
+[00:03:05] [sv:dbg:network:init] : module initializing...
+[00:03:05] [dbg:raknet:init] : module initializing...
+[00:03:05] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:03:05] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:03:05] [dbg:raknet:init] : module initialized
+[00:03:05] [sv:dbg:network:init] : module initialized
+[00:03:05]  -------------------------------------------    
+[00:03:05]    ___                __   __    _              
+[00:03:05]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:03:05]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:03:05]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:03:05]                   |_|                           
+[00:03:05]  -------------------------------------------    
+[00:03:05]            SampVoice by MOR loaded              
+[00:03:05]  -------------------------------------------    
+[00:03:05]   Loaded.
+[00:03:05]  Loaded 9 plugins.
+
+[00:03:05] 
+[00:03:05] Filterscripts
+[00:03:05] ---------------
+[00:03:05]   Loaded 0 filterscripts.
+
+[00:03:05] [sv:dbg:main:AmxLoad] : net game pointer (value:007F9CA8) received
+[00:03:05] [sv:dbg:network:bind] : voice server running on port 51507
+[00:03:05] <> Database connected successful
+[00:03:05] Number of vehicle models: 22
+[00:03:05] <> Houses loaded: 57 | Time: 1 (ms)
+[00:03:05] <> Business loaded: 4 | Time: 0 (ms)
+[00:03:05] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:03:06]  -------------------------------------------
+[00:03:06]            SampVoice unloading...           
+[00:03:06]  -------------------------------------------
+[00:03:06] [dbg:raknet:free] : module releasing...
+[00:03:06] [dbg:raknet:free] : module released
+[00:03:06] [sv:dbg:network:free] : module releasing...
+[00:03:06] [sv:dbg:network:free] : module released
+[00:03:07]  -------------------------------------------
+[00:03:07]            SampVoice unloading...           
+[00:03:07]  -------------------------------------------
+[00:03:07] [dbg:raknet:free] : module releasing...
+[00:03:07] [dbg:raknet:free] : module released
+[00:03:07] [sv:dbg:network:free] : module releasing...
+[00:03:07] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:03:09] 
+[00:03:09] Server Plugins
+[00:03:09] --------------
+[00:03:09]  Loading plugin: crashdetect
+[00:03:09]   CrashDetect plugin 4.19.4
+[00:03:09]   Loaded.
+[00:03:09]  Loading plugin: mysql
+[00:03:09]  >> plugin.mysql: R41-4 successfully loaded.
+[00:03:09]   Loaded.
+[00:03:09]  Loading plugin: pawncmd
+[00:03:09] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:03:09]   Loaded.
+[00:03:09]  Loading plugin: pawn-memory
+[00:03:09] ========================
+[00:03:09] = Memory access plugin =
+[00:03:09] =       Made by BigETI =
+[00:03:09] = Loaded!              =
+[00:03:09] ========================
+[00:03:09]   Loaded.
+[00:03:09]  Loading plugin: SKY
+[00:03:09] 
+[00:03:09]  ===============================
+[00:03:09]    
+[00:03:09]    < SKY - 2.2.2 >
+[00:03:09]    
+[00:03:09]    (c) 2008 - Present | YSF Maintainers
+[00:03:09]    (c) 2015 | Oscar "Slice" Broman
+[00:03:09]    
+[00:03:09]    Server Version: 0.3.7 R2
+[00:03:09]    Operating System: Windows
+[00:03:09]    Built on: Jan 20 2020 at 22:21:16
+[00:03:09]    
+[00:03:09]  ===============================
+[00:03:09] 
+[00:03:09]   Loaded.
+[00:03:09]  Loading plugin: sscanf
+[00:03:09] 
+
+[00:03:09]  ===============================
+
+[00:03:09]       sscanf plugin loaded.     
+
+[00:03:09]          Version:  2.8.1        
+
+[00:03:09]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:03:09]  ===============================
+
+[00:03:09]   Loaded.
+[00:03:09]  Loading plugin: streamer
+[00:03:09] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:03:09]   Loaded.
+[00:03:09]  Loading plugin: pawnraknet
+[00:03:09] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:03:09]   Loaded.
+[00:03:09]  Loading plugin: sampvoice
+[00:03:09] [sv:dbg:network:init] : module initializing...
+[00:03:09] [dbg:raknet:init] : module initializing...
+[00:03:09] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:03:09] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:03:09] [dbg:raknet:init] : module initialized
+[00:03:09] [sv:dbg:network:init] : module initialized
+[00:03:09]  -------------------------------------------    
+[00:03:09]    ___                __   __    _              
+[00:03:09]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:03:09]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:03:09]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:03:09]                   |_|                           
+[00:03:09]  -------------------------------------------    
+[00:03:09]            SampVoice by MOR loaded              
+[00:03:09]  -------------------------------------------    
+[00:03:09]   Loaded.
+[00:03:09]  Loaded 9 plugins.
+
+[00:03:09] 
+[00:03:09] Filterscripts
+[00:03:09] ---------------
+[00:03:09]   Loaded 0 filterscripts.
+
+[00:03:09] [sv:dbg:main:AmxLoad] : net game pointer (value:024D9CA8) received
+[00:03:09] [sv:dbg:network:bind] : voice server running on port 58046
+[00:03:09] <> Database connected successful
+[00:03:09] Number of vehicle models: 22
+[00:03:09] <> Houses loaded: 57 | Time: 0 (ms)
+[00:03:09] <> Business loaded: 4 | Time: 0 (ms)
+[00:03:09] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:03:14] [connection] 192.168.50.44:49231 requests connection cookie.
+[00:03:15] [connection] incoming connection: 192.168.50.44:49231 id: 0
+[00:03:16] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:03:16] [sv:dbg:network:connect] : player (0) assigned key (111ded1f)
+[00:03:16] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:03:16] <> Bedinashvili_Levani - joined to server
+[00:03:18] [sv:dbg:network:receive] : player (0) identified (port:62519)
+[00:04:44] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:04:44] <> Bedinashvili_Levani - left form server
+[00:04:44] [part] Bedinashvili_Levani has left the server (0:1)
+[00:04:45]  -------------------------------------------
+[00:04:45]            SampVoice unloading...           
+[00:04:45]  -------------------------------------------
+[00:04:45] [dbg:raknet:free] : module releasing...
+[00:04:45] [dbg:raknet:free] : module released
+[00:04:45] [sv:dbg:network:free] : module releasing...
+[00:04:45] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:04:47] 
+[00:04:47] Server Plugins
+[00:04:47] --------------
+[00:04:47]  Loading plugin: crashdetect
+[00:04:47]   CrashDetect plugin 4.19.4
+[00:04:47]   Loaded.
+[00:04:47]  Loading plugin: mysql
+[00:04:47]  >> plugin.mysql: R41-4 successfully loaded.
+[00:04:47]   Loaded.
+[00:04:47]  Loading plugin: pawncmd
+[00:04:47] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:04:47]   Loaded.
+[00:04:47]  Loading plugin: pawn-memory
+[00:04:47] ========================
+[00:04:47] = Memory access plugin =
+[00:04:47] =       Made by BigETI =
+[00:04:47] = Loaded!              =
+[00:04:47] ========================
+[00:04:47]   Loaded.
+[00:04:47]  Loading plugin: SKY
+[00:04:47] 
+[00:04:47]  ===============================
+[00:04:47]    
+[00:04:47]    < SKY - 2.2.2 >
+[00:04:47]    
+[00:04:47]    (c) 2008 - Present | YSF Maintainers
+[00:04:47]    (c) 2015 | Oscar "Slice" Broman
+[00:04:47]    
+[00:04:47]    Server Version: 0.3.7 R2
+[00:04:47]    Operating System: Windows
+[00:04:47]    Built on: Jan 20 2020 at 22:21:16
+[00:04:47]    
+[00:04:47]  ===============================
+[00:04:47] 
+[00:04:47]   Loaded.
+[00:04:47]  Loading plugin: sscanf
+[00:04:47] 
+
+[00:04:47]  ===============================
+
+[00:04:47]       sscanf plugin loaded.     
+
+[00:04:47]          Version:  2.8.1        
+
+[00:04:47]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:04:47]  ===============================
+
+[00:04:47]   Loaded.
+[00:04:47]  Loading plugin: streamer
+[00:04:47] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:04:47]   Loaded.
+[00:04:47]  Loading plugin: pawnraknet
+[00:04:47] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:04:47]   Loaded.
+[00:04:47]  Loading plugin: sampvoice
+[00:04:47] [sv:dbg:network:init] : module initializing...
+[00:04:47] [dbg:raknet:init] : module initializing...
+[00:04:47] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:04:47] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:04:47] [dbg:raknet:init] : module initialized
+[00:04:47] [sv:dbg:network:init] : module initialized
+[00:04:47]  -------------------------------------------    
+[00:04:47]    ___                __   __    _              
+[00:04:47]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:04:47]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:04:47]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:04:47]                   |_|                           
+[00:04:47]  -------------------------------------------    
+[00:04:47]            SampVoice by MOR loaded              
+[00:04:47]  -------------------------------------------    
+[00:04:47]   Loaded.
+[00:04:47]  Loaded 9 plugins.
+
+[00:04:47] 
+[00:04:47] Filterscripts
+[00:04:47] ---------------
+[00:04:47]   Loaded 0 filterscripts.
+
+[00:04:47] [sv:dbg:main:AmxLoad] : net game pointer (value:022C9CA8) received
+[00:04:47] [sv:dbg:network:bind] : voice server running on port 53921
+[00:04:47] <> Database connected successful
+[00:04:47] Number of vehicle models: 22
+[00:04:47] <> Houses loaded: 57 | Time: 1 (ms)
+[00:04:47] <> Business loaded: 4 | Time: 0 (ms)
+[00:04:47] <> Fractions loaded: 15 | Time: 1 (ms)
+[00:05:04] [connection] 192.168.50.44:60157 requests connection cookie.
+[00:05:05] [connection] incoming connection: 192.168.50.44:60157 id: 0
+[00:05:05] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:05:05] [sv:dbg:network:connect] : player (0) assigned key (786ca074)
+[00:05:05] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:05:05] <> Bedinashvili_Levani - joined to server
+[00:05:06] [sv:dbg:network:receive] : player (0) identified (port:60865)
+[00:08:29] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:08:29] <> Bedinashvili_Levani - left form server
+[00:08:29] [part] Bedinashvili_Levani has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:08:31] 
+[00:08:31] Server Plugins
+[00:08:31] --------------
+[00:08:31]  Loading plugin: crashdetect
+[00:08:31]   CrashDetect plugin 4.19.4
+[00:08:31]   Loaded.
+[00:08:31]  Loading plugin: mysql
+[00:08:31]  >> plugin.mysql: R41-4 successfully loaded.
+[00:08:31]   Loaded.
+[00:08:31]  Loading plugin: pawncmd
+[00:08:31] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:08:31]   Loaded.
+[00:08:31]  Loading plugin: pawn-memory
+[00:08:31] ========================
+[00:08:31] = Memory access plugin =
+[00:08:31] =       Made by BigETI =
+[00:08:31] = Loaded!              =
+[00:08:31] ========================
+[00:08:31]   Loaded.
+[00:08:31]  Loading plugin: SKY
+[00:08:31] 
+[00:08:31]  ===============================
+[00:08:31]    
+[00:08:31]    < SKY - 2.2.2 >
+[00:08:31]    
+[00:08:31]    (c) 2008 - Present | YSF Maintainers
+[00:08:31]    (c) 2015 | Oscar "Slice" Broman
+[00:08:31]    
+[00:08:31]    Server Version: 0.3.7 R2
+[00:08:31]    Operating System: Windows
+[00:08:31]    Built on: Jan 20 2020 at 22:21:16
+[00:08:31]    
+[00:08:31]  ===============================
+[00:08:31] 
+[00:08:31]   Loaded.
+[00:08:31]  Loading plugin: sscanf
+[00:08:31] 
+
+[00:08:31]  ===============================
+
+[00:08:31]       sscanf plugin loaded.     
+
+[00:08:31]          Version:  2.8.1        
+
+[00:08:31]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:08:31]  ===============================
+
+[00:08:31]   Loaded.
+[00:08:31]  Loading plugin: streamer
+[00:08:31] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:08:31]   Loaded.
+[00:08:31]  Loading plugin: pawnraknet
+[00:08:31] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:08:31]   Loaded.
+[00:08:31]  Loading plugin: sampvoice
+[00:08:31] [sv:dbg:network:init] : module initializing...
+[00:08:31] [dbg:raknet:init] : module initializing...
+[00:08:31] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:08:31] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:08:31] [dbg:raknet:init] : module initialized
+[00:08:31] [sv:dbg:network:init] : module initialized
+[00:08:31]  -------------------------------------------    
+[00:08:31]    ___                __   __    _              
+[00:08:31]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:08:31]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:08:31]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:08:31]                   |_|                           
+[00:08:31]  -------------------------------------------    
+[00:08:31]            SampVoice by MOR loaded              
+[00:08:31]  -------------------------------------------    
+[00:08:31]   Loaded.
+[00:08:31]  Loaded 9 plugins.
+
+[00:08:31] 
+[00:08:31] Filterscripts
+[00:08:31] ---------------
+[00:08:31]   Loaded 0 filterscripts.
+
+[00:08:32] [sv:dbg:main:AmxLoad] : net game pointer (value:02229CA8) received
+[00:08:32] [sv:dbg:network:bind] : voice server running on port 54026
+[00:08:32] <> Database connected successful
+[00:08:32] Number of vehicle models: 22
+[00:08:32] <> Houses loaded: 57 | Time: 0 (ms)
+[00:08:32] <> Business loaded: 4 | Time: 0 (ms)
+[00:08:32] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:08:33]  -------------------------------------------
+[00:08:33]            SampVoice unloading...           
+[00:08:33]  -------------------------------------------
+[00:08:34] [dbg:raknet:free] : module releasing...
+[00:08:34] [dbg:raknet:free] : module released
+[00:08:34] [sv:dbg:network:free] : module releasing...
+[00:08:34] [sv:dbg:network:free] : module released
+[00:08:34]  -------------------------------------------
+[00:08:34]            SampVoice unloading...           
+[00:08:34]  -------------------------------------------
+[00:08:35] [dbg:raknet:free] : module releasing...
+[00:08:35] [dbg:raknet:free] : module released
+[00:08:35] [sv:dbg:network:free] : module releasing...
+[00:08:35] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:08:36] 
+[00:08:36] Server Plugins
+[00:08:36] --------------
+[00:08:36]  Loading plugin: crashdetect
+[00:08:36]   CrashDetect plugin 4.19.4
+[00:08:36]   Loaded.
+[00:08:36]  Loading plugin: mysql
+[00:08:36]  >> plugin.mysql: R41-4 successfully loaded.
+[00:08:36]   Loaded.
+[00:08:36]  Loading plugin: pawncmd
+[00:08:36] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:08:36]   Loaded.
+[00:08:36]  Loading plugin: pawn-memory
+[00:08:36] ========================
+[00:08:36] = Memory access plugin =
+[00:08:36] =       Made by BigETI =
+[00:08:36] = Loaded!              =
+[00:08:36] ========================
+[00:08:36]   Loaded.
+[00:08:36]  Loading plugin: SKY
+[00:08:36] 
+[00:08:36]  ===============================
+[00:08:36]    
+[00:08:36]    < SKY - 2.2.2 >
+[00:08:36]    
+[00:08:36]    (c) 2008 - Present | YSF Maintainers
+[00:08:36]    (c) 2015 | Oscar "Slice" Broman
+[00:08:36]    
+[00:08:36]    Server Version: 0.3.7 R2
+[00:08:36]    Operating System: Windows
+[00:08:36]    Built on: Jan 20 2020 at 22:21:16
+[00:08:36]    
+[00:08:36]  ===============================
+[00:08:36] 
+[00:08:36]   Loaded.
+[00:08:36]  Loading plugin: sscanf
+[00:08:36] 
+
+[00:08:36]  ===============================
+
+[00:08:36]       sscanf plugin loaded.     
+
+[00:08:36]          Version:  2.8.1        
+
+[00:08:36]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:08:36]  ===============================
+
+[00:08:36]   Loaded.
+[00:08:36]  Loading plugin: streamer
+[00:08:36] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:08:36]   Loaded.
+[00:08:36]  Loading plugin: pawnraknet
+[00:08:36] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:08:36]   Loaded.
+[00:08:36]  Loading plugin: sampvoice
+[00:08:36] [sv:dbg:network:init] : module initializing...
+[00:08:36] [dbg:raknet:init] : module initializing...
+[00:08:36] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:08:36] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:08:36] [dbg:raknet:init] : module initialized
+[00:08:36] [sv:dbg:network:init] : module initialized
+[00:08:36]  -------------------------------------------    
+[00:08:36]    ___                __   __    _              
+[00:08:36]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:08:36]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:08:36]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:08:36]                   |_|                           
+[00:08:36]  -------------------------------------------    
+[00:08:36]            SampVoice by MOR loaded              
+[00:08:36]  -------------------------------------------    
+[00:08:36]   Loaded.
+[00:08:36]  Loaded 9 plugins.
+
+[00:08:36] 
+[00:08:36] Filterscripts
+[00:08:36] ---------------
+[00:08:36]   Loaded 0 filterscripts.
+
+[00:08:36] [sv:dbg:main:AmxLoad] : net game pointer (value:02459CA8) received
+[00:08:36] [sv:dbg:network:bind] : voice server running on port 60987
+[00:08:36] <> Database connected successful
+[00:08:36] Number of vehicle models: 22
+[00:08:36] <> Houses loaded: 57 | Time: 1 (ms)
+[00:08:36] <> Business loaded: 4 | Time: 0 (ms)
+[00:08:36] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:08:42] [connection] 192.168.50.44:59376 requests connection cookie.
+[00:08:43] [connection] incoming connection: 192.168.50.44:59376 id: 0
+[00:08:43] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:08:43] [sv:dbg:network:connect] : player (0) assigned key (e71d98a0)
+[00:08:43] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:08:43] <> Bedinashvili_Levani - joined to server
+[00:08:45] [sv:dbg:network:receive] : player (0) identified (port:52654)
+[00:11:44] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:11:44] <> Bedinashvili_Levani - left form server
+[00:11:44] [part] Bedinashvili_Levani has left the server (0:1)
+[00:11:45]  -------------------------------------------
+[00:11:45]            SampVoice unloading...           
+[00:11:45]  -------------------------------------------
+[00:11:46] [dbg:raknet:free] : module releasing...
+[00:11:46] [dbg:raknet:free] : module released
+[00:11:46] [sv:dbg:network:free] : module releasing...
+[00:11:46] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:11:47] 
+[00:11:47] Server Plugins
+[00:11:47] --------------
+[00:11:47]  Loading plugin: crashdetect
+[00:11:47]   CrashDetect plugin 4.19.4
+[00:11:47]   Loaded.
+[00:11:47]  Loading plugin: mysql
+[00:11:47]  >> plugin.mysql: R41-4 successfully loaded.
+[00:11:47]   Loaded.
+[00:11:47]  Loading plugin: pawncmd
+[00:11:47] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:11:47]   Loaded.
+[00:11:47]  Loading plugin: pawn-memory
+[00:11:47] ========================
+[00:11:47] = Memory access plugin =
+[00:11:47] =       Made by BigETI =
+[00:11:47] = Loaded!              =
+[00:11:47] ========================
+[00:11:47]   Loaded.
+[00:11:47]  Loading plugin: SKY
+[00:11:47] 
+[00:11:47]  ===============================
+[00:11:47]    
+[00:11:47]    < SKY - 2.2.2 >
+[00:11:47]    
+[00:11:47]    (c) 2008 - Present | YSF Maintainers
+[00:11:47]    (c) 2015 | Oscar "Slice" Broman
+[00:11:47]    
+[00:11:47]    Server Version: 0.3.7 R2
+[00:11:47]    Operating System: Windows
+[00:11:47]    Built on: Jan 20 2020 at 22:21:16
+[00:11:47]    
+[00:11:47]  ===============================
+[00:11:47] 
+[00:11:47]   Loaded.
+[00:11:47]  Loading plugin: sscanf
+[00:11:47] 
+
+[00:11:47]  ===============================
+
+[00:11:47]       sscanf plugin loaded.     
+
+[00:11:47]          Version:  2.8.1        
+
+[00:11:47]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:11:47]  ===============================
+
+[00:11:47]   Loaded.
+[00:11:47]  Loading plugin: streamer
+[00:11:47] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:11:47]   Loaded.
+[00:11:47]  Loading plugin: pawnraknet
+[00:11:47] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:11:47]   Loaded.
+[00:11:47]  Loading plugin: sampvoice
+[00:11:47] [sv:dbg:network:init] : module initializing...
+[00:11:47] [dbg:raknet:init] : module initializing...
+[00:11:47] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:11:47] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:11:47] [dbg:raknet:init] : module initialized
+[00:11:47] [sv:dbg:network:init] : module initialized
+[00:11:47]  -------------------------------------------    
+[00:11:47]    ___                __   __    _              
+[00:11:47]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:11:47]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:11:47]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:11:47]                   |_|                           
+[00:11:47]  -------------------------------------------    
+[00:11:47]            SampVoice by MOR loaded              
+[00:11:47]  -------------------------------------------    
+[00:11:47]   Loaded.
+[00:11:47]  Loaded 9 plugins.
+
+[00:11:47] 
+[00:11:47] Filterscripts
+[00:11:47] ---------------
+[00:11:47]   Loaded 0 filterscripts.
+
+[00:11:47] [sv:dbg:main:AmxLoad] : net game pointer (value:02269CA8) received
+[00:11:47] [sv:dbg:network:bind] : voice server running on port 60889
+[00:11:47] <> Database connected successful
+[00:11:47] Number of vehicle models: 22
+[00:11:47] <> Houses loaded: 57 | Time: 1 (ms)
+[00:11:47] <> Business loaded: 4 | Time: 0 (ms)
+[00:11:47] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:11:57] [connection] 192.168.50.44:57845 requests connection cookie.
+[00:11:58] [connection] incoming connection: 192.168.50.44:57845 id: 0
+[00:11:58] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:11:58] [sv:dbg:network:connect] : player (0) assigned key (771b0c79)
+[00:11:58] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:11:58] <> Bedinashvili_Levani - joined to server
+[00:11:59] [sv:dbg:network:receive] : player (0) identified (port:57847)
+[00:12:56] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:12:56] <> Bedinashvili_Levani - left form server
+[00:12:56] [part] Bedinashvili_Levani has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:12:59] 
+[00:12:59] Server Plugins
+[00:12:59] --------------
+[00:12:59]  Loading plugin: crashdetect
+[00:12:59]   CrashDetect plugin 4.19.4
+[00:12:59]   Loaded.
+[00:12:59]  Loading plugin: mysql
+[00:12:59]  >> plugin.mysql: R41-4 successfully loaded.
+[00:12:59]   Loaded.
+[00:12:59]  Loading plugin: pawncmd
+[00:12:59] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:12:59]   Loaded.
+[00:12:59]  Loading plugin: pawn-memory
+[00:12:59] ========================
+[00:12:59] = Memory access plugin =
+[00:12:59] =       Made by BigETI =
+[00:12:59] = Loaded!              =
+[00:12:59] ========================
+[00:12:59]   Loaded.
+[00:12:59]  Loading plugin: SKY
+[00:12:59] 
+[00:12:59]  ===============================
+[00:12:59]    
+[00:12:59]    < SKY - 2.2.2 >
+[00:12:59]    
+[00:12:59]    (c) 2008 - Present | YSF Maintainers
+[00:12:59]    (c) 2015 | Oscar "Slice" Broman
+[00:12:59]    
+[00:12:59]    Server Version: 0.3.7 R2
+[00:12:59]    Operating System: Windows
+[00:12:59]    Built on: Jan 20 2020 at 22:21:16
+[00:12:59]    
+[00:12:59]  ===============================
+[00:12:59] 
+[00:12:59]   Loaded.
+[00:12:59]  Loading plugin: sscanf
+[00:12:59] 
+
+[00:12:59]  ===============================
+
+[00:12:59]       sscanf plugin loaded.     
+
+[00:12:59]          Version:  2.8.1        
+
+[00:12:59]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:12:59]  ===============================
+
+[00:12:59]   Loaded.
+[00:12:59]  Loading plugin: streamer
+[00:12:59] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:12:59]   Loaded.
+[00:12:59]  Loading plugin: pawnraknet
+[00:12:59] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:12:59]   Loaded.
+[00:12:59]  Loading plugin: sampvoice
+[00:12:59] [sv:dbg:network:init] : module initializing...
+[00:12:59] [dbg:raknet:init] : module initializing...
+[00:12:59] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:12:59] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:12:59] [dbg:raknet:init] : module initialized
+[00:12:59] [sv:dbg:network:init] : module initialized
+[00:12:59]  -------------------------------------------    
+[00:12:59]    ___                __   __    _              
+[00:12:59]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:12:59]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:12:59]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:12:59]                   |_|                           
+[00:12:59]  -------------------------------------------    
+[00:12:59]            SampVoice by MOR loaded              
+[00:12:59]  -------------------------------------------    
+[00:12:59]   Loaded.
+[00:12:59]  Loaded 9 plugins.
+
+[00:12:59] 
+[00:12:59] Filterscripts
+[00:12:59] ---------------
+[00:12:59]   Loaded 0 filterscripts.
+
+[00:12:59] [sv:dbg:main:AmxLoad] : net game pointer (value:022D9CA8) received
+[00:12:59] [sv:dbg:network:bind] : voice server running on port 63493
+[00:12:59] <> Database connected successful
+[00:12:59] Number of vehicle models: 22
+[00:12:59] <> Houses loaded: 57 | Time: 1 (ms)
+[00:12:59] <> Business loaded: 4 | Time: 0 (ms)
+[00:12:59] <> Fractions loaded: 15 | Time: 1 (ms)
+[00:13:02]  -------------------------------------------
+[00:13:02]            SampVoice unloading...           
+[00:13:02]  -------------------------------------------
+[00:13:02] [dbg:raknet:free] : module releasing...
+[00:13:02] [dbg:raknet:free] : module released
+[00:13:02] [sv:dbg:network:free] : module releasing...
+[00:13:02] [sv:dbg:network:free] : module released
+[00:13:02]  -------------------------------------------
+[00:13:02]            SampVoice unloading...           
+[00:13:02]  -------------------------------------------
+[00:13:03] [dbg:raknet:free] : module releasing...
+[00:13:03] [dbg:raknet:free] : module released
+[00:13:03] [sv:dbg:network:free] : module releasing...
+[00:13:03] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:13:04] 
+[00:13:04] Server Plugins
+[00:13:04] --------------
+[00:13:04]  Loading plugin: crashdetect
+[00:13:04]   CrashDetect plugin 4.19.4
+[00:13:04]   Loaded.
+[00:13:04]  Loading plugin: mysql
+[00:13:04]  >> plugin.mysql: R41-4 successfully loaded.
+[00:13:04]   Loaded.
+[00:13:04]  Loading plugin: pawncmd
+[00:13:04] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:13:04]   Loaded.
+[00:13:04]  Loading plugin: pawn-memory
+[00:13:04] ========================
+[00:13:04] = Memory access plugin =
+[00:13:04] =       Made by BigETI =
+[00:13:04] = Loaded!              =
+[00:13:04] ========================
+[00:13:04]   Loaded.
+[00:13:04]  Loading plugin: SKY
+[00:13:04] 
+[00:13:04]  ===============================
+[00:13:04]    
+[00:13:04]    < SKY - 2.2.2 >
+[00:13:04]    
+[00:13:04]    (c) 2008 - Present | YSF Maintainers
+[00:13:04]    (c) 2015 | Oscar "Slice" Broman
+[00:13:04]    
+[00:13:04]    Server Version: 0.3.7 R2
+[00:13:04]    Operating System: Windows
+[00:13:04]    Built on: Jan 20 2020 at 22:21:16
+[00:13:04]    
+[00:13:04]  ===============================
+[00:13:04] 
+[00:13:04]   Loaded.
+[00:13:04]  Loading plugin: sscanf
+[00:13:04] 
+
+[00:13:04]  ===============================
+
+[00:13:04]       sscanf plugin loaded.     
+
+[00:13:04]          Version:  2.8.1        
+
+[00:13:04]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:13:04]  ===============================
+
+[00:13:04]   Loaded.
+[00:13:04]  Loading plugin: streamer
+[00:13:04] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:13:04]   Loaded.
+[00:13:04]  Loading plugin: pawnraknet
+[00:13:04] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:13:04]   Loaded.
+[00:13:04]  Loading plugin: sampvoice
+[00:13:04] [sv:dbg:network:init] : module initializing...
+[00:13:04] [dbg:raknet:init] : module initializing...
+[00:13:04] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:13:04] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:13:04] [dbg:raknet:init] : module initialized
+[00:13:04] [sv:dbg:network:init] : module initialized
+[00:13:04]  -------------------------------------------    
+[00:13:04]    ___                __   __    _              
+[00:13:04]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:13:04]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:13:04]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:13:04]                   |_|                           
+[00:13:04]  -------------------------------------------    
+[00:13:04]            SampVoice by MOR loaded              
+[00:13:04]  -------------------------------------------    
+[00:13:04]   Loaded.
+[00:13:04]  Loaded 9 plugins.
+
+[00:13:04] 
+[00:13:04] Filterscripts
+[00:13:04] ---------------
+[00:13:04]   Loaded 0 filterscripts.
+
+[00:13:04] [sv:dbg:main:AmxLoad] : net game pointer (value:02559CA8) received
+[00:13:04] [sv:dbg:network:bind] : voice server running on port 63465
+[00:13:04] <> Database connected successful
+[00:13:04] Number of vehicle models: 22
+[00:13:04] <> Houses loaded: 57 | Time: 0 (ms)
+[00:13:04] <> Business loaded: 4 | Time: 0 (ms)
+[00:13:04] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:13:12] [connection] 192.168.50.44:55813 requests connection cookie.
+[00:13:13] [connection] incoming connection: 192.168.50.44:55813 id: 0
+[00:13:13] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:13:13] [sv:dbg:network:connect] : player (0) assigned key (13c7c6f3)
+[00:13:13] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:13:13] <> Bedinashvili_Levani - joined to server
+[00:13:15] [sv:dbg:network:receive] : player (0) identified (port:55814)
+[00:14:20] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:14:20] <> Bedinashvili_Levani - left form server
+[00:14:20] [part] Bedinashvili_Levani has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:14:22] 
+[00:14:22] Server Plugins
+[00:14:22] --------------
+[00:14:22]  Loading plugin: crashdetect
+[00:14:22]   CrashDetect plugin 4.19.4
+[00:14:22]   Loaded.
+[00:14:22]  Loading plugin: mysql
+[00:14:22]  >> plugin.mysql: R41-4 successfully loaded.
+[00:14:22]   Loaded.
+[00:14:22]  Loading plugin: pawncmd
+[00:14:22] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:14:22]   Loaded.
+[00:14:22]  Loading plugin: pawn-memory
+[00:14:22] ========================
+[00:14:22] = Memory access plugin =
+[00:14:22] =       Made by BigETI =
+[00:14:22] = Loaded!              =
+[00:14:22] ========================
+[00:14:22]   Loaded.
+[00:14:22]  Loading plugin: SKY
+[00:14:22] 
+[00:14:22]  ===============================
+[00:14:22]    
+[00:14:22]    < SKY - 2.2.2 >
+[00:14:22]    
+[00:14:22]    (c) 2008 - Present | YSF Maintainers
+[00:14:22]    (c) 2015 | Oscar "Slice" Broman
+[00:14:22]    
+[00:14:22]    Server Version: 0.3.7 R2
+[00:14:22]    Operating System: Windows
+[00:14:22]    Built on: Jan 20 2020 at 22:21:16
+[00:14:22]    
+[00:14:22]  ===============================
+[00:14:22] 
+[00:14:22]   Loaded.
+[00:14:22]  Loading plugin: sscanf
+[00:14:22] 
+
+[00:14:22]  ===============================
+
+[00:14:22]       sscanf plugin loaded.     
+
+[00:14:22]          Version:  2.8.1        
+
+[00:14:22]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:14:22]  ===============================
+
+[00:14:22]   Loaded.
+[00:14:22]  Loading plugin: streamer
+[00:14:22] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:14:22]   Loaded.
+[00:14:22]  Loading plugin: pawnraknet
+[00:14:22] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:14:22]   Loaded.
+[00:14:22]  Loading plugin: sampvoice
+[00:14:22] [sv:dbg:network:init] : module initializing...
+[00:14:22] [dbg:raknet:init] : module initializing...
+[00:14:22] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:14:22] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:14:22] [dbg:raknet:init] : module initialized
+[00:14:22] [sv:dbg:network:init] : module initialized
+[00:14:22]  -------------------------------------------    
+[00:14:22]    ___                __   __    _              
+[00:14:22]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:14:22]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:14:22]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:14:22]                   |_|                           
+[00:14:22]  -------------------------------------------    
+[00:14:22]            SampVoice by MOR loaded              
+[00:14:22]  -------------------------------------------    
+[00:14:22]   Loaded.
+[00:14:22]  Loaded 9 plugins.
+
+[00:14:22] 
+[00:14:22] Filterscripts
+[00:14:22] ---------------
+[00:14:22]   Loaded 0 filterscripts.
+
+[00:14:22] [sv:dbg:main:AmxLoad] : net game pointer (value:007A9CA8) received
+[00:14:22] [sv:dbg:network:bind] : voice server running on port 65212
+[00:14:22] <> Database connected successful
+[00:14:22] Number of vehicle models: 22
+[00:14:22] <> Houses loaded: 57 | Time: 0 (ms)
+[00:14:22] <> Business loaded: 4 | Time: 0 (ms)
+[00:14:22] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:14:24]  -------------------------------------------
+[00:14:24]            SampVoice unloading...           
+[00:14:24]  -------------------------------------------
+[00:14:24] [dbg:raknet:free] : module releasing...
+[00:14:24] [dbg:raknet:free] : module released
+[00:14:24] [sv:dbg:network:free] : module releasing...
+[00:14:24] [sv:dbg:network:free] : module released
+[00:14:24]  -------------------------------------------
+[00:14:24]            SampVoice unloading...           
+[00:14:24]  -------------------------------------------
+[00:14:25] [dbg:raknet:free] : module releasing...
+[00:14:25] [dbg:raknet:free] : module released
+[00:14:25] [sv:dbg:network:free] : module releasing...
+[00:14:25] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:14:26] 
+[00:14:26] Server Plugins
+[00:14:26] --------------
+[00:14:26]  Loading plugin: crashdetect
+[00:14:26]   CrashDetect plugin 4.19.4
+[00:14:26]   Loaded.
+[00:14:26]  Loading plugin: mysql
+[00:14:26]  >> plugin.mysql: R41-4 successfully loaded.
+[00:14:26]   Loaded.
+[00:14:26]  Loading plugin: pawncmd
+[00:14:26] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:14:26]   Loaded.
+[00:14:26]  Loading plugin: pawn-memory
+[00:14:26] ========================
+[00:14:26] = Memory access plugin =
+[00:14:26] =       Made by BigETI =
+[00:14:26] = Loaded!              =
+[00:14:26] ========================
+[00:14:26]   Loaded.
+[00:14:26]  Loading plugin: SKY
+[00:14:26] 
+[00:14:26]  ===============================
+[00:14:26]    
+[00:14:26]    < SKY - 2.2.2 >
+[00:14:26]    
+[00:14:26]    (c) 2008 - Present | YSF Maintainers
+[00:14:26]    (c) 2015 | Oscar "Slice" Broman
+[00:14:26]    
+[00:14:26]    Server Version: 0.3.7 R2
+[00:14:26]    Operating System: Windows
+[00:14:26]    Built on: Jan 20 2020 at 22:21:16
+[00:14:26]    
+[00:14:26]  ===============================
+[00:14:26] 
+[00:14:26]   Loaded.
+[00:14:26]  Loading plugin: sscanf
+[00:14:26] 
+
+[00:14:26]  ===============================
+
+[00:14:26]       sscanf plugin loaded.     
+
+[00:14:26]          Version:  2.8.1        
+
+[00:14:26]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:14:26]  ===============================
+
+[00:14:26]   Loaded.
+[00:14:26]  Loading plugin: streamer
+[00:14:26] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:14:26]   Loaded.
+[00:14:26]  Loading plugin: pawnraknet
+[00:14:26] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:14:26]   Loaded.
+[00:14:26]  Loading plugin: sampvoice
+[00:14:26] [sv:dbg:network:init] : module initializing...
+[00:14:26] [dbg:raknet:init] : module initializing...
+[00:14:26] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:14:26] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:14:26] [dbg:raknet:init] : module initialized
+[00:14:26] [sv:dbg:network:init] : module initialized
+[00:14:26]  -------------------------------------------    
+[00:14:26]    ___                __   __    _              
+[00:14:26]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:14:26]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:14:26]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:14:26]                   |_|                           
+[00:14:26]  -------------------------------------------    
+[00:14:26]            SampVoice by MOR loaded              
+[00:14:26]  -------------------------------------------    
+[00:14:26]   Loaded.
+[00:14:26]  Loaded 9 plugins.
+
+[00:14:26] 
+[00:14:26] Filterscripts
+[00:14:26] ---------------
+[00:14:26]   Loaded 0 filterscripts.
+
+[00:14:26] [sv:dbg:main:AmxLoad] : net game pointer (value:023F9CA8) received
+[00:14:26] [sv:dbg:network:bind] : voice server running on port 49593
+[00:14:26] <> Database connected successful
+[00:14:26] Number of vehicle models: 22
+[00:14:26] <> Houses loaded: 57 | Time: 1 (ms)
+[00:14:26] <> Business loaded: 4 | Time: 0 (ms)
+[00:14:26] <> Fractions loaded: 15 | Time: 1 (ms)
+[00:14:31] [connection] 192.168.50.44:56414 requests connection cookie.
+[00:14:32] [connection] incoming connection: 192.168.50.44:56414 id: 0
+[00:14:33] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:14:33] [sv:dbg:network:connect] : player (0) assigned key (aa43145c)
+[00:14:33] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:14:33] <> Bedinashvili_Levani - joined to server
+[00:14:35] [sv:dbg:network:receive] : player (0) identified (port:63733)
+[00:14:57] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:14:57] <> Bedinashvili_Levani - left form server
+[00:14:57] [part] Bedinashvili_Levani has left the server (0:1)
+[00:15:16]  -------------------------------------------
+[00:15:16]            SampVoice unloading...           
+[00:15:16]  -------------------------------------------
+[00:15:16] [dbg:raknet:free] : module releasing...
+[00:15:16] [dbg:raknet:free] : module released
+[00:15:16] [sv:dbg:network:free] : module releasing...
+[00:15:16] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:15:18] 
+[00:15:18] Server Plugins
+[00:15:18] --------------
+[00:15:18]  Loading plugin: crashdetect
+[00:15:18]   CrashDetect plugin 4.19.4
+[00:15:18]   Loaded.
+[00:15:18]  Loading plugin: mysql
+[00:15:18]  >> plugin.mysql: R41-4 successfully loaded.
+[00:15:18]   Loaded.
+[00:15:18]  Loading plugin: pawncmd
+[00:15:18] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:15:18]   Loaded.
+[00:15:18]  Loading plugin: pawn-memory
+[00:15:18] ========================
+[00:15:18] = Memory access plugin =
+[00:15:18] =       Made by BigETI =
+[00:15:18] = Loaded!              =
+[00:15:18] ========================
+[00:15:18]   Loaded.
+[00:15:18]  Loading plugin: SKY
+[00:15:18] 
+[00:15:18]  ===============================
+[00:15:18]    
+[00:15:18]    < SKY - 2.2.2 >
+[00:15:18]    
+[00:15:18]    (c) 2008 - Present | YSF Maintainers
+[00:15:18]    (c) 2015 | Oscar "Slice" Broman
+[00:15:18]    
+[00:15:18]    Server Version: 0.3.7 R2
+[00:15:18]    Operating System: Windows
+[00:15:18]    Built on: Jan 20 2020 at 22:21:16
+[00:15:18]    
+[00:15:18]  ===============================
+[00:15:18] 
+[00:15:18]   Loaded.
+[00:15:18]  Loading plugin: sscanf
+[00:15:18] 
+
+[00:15:18]  ===============================
+
+[00:15:18]       sscanf plugin loaded.     
+
+[00:15:18]          Version:  2.8.1        
+
+[00:15:18]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:15:18]  ===============================
+
+[00:15:18]   Loaded.
+[00:15:18]  Loading plugin: streamer
+[00:15:18] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:15:18]   Loaded.
+[00:15:18]  Loading plugin: pawnraknet
+[00:15:18] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:15:18]   Loaded.
+[00:15:18]  Loading plugin: sampvoice
+[00:15:18] [sv:dbg:network:init] : module initializing...
+[00:15:18] [dbg:raknet:init] : module initializing...
+[00:15:18] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:15:18] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:15:18] [dbg:raknet:init] : module initialized
+[00:15:18] [sv:dbg:network:init] : module initialized
+[00:15:18]  -------------------------------------------    
+[00:15:18]    ___                __   __    _              
+[00:15:18]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:15:18]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:15:18]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:15:18]                   |_|                           
+[00:15:18]  -------------------------------------------    
+[00:15:18]            SampVoice by MOR loaded              
+[00:15:18]  -------------------------------------------    
+[00:15:18]   Loaded.
+[00:15:18]  Loaded 9 plugins.
+
+[00:15:18] 
+[00:15:18] Filterscripts
+[00:15:18] ---------------
+[00:15:18]   Loaded 0 filterscripts.
+
+[00:15:18] [sv:dbg:main:AmxLoad] : net game pointer (value:00619CA8) received
+[00:15:18] [sv:dbg:network:bind] : voice server running on port 65147
+[00:15:18] <> Database connected successful
+[00:15:18] Number of vehicle models: 22
+[00:15:18] <> Houses loaded: 57 | Time: 0 (ms)
+[00:15:18] <> Business loaded: 4 | Time: 0 (ms)
+[00:15:18] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:15:25] [connection] 192.168.50.44:54558 requests connection cookie.
+[00:15:26] [connection] incoming connection: 192.168.50.44:54558 id: 0
+[00:15:26] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:15:26] [sv:dbg:network:connect] : player (0) assigned key (76e4243b)
+[00:15:26] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:15:26] <> Bedinashvili_Levani - joined to server
+[00:15:26] [sv:dbg:network:receive] : player (0) identified (port:54559)
+[00:15:36] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:15:36] <> Bedinashvili_Levani - left form server
+[00:15:36] [part] Bedinashvili_Levani has left the server (0:1)
+[00:15:51] [connection] 192.168.50.44:63466 requests connection cookie.
+[00:15:52] [connection] incoming connection: 192.168.50.44:63466 id: 0
+[00:15:53] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:15:53] [sv:dbg:network:connect] : player (0) assigned key (21fc79f6)
+[00:15:53] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:15:53] <> Bedinashvili_Levani - joined to server
+[00:15:54]  -------------------------------------------
+[00:15:54]            SampVoice unloading...           
+[00:15:54]  -------------------------------------------
+[00:15:55] [dbg:raknet:free] : module releasing...
+[00:15:55] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:15:55] [dbg:raknet:free] : module released
+[00:15:55] [sv:dbg:network:free] : module releasing...
+[00:15:55] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:15:57] 
+[00:15:57] Server Plugins
+[00:15:57] --------------
+[00:15:57]  Loading plugin: crashdetect
+[00:15:57]   CrashDetect plugin 4.19.4
+[00:15:57]   Loaded.
+[00:15:57]  Loading plugin: mysql
+[00:15:57]  >> plugin.mysql: R41-4 successfully loaded.
+[00:15:57]   Loaded.
+[00:15:57]  Loading plugin: pawncmd
+[00:15:57] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:15:57]   Loaded.
+[00:15:57]  Loading plugin: pawn-memory
+[00:15:57] ========================
+[00:15:57] = Memory access plugin =
+[00:15:57] =       Made by BigETI =
+[00:15:57] = Loaded!              =
+[00:15:57] ========================
+[00:15:57]   Loaded.
+[00:15:57]  Loading plugin: SKY
+[00:15:57] 
+[00:15:57]  ===============================
+[00:15:57]    
+[00:15:57]    < SKY - 2.2.2 >
+[00:15:57]    
+[00:15:57]    (c) 2008 - Present | YSF Maintainers
+[00:15:57]    (c) 2015 | Oscar "Slice" Broman
+[00:15:57]    
+[00:15:57]    Server Version: 0.3.7 R2
+[00:15:57]    Operating System: Windows
+[00:15:57]    Built on: Jan 20 2020 at 22:21:16
+[00:15:57]    
+[00:15:57]  ===============================
+[00:15:57] 
+[00:15:57]   Loaded.
+[00:15:57]  Loading plugin: sscanf
+[00:15:57] 
+
+[00:15:57]  ===============================
+
+[00:15:57]       sscanf plugin loaded.     
+
+[00:15:57]          Version:  2.8.1        
+
+[00:15:57]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:15:57]  ===============================
+
+[00:15:57]   Loaded.
+[00:15:57]  Loading plugin: streamer
+[00:15:57] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:15:57]   Loaded.
+[00:15:57]  Loading plugin: pawnraknet
+[00:15:57] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:15:57]   Loaded.
+[00:15:57]  Loading plugin: sampvoice
+[00:15:57] [sv:dbg:network:init] : module initializing...
+[00:15:57] [dbg:raknet:init] : module initializing...
+[00:15:57] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:15:57] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:15:57] [dbg:raknet:init] : module initialized
+[00:15:57] [sv:dbg:network:init] : module initialized
+[00:15:57]  -------------------------------------------    
+[00:15:57]    ___                __   __    _              
+[00:15:57]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:15:57]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:15:57]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:15:57]                   |_|                           
+[00:15:57]  -------------------------------------------    
+[00:15:57]            SampVoice by MOR loaded              
+[00:15:57]  -------------------------------------------    
+[00:15:57]   Loaded.
+[00:15:57]  Loaded 9 plugins.
+
+[00:15:57] 
+[00:15:57] Filterscripts
+[00:15:57] ---------------
+[00:15:57]   Loaded 0 filterscripts.
+
+[00:15:57] [sv:dbg:main:AmxLoad] : net game pointer (value:02369CA8) received
+[00:15:57] [sv:dbg:network:bind] : voice server running on port 61785
+[00:15:57] <> Database connected successful
+[00:15:57] Number of vehicle models: 22
+[00:15:57] <> Houses loaded: 57 | Time: 1 (ms)
+[00:15:57] <> Business loaded: 4 | Time: 1 (ms)
+[00:15:57] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:16:02] [connection] 192.168.50.44:52615 requests connection cookie.
+[00:16:03] [connection] incoming connection: 192.168.50.44:52615 id: 0
+[00:16:03] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:16:03] [sv:dbg:network:connect] : player (0) assigned key (3b05fd31)
+[00:16:03] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:16:03] <> Bedinashvili_Levani - joined to server
+[00:16:04] [sv:dbg:network:receive] : player (0) identified (port:52616)
+[00:16:17] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:16:17] <> Bedinashvili_Levani - left form server
+[00:16:17] [part] Bedinashvili_Levani has left the server (0:1)
+[00:16:31]  -------------------------------------------
+[00:16:31]            SampVoice unloading...           
+[00:16:31]  -------------------------------------------
+[00:16:32] [dbg:raknet:free] : module releasing...
+[00:16:32] [dbg:raknet:free] : module released
+[00:16:32] [sv:dbg:network:free] : module releasing...
+[00:16:32] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:16:57] 
+[00:16:57] Server Plugins
+[00:16:57] --------------
+[00:16:57]  Loading plugin: crashdetect
+[00:16:57]   CrashDetect plugin 4.19.4
+[00:16:57]   Loaded.
+[00:16:57]  Loading plugin: mysql
+[00:16:57]  >> plugin.mysql: R41-4 successfully loaded.
+[00:16:57]   Loaded.
+[00:16:57]  Loading plugin: pawncmd
+[00:16:57] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:16:57]   Loaded.
+[00:16:57]  Loading plugin: pawn-memory
+[00:16:57] ========================
+[00:16:57] = Memory access plugin =
+[00:16:57] =       Made by BigETI =
+[00:16:57] = Loaded!              =
+[00:16:57] ========================
+[00:16:57]   Loaded.
+[00:16:57]  Loading plugin: SKY
+[00:16:57] 
+[00:16:57]  ===============================
+[00:16:57]    
+[00:16:57]    < SKY - 2.2.2 >
+[00:16:57]    
+[00:16:57]    (c) 2008 - Present | YSF Maintainers
+[00:16:57]    (c) 2015 | Oscar "Slice" Broman
+[00:16:57]    
+[00:16:57]    Server Version: 0.3.7 R2
+[00:16:57]    Operating System: Windows
+[00:16:57]    Built on: Jan 20 2020 at 22:21:16
+[00:16:57]    
+[00:16:57]  ===============================
+[00:16:57] 
+[00:16:57]   Loaded.
+[00:16:57]  Loading plugin: sscanf
+[00:16:57] 
+
+[00:16:57]  ===============================
+
+[00:16:57]       sscanf plugin loaded.     
+
+[00:16:57]          Version:  2.8.1        
+
+[00:16:57]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:16:57]  ===============================
+
+[00:16:57]   Loaded.
+[00:16:57]  Loading plugin: streamer
+[00:16:57] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:16:57]   Loaded.
+[00:16:57]  Loading plugin: pawnraknet
+[00:16:57] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:16:57]   Loaded.
+[00:16:57]  Loading plugin: sampvoice
+[00:16:57] [sv:dbg:network:init] : module initializing...
+[00:16:57] [dbg:raknet:init] : module initializing...
+[00:16:57] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:16:57] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:16:57] [dbg:raknet:init] : module initialized
+[00:16:57] [sv:dbg:network:init] : module initialized
+[00:16:57]  -------------------------------------------    
+[00:16:57]    ___                __   __    _              
+[00:16:57]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:16:57]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:16:57]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:16:57]                   |_|                           
+[00:16:57]  -------------------------------------------    
+[00:16:57]            SampVoice by MOR loaded              
+[00:16:57]  -------------------------------------------    
+[00:16:57]   Loaded.
+[00:16:57]  Loaded 9 plugins.
+
+[00:16:57] 
+[00:16:57] Filterscripts
+[00:16:57] ---------------
+[00:16:57]   Loaded 0 filterscripts.
+
+[00:16:57] [sv:dbg:main:AmxLoad] : net game pointer (value:02359CA8) received
+[00:16:57] [sv:dbg:network:bind] : voice server running on port 52412
+[00:16:57] <> Database connected successful
+[00:16:57] Number of vehicle models: 22
+[00:16:57] <> Houses loaded: 57 | Time: 1 (ms)
+[00:16:57] <> Business loaded: 4 | Time: 0 (ms)
+[00:16:57] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:17:18]  -------------------------------------------
+[00:17:18]            SampVoice unloading...           
+[00:17:18]  -------------------------------------------
+[00:17:18] [dbg:raknet:free] : module releasing...
+[00:17:18] [dbg:raknet:free] : module released
+[00:17:18] [sv:dbg:network:free] : module releasing...
+[00:17:18] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:17:21] 
+[00:17:21] Server Plugins
+[00:17:21] --------------
+[00:17:21]  Loading plugin: crashdetect
+[00:17:21]   CrashDetect plugin 4.19.4
+[00:17:21]   Loaded.
+[00:17:21]  Loading plugin: mysql
+[00:17:21]  >> plugin.mysql: R41-4 successfully loaded.
+[00:17:21]   Loaded.
+[00:17:21]  Loading plugin: pawncmd
+[00:17:21] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:17:21]   Loaded.
+[00:17:21]  Loading plugin: pawn-memory
+[00:17:21] ========================
+[00:17:21] = Memory access plugin =
+[00:17:21] =       Made by BigETI =
+[00:17:21] = Loaded!              =
+[00:17:21] ========================
+[00:17:21]   Loaded.
+[00:17:21]  Loading plugin: SKY
+[00:17:21] 
+[00:17:21]  ===============================
+[00:17:21]    
+[00:17:21]    < SKY - 2.2.2 >
+[00:17:21]    
+[00:17:21]    (c) 2008 - Present | YSF Maintainers
+[00:17:21]    (c) 2015 | Oscar "Slice" Broman
+[00:17:21]    
+[00:17:21]    Server Version: 0.3.7 R2
+[00:17:21]    Operating System: Windows
+[00:17:21]    Built on: Jan 20 2020 at 22:21:16
+[00:17:21]    
+[00:17:21]  ===============================
+[00:17:21] 
+[00:17:21]   Loaded.
+[00:17:21]  Loading plugin: sscanf
+[00:17:21] 
+
+[00:17:21]  ===============================
+
+[00:17:21]       sscanf plugin loaded.     
+
+[00:17:21]          Version:  2.8.1        
+
+[00:17:21]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:17:21]  ===============================
+
+[00:17:21]   Loaded.
+[00:17:21]  Loading plugin: streamer
+[00:17:21] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:17:21]   Loaded.
+[00:17:21]  Loading plugin: pawnraknet
+[00:17:21] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:17:21]   Loaded.
+[00:17:21]  Loading plugin: sampvoice
+[00:17:21] [sv:dbg:network:init] : module initializing...
+[00:17:21] [dbg:raknet:init] : module initializing...
+[00:17:21] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:17:21] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:17:21] [dbg:raknet:init] : module initialized
+[00:17:21] [sv:dbg:network:init] : module initialized
+[00:17:21]  -------------------------------------------    
+[00:17:21]    ___                __   __    _              
+[00:17:21]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:17:21]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:17:21]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:17:21]                   |_|                           
+[00:17:21]  -------------------------------------------    
+[00:17:21]            SampVoice by MOR loaded              
+[00:17:21]  -------------------------------------------    
+[00:17:21]   Loaded.
+[00:17:21]  Loaded 9 plugins.
+
+[00:17:21] 
+[00:17:21] Filterscripts
+[00:17:21] ---------------
+[00:17:21]   Loaded 0 filterscripts.
+
+[00:17:21] [sv:dbg:main:AmxLoad] : net game pointer (value:001F9CA8) received
+[00:17:21] [sv:dbg:network:bind] : voice server running on port 50500
+[00:17:21] <> Database connected successful
+[00:17:21] Number of vehicle models: 22
+[00:17:21] <> Houses loaded: 57 | Time: 1 (ms)
+[00:17:21] <> Business loaded: 4 | Time: 0 (ms)
+[00:17:21] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:17:26] [connection] 192.168.50.44:62435 requests connection cookie.
+[00:17:27] [connection] incoming connection: 192.168.50.44:62435 id: 0
+[00:17:27] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:17:27] [sv:dbg:network:connect] : player (0) assigned key (93f877ec)
+[00:17:27] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:17:27] <> Bedinashvili_Levani - joined to server
+[00:17:29] [sv:dbg:network:receive] : player (0) identified (port:62436)
+[00:17:49] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:17:49] <> Bedinashvili_Levani - left form server
+[00:17:49] [part] Bedinashvili_Levani has left the server (0:1)
+[00:18:31]  -------------------------------------------
+[00:18:31]            SampVoice unloading...           
+[00:18:31]  -------------------------------------------
+[00:18:32] [dbg:raknet:free] : module releasing...
+[00:18:32] [dbg:raknet:free] : module released
+[00:18:32] [sv:dbg:network:free] : module releasing...
+[00:18:32] [sv:dbg:network:free] : module released
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:19:31] 
+[00:19:31] Server Plugins
+[00:19:31] --------------
+[00:19:31]  Loading plugin: crashdetect
+[00:19:31]   CrashDetect plugin 4.19.4
+[00:19:31]   Loaded.
+[00:19:31]  Loading plugin: mysql
+[00:19:31]  >> plugin.mysql: R41-4 successfully loaded.
+[00:19:31]   Loaded.
+[00:19:31]  Loading plugin: pawncmd
+[00:19:31] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:19:31]   Loaded.
+[00:19:31]  Loading plugin: pawn-memory
+[00:19:31] ========================
+[00:19:31] = Memory access plugin =
+[00:19:31] =       Made by BigETI =
+[00:19:31] = Loaded!              =
+[00:19:31] ========================
+[00:19:31]   Loaded.
+[00:19:31]  Loading plugin: SKY
+[00:19:31] 
+[00:19:31]  ===============================
+[00:19:31]    
+[00:19:31]    < SKY - 2.2.2 >
+[00:19:31]    
+[00:19:31]    (c) 2008 - Present | YSF Maintainers
+[00:19:31]    (c) 2015 | Oscar "Slice" Broman
+[00:19:31]    
+[00:19:31]    Server Version: 0.3.7 R2
+[00:19:31]    Operating System: Windows
+[00:19:31]    Built on: Jan 20 2020 at 22:21:16
+[00:19:31]    
+[00:19:31]  ===============================
+[00:19:31] 
+[00:19:31]   Loaded.
+[00:19:31]  Loading plugin: sscanf
+[00:19:31] 
+
+[00:19:31]  ===============================
+
+[00:19:31]       sscanf plugin loaded.     
+
+[00:19:31]          Version:  2.8.1        
+
+[00:19:31]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:19:31]  ===============================
+
+[00:19:31]   Loaded.
+[00:19:31]  Loading plugin: streamer
+[00:19:31] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[00:19:31]   Loaded.
+[00:19:31]  Loading plugin: pawnraknet
+[00:19:31] Pawn.RakNet plugin v1.2.0 by urShadow loaded
+[00:19:31]   Loaded.
+[00:19:31]  Loading plugin: sampvoice
+[00:19:31] [sv:dbg:network:init] : module initializing...
+[00:19:31] [dbg:raknet:init] : module initializing...
+[00:19:31] [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[00:19:31] [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[00:19:31] [dbg:raknet:init] : module initialized
+[00:19:31] [sv:dbg:network:init] : module initialized
+[00:19:31]  -------------------------------------------    
+[00:19:31]    ___                __   __    _              
+[00:19:31]   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[00:19:31]   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[00:19:31]   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[00:19:31]                   |_|                           
+[00:19:31]  -------------------------------------------    
+[00:19:31]            SampVoice by MOR loaded              
+[00:19:31]  -------------------------------------------    
+[00:19:31]   Loaded.
+[00:19:31]  Loaded 9 plugins.
+
+[00:19:31] 
+[00:19:31] Filterscripts
+[00:19:31] ---------------
+[00:19:31]   Loaded 0 filterscripts.
+
+[00:19:31] [sv:dbg:main:AmxLoad] : net game pointer (value:02499CA8) received
+[00:19:31] [sv:dbg:network:bind] : voice server running on port 51022
+[00:19:31] <> Database connected successful
+[00:19:31] Number of vehicle models: 22
+[00:19:31] <> Houses loaded: 57 | Time: 1 (ms)
+[00:19:31] <> Business loaded: 4 | Time: 0 (ms)
+[00:19:31] <> Fractions loaded: 15 | Time: 0 (ms)
+[00:19:36] [connection] 192.168.50.44:50326 requests connection cookie.
+[00:19:37] [connection] incoming connection: 192.168.50.44:50326 id: 0
+[00:19:37] [sv:dbg:network:connect] : connecting player (0) with address (192.168.50.44) ...
+[00:19:37] [sv:dbg:network:connect] : player (0) assigned key (72a5f98b)
+[00:19:37] [join] Bedinashvili_Levani has joined the server (0:192.168.50.44)
+[00:19:37] <> Bedinashvili_Levani - joined to server
+[00:19:38] [sv:dbg:network:receive] : player (0) identified (port:50327)
+[00:20:15] [sv:dbg:network:connect] : disconnecting player (0) ...
+[00:20:15] <> Bedinashvili_Levani - left form server
+[00:20:15] [part] Bedinashvili_Levani has left the server (0:1)
+[00:20:16]  -------------------------------------------
+[00:20:16]            SampVoice unloading...           
+[00:20:16]  -------------------------------------------
+[00:20:16] [dbg:raknet:free] : module releasing...
+[00:20:16] [dbg:raknet:free] : module released
+[00:20:16] [sv:dbg:network:free] : module releasing...
+[00:20:16] [sv:dbg:network:free] : module released
