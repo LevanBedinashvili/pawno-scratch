@@ -46,6 +46,7 @@ new MySQL:connects;
 //------------------------------
 #include "../../library/enums/userdata"
 #include "../../library/enums/carinfo"
+new MyCarID[MAX_PLAYERS][25];
 //------------------------------
 new FreshTimer;
 //------------------------------
@@ -400,6 +401,35 @@ new VehicleNames[212][] = {
 
 new AddVehicle;
 
+stock ShowCarMenu(playerid) {
+    new query[256];
+    format(query, sizeof(query), "SELECT * FROM `cars` WHERE Owner = '%s'",Name(playerid));
+    mysql_query(connects, query);
+    new rows;
+    cache_get_row_count(rows);
+    if(!rows) return SendClientMessage(playerid, -1, "Mankanebi ver moidzebna");
+    new CarCount = 0, listCount = 0;
+    for new i = 0;i < rows; i++ do {
+        cache_get_value_name_int(i, "Model", MyCarID[playerid][CarCount]);
+        CarCount ++;
+    }
+    for(new i = 0; i < 25; i ++) if(MyCarID[playerid][i]) listCount ++;
+    new DialogStr[256], dialogstr[100];
+    DialogStr = "{ffffff}FixCar Menu\n";
+    for(new i = 0; i < listCount; i ++) {
+        format(dialogstr, sizeof(dialogstr),  "[%d] - %s\n",(i+1),VehicleNames[MyCarID[playerid][i]-400]);
+        strcat(DialogStr, dialogstr);
+    }
+    ShowPlayerDialog(playerid, 9955, DIALOG_STYLE_TABLIST_HEADERS, "Cars Menu", DialogStr, "Spawn", "Gasvla");
+    return true;
+}
+stock GivePlayerCar(playerid, carid) {
+    new query[256];
+    format(query, sizeof(query), "INSERT INTO `cars` (`Owner`, `Model`) VALUES ('%s', '%d')",Name(playerid),carid);
+    mysql_query(connects, query);
+    return true;
+}
+
 stock GetString(param1[],param2[]) {
 	return !strcmp(param1, param2, false);
 }
@@ -475,16 +505,7 @@ stock LoadOwnableCars() {
 		cache_get_value_name_int	(i,	"ID", 			CarInfo[i][cID]);
 		cache_get_value_name_int	(i,	"Model", 		CarInfo[i][cModel]);
 		cache_get_value_name		(i,	"Owner", 		CarInfo[i][cOwner],32);
-		
-		cache_get_value_name_float	(i,	"Sell_X", 		CarInfo[i][cSell_X]);
-		cache_get_value_name_float	(i,	"Sell_Y", 		CarInfo[i][cSell_X]);
-		cache_get_value_name_float	(i,	"Sell_Z", 		CarInfo[i][cSell_X]);
-		cache_get_value_name_float	(i,	"Sell_A", 		CarInfo[i][cSell_X]);
-		
-		cache_get_value_name_float	(i,	"Pos_X", 		CarInfo[i][cPos_X]);
-		cache_get_value_name_float	(i,	"Pos_Y", 		CarInfo[i][cPos_Y]);
-		cache_get_value_name_float	(i,	"Pos_Z", 		CarInfo[i][cPos_Z]);
-		cache_get_value_name_float	(i,	"Pos_A", 		CarInfo[i][cPos_A]);
+
 		cache_get_value_name_int	(i,	"Color_1", 		CarInfo[i][cColor_1]);
 		cache_get_value_name_int	(i,	"Color_2", 		CarInfo[i][cColor_2]);
 		/* ------------------------------------------------------------------ */
@@ -525,18 +546,14 @@ UpdateCarInfo(vehicleid) {
 stock SaveOwnableCar(carid) {
 	new string[4556];
 	format(string, sizeof(string), "UPDATE `cars` SET \
-		`Model` = '%d', `Sell_X` = '%.4f', `Sell_Y` = '%.4f', `Sell_Z` = '%.4f', `Sell_A` = '%.4f', \
+		`Model` = '%d',\
 		`Owner` = '%s',  `Color_1` = '%d',`Color_2` = '%d',\
 		`Spoiler` = '%d',`Hood` = '%d',`Sides` = '%d',`Nitro` = '%d',`Lamps` = '%d',`Exhaust` = '%d',`Wheels` = '%d', \
 		`Roof` = '%d',`Hydraulics` = '%d',`Bullbar` = '%d',`RBullbars` = '%d', \
 		`FSign` = '%d',`FBullbars` = '%d', \
 		`FBumper` = '%d',`RBumper` = '%d',`Vents` = '%d',`PaintJob` = '%d' WHERE `ID` = '%i'",
-		
+
   		CarInfo[carid][cModel],
-		CarInfo[carid][cSell_X],
-		CarInfo[carid][cSell_Y],
-		CarInfo[carid][cSell_Z],
-		CarInfo[carid][cSell_A],
 		CarInfo[carid][cOwner],
 		CarInfo[carid][cColor_1],
 		CarInfo[carid][cColor_2],
@@ -559,13 +576,13 @@ stock SaveOwnableCar(carid) {
 		CarInfo[carid][cPaintJob],
 		carid+1);
 	mysql_query(connects, string, false);
-	
-	
+
+
 	string[0] = EOS;
-	
+
 	format(string, sizeof(string), "UPDATE `cars` SET \
 		`Pos_X` = '%.4f', `Pos_Y` = '%.4f', `Pos_Z` = '%.4f', `Pos_A` = '%.4f', `Interior` = '%d', `VirtualWorld` = '%d' WHERE `ID` = '%i'",
-		
+
 		CarInfo[carid][cPos_X],
 		CarInfo[carid][cPos_Y],
 		CarInfo[carid][cPos_Z],
@@ -574,7 +591,7 @@ stock SaveOwnableCar(carid) {
 		CarInfo[carid][cVirtualWorld],
 		carid+1);
 	mysql_query(connects, string, false);
-	
+
 	return true;
 }
 
@@ -706,10 +723,6 @@ stock GetCarPrice(carid) {
 stock SellCar(carid)
 {
 	new number = GetVehicleID(carid);
- 	CarInfo[number][cPos_X] = CarInfo[number][cSell_X];
-	CarInfo[number][cPos_Y] = CarInfo[number][cSell_Y];
-	CarInfo[number][cPos_Z] = CarInfo[number][cSell_Z];
-	CarInfo[number][cPos_A] = CarInfo[number][cSell_A];
 	CarInfo[number][cColor_1] = 1;
 	CarInfo[number][cColor_2] = 1;
 	CarInfo[number][cVirtualWorld] = 0;
@@ -1157,7 +1170,7 @@ stock ShowLoginDialog(playerid) {
     \n\n{FFFFFF}Sasiamovnoa tqveni naxva isev serverze\
     \n{FFFFFF}Avtorizaciisatvis gtxovt miutitot paroli, romelic daayenet registraciis dros\
     \n\n{7C91A9}* Rodesac miutitebt parols daachiret 'Next' gilaks");
-	ShowPlayerDialog(playerid, 100, DIALOG_STYLE_PASSWORD, "{FFFFFF}Avtorizacia | {F0A45D}[ Paroli ]", string, "Next", "Cancel");
+	ShowPlayerDialog(playerid, 100, DIALOG_STYLE_PASSWORD, "{FFFFFF}Avtorizacia", string, "Next", "Cancel");
 }
 stock ShowRegisterDialog(playerid) {
     new string[1300];
@@ -1168,7 +1181,7 @@ stock ShowRegisterDialog(playerid) {
     \n{F0A45D}[2]{FFFFFF} Paroli unda iyos latinuri asoebit\
     \n{F0A45D}[3]{FFFFFF} Parolis sigrdze unda iyos 8'dan 32 simbolomde\
     \n\n{7C91A9}* Rodesac miutitebt parols daachiret 'Next' gilaks");
-	ShowPlayerDialog(playerid, 101, DIALOG_STYLE_INPUT, "{FFFFFF}Registracia | {F0A45D}[ Paroli ]", string, "Next", "Cancel");
+	ShowPlayerDialog(playerid, 101, DIALOG_STYLE_INPUT, "{FFFFFF}Registracia", string, "Next", "Cancel");
 }
 stock ShowEmailDialog(playerid) {
     new string[1300];
@@ -1179,7 +1192,7 @@ stock ShowEmailDialog(playerid) {
 	ShowPlayerDialog(playerid, 102, DIALOG_STYLE_INPUT, "{FFFFFF}Registracia | {F0A45D}[ Email ]", string, "Next", "Cancel");
 }
 stock ShowAdminDialog(playerid) {
-	ShowPlayerDialog(playerid, 202, DIALOG_STYLE_INPUT, "{FFFFFF}Admin | {F0A45D}[ Registracia ]",
+	ShowPlayerDialog(playerid, 202, DIALOG_STYLE_INPUT, "{FFFFFF}Alogin",
 	"{FFFFFF}- Mogesalmebat administration system -\n\n\
 	{FFFFFF}Uflebebis misagebat sachiroa airchiot admin paroli\n\n\
 	{7C91A9}* Miutitet tqveni sasurveli paroli da daachiret 'Next' gilaks",
@@ -1453,7 +1466,7 @@ stock SetPlayerSpawn(playerid) {
 		SetTimerEx("SetAnimationKnock", 100, false, "i", playerid);
 		SetTimerEx("SetAnimationKnock", 500, false, "i", playerid);
 
-		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Status | {F0A45D}[ Dachrili ]",
+		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Status",
 		"{FFFFFF}- Tqven xart {EF545D}sasikvdilod dachrili -\
 	    \n\n{FFFFFF}Tqveni informacia daafiqsires kamerebma da sheuvidat hospitalshi\
 	    \n\n{EF545D}Tu saswrafo daxmarebam ver mogiswrot tqven daiclebit sisxlisgan\
@@ -2579,16 +2592,6 @@ public OnGameModeInit() {
 
 	LoadOwnableCars();
 
-	for(new i = 0; i < OWNABLECARS; i++) {
-		OwnableCar[i] = AddStaticVehicleEx(CarInfo[i][cModel],CarInfo[i][cPos_X],CarInfo[i][cPos_Y],CarInfo[i][cPos_Z],CarInfo[i][cPos_A],CarInfo[i][cColor_1],CarInfo[i][cColor_2],6000);
-        LinkVehicleToInterior(OwnableCar[i], CarInfo[i][cInterior]);
-		SetVehicleVirtualWorld(OwnableCar[i], CarInfo[i][cVirtualWorld]);
-		CarText[i] = CreateDynamic3DTextLabel("-",-1,0,0,0.5,5.0,INVALID_PLAYER_ID,OwnableCar[i]);
-	}
-	AddVehicle = OWNABLECARS;
-	printf("OWNABLECARS: %d", OWNABLECARS);
-
-
 	// Visual settings
 	SetGameModeText(srvMode);
 	// Settings
@@ -3008,8 +3011,6 @@ public OnPlayerExitVehicle(playerid, vehicleid) {
 }
 
 public OnPlayerStateChange(playerid, newstate, oldstate) {
-	new string[128];
-    new carid = GetPlayerVehicleID(playerid);
 	if(newstate == PLAYER_STATE_DRIVER) {
 		new newcar = GetPlayerVehicleID(playerid);
 		if(newcar >= sapdcar[0] && newcar <= sapdcar[18]) {
@@ -3064,24 +3065,6 @@ public OnPlayerStateChange(playerid, newstate, oldstate) {
 				RemovePlayerFromVehicleAC(playerid);
   			}
 		}
-	}
-	if(newstate == PLAYER_STATE_DRIVER) {
-		if(IsAOwnableCar(carid)) {
-	        new number = GetVehicleID(carid);
-			if(CarInfo[number][cLock]) {
-	            RemovePlayerFromVehicleAC(playerid);
-	            return 1;
-	        }
-		    if(IsASellCar(carid)) {
-   				format(string,sizeof(string),"{FFFFFF}Es transporti iyideba.\n\n\t{FFFFFF}Modeli: {F0A45D}%s{FFFFFF}\nGirebuleba: {F0A45D}%d${FFFFFF}",
-				VehicleNames[GetVehicleModel(carid)-400],GetCarPrice(number));
-				ShowPlayerDialog(playerid,5010,DIALOG_STYLE_MSGBOX,"Carshop | {F0A45D}[ Auto saloni ]",string,"Buy","Cancel");
-			}
-		    else {
-		        format(string,sizeof(string),"Transportis mflobeli: {F0A45D}%s",CarInfo[number][cOwner]);
-			    SendClientMessage(playerid,-1,string);
-		    }
-	    }
 	}
 	return 1;
 }
@@ -3278,14 +3261,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 			}
 			if(PlayerToPoint(1.0, playerid, 1610.8766,-1893.8865,13.5469)) {
 				if(CleanerJob[playerid] == 0) {
-					ShowPlayerDialog(playerid, 301, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri | {F0A45D}[ Dawyeba ]",
+					ShowPlayerDialog(playerid, 301, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven iwyebt mushaobas - {F0A45D}Dasuftavebis samsaxurshi\
 	    			\n\n{FFFFFF}Tqveni movaleobaa daasuftovot qalaqi, amistvis miyevit witel checkpointebs\
 	    			\n\n{7C91A9}* Tu gsurt mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
 					return true;
 				}
 				if(CleanerJob[playerid] == 1) {
-					ShowPlayerDialog(playerid, 301, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri | {F0A45D}[ Dasruleba ]",
+					ShowPlayerDialog(playerid, 301, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven asrulebt mushaobas - {F0A45D}Dasuftavebis samsaxurshi\
 	    			\n\n{FFFFFF}Tu tvlit rom daasrulet daasuftaveba, gamoicvalet tansacmeli da aiget avansi\
 	    			\n\n{7C91A9}* Tu gsurt daasrulot mushaoba daachiret 'Next' gilaks", "Next", "Cancel");	
@@ -3294,14 +3277,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 			}
 			if(PlayerToPoint(1.0, playerid, 2539.5708,-1299.5469,1044.1250)) {
 				if(WarehouseJob[playerid] == 0) {
-					ShowPlayerDialog(playerid, 305, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri | {F0A45D}[ Dawyeba ]",
+					ShowPlayerDialog(playerid, 305, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven iwyebt mushaobas - {F0A45D}Materialebis dammzadebeli\
 		    		\n\n{FFFFFF}Tqveni movaleobaa gaaketot materialebi, amistvis midit pickuptan da daachiret 'ALT's\
 		    		\n\n{7C91A9}* Tu gsurt mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
 		    		return true;
 	    		}
 	    		if(WarehouseJob[playerid] == 1) {
-					ShowPlayerDialog(playerid, 305, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri | {F0A45D}[ Dasruleba ]",
+					ShowPlayerDialog(playerid, 305, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven asrulebt mushaobas - {F0A45D}Materialebis dammzadebeli\
 		    		\n\n{FFFFFF}Tu tvlit rom daasrulet materialebis gaketeba, gamoicvalet tansacmeli da aiget avansi\
 		    		\n\n{7C91A9}* Tu gsurt daasrulot mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
@@ -3310,14 +3293,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 			}
 			if(PlayerToPoint(1.0, playerid, 2175.9668,-2259.2197,14.7734)) {
 				if(MtvirtaviJob[playerid] == 0) {
-					ShowPlayerDialog(playerid, 306, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri | {F0A45D}[ Dawyeba ]",
+					ShowPlayerDialog(playerid, 306, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven iwyebt mushaobas - {F0A45D}Mtvirtavi\
 		    		\n\n{FFFFFF}Tqveni movaleobaa gadazidot tvirti, amistvis midit pickuptan da daachiret 'ALT's\
 		    		\n\n{7C91A9}* Tu gsurt mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
 		    		return true;
 	    		}
 	    		if(MtvirtaviJob[playerid] == 1) {
-					ShowPlayerDialog(playerid, 306, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri | {F0A45D}[ Dasruleba ]",
+					ShowPlayerDialog(playerid, 306, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven asrulebt mushaobas - {F0A45D}Mtvirtavi\
 		    		\n\n{FFFFFF}Tu tvlit rom daasrulet materialebis gaketeba, gamoicvalet tansacmeli da aiget avansi\
 		    		\n\n{7C91A9}* Tu gsurt daasrulot mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
@@ -3332,7 +3315,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 		            	\n\n{FFFFFF}Namdvilad gsurt sheidzinot mocemuli saxli?\
 		            	\n{FFFFFF}Tqven mogiwevt gadaixadot: {F0A45D}[ %d$ ]{FFFFFF}\
 		            	\n\n{7C91A9}* Tu gsurt sheidzinot saxli daachiret 'Next' gilaks", HouseData[i][hID], HouseData[i][hPrice]);
-		 				ShowPlayerDialog(playerid, 401, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli | {F0A45D}[ Yidva ]", string, "Next", "Cancel");
+		 				ShowPlayerDialog(playerid, 401, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli", string, "Next", "Cancel");
 			    	}
 				    else {
 				    	static const dour_status[2][40 + 1] = {
@@ -3344,7 +3327,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 		            	\n{FFFFFF}Saxli mflobeli aris: {F0A45D}[ %s ]{FFFFFF}\
 		            	\n{FFFFFF}Saxlis karebi aris: {F0A45D}[ %s ]{FFFFFF}\
 		            	\n\n{7C91A9}* Tu gsurt shexvidet saxlshi daachiret 'Next' gilaks", HouseData[i][hID], HouseData[i][hOwner], dour_status[HouseData[i][hLock]]);
-		      			ShowPlayerDialog(playerid, 402, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli | {F0A45D}[ Shesvla ]", string, "Next", "Cancel");
+		      			ShowPlayerDialog(playerid, 402, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli", string, "Next", "Cancel");
 				    }
 				}
 				if(PlayerToPoint(2.0, playerid, HouseData[i][hExitX], HouseData[i][hExitY], HouseData[i][hExitZ])) {
@@ -3364,14 +3347,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 		            	\n\n{FFFFFF}Namdvilad gsurt sheidzinot mocemuli biznesi?\
 		            	\n{FFFFFF}Tqven mogiwevt gadaixadot: {F0A45D}[ %d$ ]{FFFFFF}\
 		            	\n\n{7C91A9}* Tu gsurt sheidzinot biznesi daachiret 'Next' gilaks", BizzData[i][bID], BizzData[i][bPrice]);
-		 				ShowPlayerDialog(playerid, 410, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business | {F0A45D}[ Yidva ]", string, "Next", "Cancel");
+		 				ShowPlayerDialog(playerid, 410, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business", string, "Next", "Cancel");
 			    	}
 				    else {
 				    	format(string, sizeof(string), "{FFFFFF} - Biznesis informacia - {F0A45D}[ %d ]\
 		            	\n\n{FFFFFF}Mflobeli aris: {F0A45D}[ %s ]{FFFFFF}\
 		            	\n{FFFFFF}Shesvlis fasi: {F0A45D}[ 500$ ]{FFFFFF}\
 		            	\n\n{7C91A9}* Tu gsurt shexvidet daachiret 'Next' gilaks", BizzData[i][bID], BizzData[i][bOwner]);
-		      			ShowPlayerDialog(playerid, 411, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business | {F0A45D}[ Shesvla ]", string, "Next", "Cancel");
+		      			ShowPlayerDialog(playerid, 411, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business", string, "Next", "Cancel");
 				    }
 				}
 				if(PlayerToPoint(2.0, playerid, BizzData[i][bExitX], BizzData[i][bExitY], BizzData[i][bExitZ])) {
@@ -3390,7 +3373,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 							format(string, sizeof(string), "{FFFFFF}Product\t{FFFFFF}Price\
 							\n{F0A45D}[1]{FFFFFF} Mobiluri telefoni\t{F0A45D}[ 1000$ ]\
 							\n{F0A45D}[2]{FFFFFF} Saati\t{F0A45D}[ 700$ ]");
-				      		ShowPlayerDialog(playerid, 415, DIALOG_STYLE_TABLIST_HEADERS, "{FFFFFF}Business | {F0A45D}[ Nivtebi ]", string, "Next", "Cancel");
+				      		ShowPlayerDialog(playerid, 415, DIALOG_STYLE_TABLIST_HEADERS, "{FFFFFF}Business", string, "Next", "Cancel");
 			   				return true;
 			      		}
 			      		if(BizzData[i][bType] == 2) {
@@ -3487,7 +3470,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 				format(string, sizeof(string),
 				"{F0A45D}[1]{FFFFFF} - Materialebis ageba\n\
 				{F0A45D}[2]{FFFFFF} - Narkotikebis ageba");
-				ShowPlayerDialog(playerid, 600, DIALOG_STYLE_LIST, "{FFFFFF}Gang | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");	
+				ShowPlayerDialog(playerid, 600, DIALOG_STYLE_LIST, "{FFFFFF}Gang", string, "Next", "Cancel");	
 				if(GetPlayerVirtualWorld(playerid) == 7) {
 					if(UserData[playerid][pMember] != 7) return true;
 				}
@@ -3840,7 +3823,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				}
 				case 2: {
 					new Float:X,Float:Y,Float:Z;
-					GetVehiclePos(ShowVeh[playerid],X,Y,Z); 
+					GetVehiclePos(ShowVeh[playerid],X,Y,Z);
 					SetPlayerCheckpoint(playerid,X,Y,Z,5);
 					SendSuccesMessage(playerid, "Tqveni transporti moinishna rukaze");
 				}
@@ -3867,13 +3850,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					GiveUserMoney(playerid, cost);
 					format(s_string, sizeof(s_string), "~g~+%d$", cost);
 					GameTextForPlayer(playerid, s_string, 5000, 1);
-					
+
 					UserData[playerid][pCars] -= 1;
 					UpdateUserData(playerid, "pCars", UserData[playerid][pCars]);
 					SellCar(carid);
-                    
+
                     RemovePlayerFromVehicleAC(playerid);
-                    
+
 				  	format(YCMDstr, sizeof(YCMDstr), "[A] [CARSHOP] Motamashe %s[%d] gayida avtomobili (Model: %s, ID: %d).",Name(playerid),playerid,VehicleNames[GetVehicleModel(carid)-400],carid);
 					SendAdminMessage(-1, YCMDstr);
 				}
@@ -3915,6 +3898,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		}
 	}
 	switch(dialogid) {
+		case 9955: {
+            if(!response) return true;
+            new Float:x, Float:y, Float:z;
+            GetPlayerPos(playerid, x, y, z);
+            CreateVehicle(MyCarID[playerid][listitem], x, y + 2, z, 0, 0, 0, 0);
+        }
 		case 100: {
 			if(response) {
 				if(!strlen(inputtext)) {
@@ -3975,7 +3964,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				}
 			 	strmid(UserData[playerid][pMail], inputtext, 0, strlen(inputtext), 64);
 		 		UpdateUserData(playerid, "pMail", UserData[playerid][pMail]);
-		 		ShowPlayerDialog(playerid, 103, DIALOG_STYLE_MSGBOX, "{FFFFFF}Registracia | {F0A45D}[ Sqesi ]",
+		 		ShowPlayerDialog(playerid, 103, DIALOG_STYLE_MSGBOX, "{FFFFFF}Registracia",
 		 		"{FFFFFF}- Tqven imyofebit serverze - {F0A45D}San Andreas Life\n\n\
 		 		{FFFFFF}Airchiet tqveni personajis sqesi\n\n\
 		 		{7C91A9}* Mamakaci - Male | Qalbatoni - Female",
@@ -3994,7 +3983,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			UpdateUserData(playerid, "pSex", UserData[playerid][pSex]);
 			UpdateUserData(playerid, "pSkin", UserData[playerid][pSkin]);
 
-		 	ShowPlayerDialog(playerid, 104, DIALOG_STYLE_MSGBOX, "{FFFFFF}Registracia | {F0A45D}[ Dasruleba ]",
+		 	ShowPlayerDialog(playerid, 104, DIALOG_STYLE_MSGBOX, "{FFFFFF}Registracia",
 			"{FFFFFF}- Tqven imyofebit serverze - {F0A45D}San Andreas Life\n\n\
 		 	{FFFFFF}Aris tu ara tqvens mier mititebuli informacia swori?\n\n\
 		 	{7C91A9}* Tu yvelaferi sworad miutetet daachiret 'Yes'",
@@ -4327,7 +4316,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				    	format(string, sizeof(string), "{FFFFFF} - Saxlis informacia - {F0A45D}[ %d ]\
 		            	\n\n{FFFFFF}Saxlis fasi aris: {F0A45D}[ %d$ ]{FFFFFF}\
 		            	\n{FFFFFF}Saxlis karebi aris: {F0A45D}[ %s ]{FFFFFF}", HouseData[i][hID], HouseData[i][hPrice], dour_status[HouseData[i][hLock]]);
-		      			ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli | {F0A45D}[ Informacia ]", string, "Cancel", "");
+		      			ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli", string, "Cancel", "");
 					}
 					case 1: {
 						new h = UserData[playerid][pHouse];
@@ -4410,7 +4399,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		            	\n\n{FFFFFF}Biznesis fasi aris: {F0A45D}[ %d$ ]{FFFFFF}\
 		            	\n{FFFFFF}Biznesis aris: {F0A45D}[ %s ]{FFFFFF}\
 		            	\n{FFFFFF}Biznesis angarishze aris: {F0A45D}[ %d$ ]{FFFFFF}", BizzData[i][bID], BizzData[i][bPrice], dour_status[BizzData[i][bLock]], BizzData[i][bBank]);
-		      			ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business | {F0A45D}[ Informacia ]", string, "Cancel", "");
+		      			ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business", string, "Cancel", "");
 					}
 					case 1: {
 						new h = UserData[playerid][pBizz];
@@ -4506,7 +4495,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				"{FFFFFF} - Tyviis informacia - {F0A45D}[ %d ]\
 		        \n\n{FFFFFF}Gasrolili aris iaragit: {F0A45D}[ %s ]{FFFFFF}\
 		        \n{FFFFFF}Gasrolili iaragis mflobeli: {F0A45D}[ %s ]{FFFFFF}", int, BulletInfo[int][bWeapone], BulletName(int));
-				ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Bullet | {F0A45D}[ Pasuxebi ]", string, "Cancel", "");
+				ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Bullet", string, "Cancel", "");
 				SetTimerEx("RemoveBullet", 10000, false, "id", playerid, GetPVarInt(playerid, "Bullet"));
 			}
 			else {
@@ -4522,13 +4511,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				if(!IsInAllowed(playerid)) return SendErrorMessage(playerid, "Tqven ar xart bandis wevri");
 				switch(listitem) {
 					case 0: {
-						ShowPlayerDialog(playerid, 601, DIALOG_STYLE_INPUT, "{FFFFFF}Gang | {F0A45D}[ Materialebi ]",
+						ShowPlayerDialog(playerid, 601, DIALOG_STYLE_INPUT, "{FFFFFF}Gang",
 						"{FFFFFF} - Materialebis ageba -\
 		            	\n\n{FFFFFF} Chaweret im materialebis raodenoba ramdenis agebac gsurt\
 		            	\n\n{7C91A9}* Miutitet materialebis raodenoba da daachiret 'Next' gilaks", "Next", "Cancel");
 					}
 					case 1: {
-						ShowPlayerDialog(playerid, 602, DIALOG_STYLE_INPUT, "{FFFFFF}Gang | {F0A45D}[ Narkotikebi ]",
+						ShowPlayerDialog(playerid, 602, DIALOG_STYLE_INPUT, "{FFFFFF}Gang",
 						"{FFFFFF} - Narkotikebis ageba -\
 		            	\n\n{FFFFFF} Chaweret im materialebis raodenoba ramdenis agebac gsurt\
 		            	\n\n{7C91A9}* Miutitet materialebis raodenoba da daachiret 'Next' gilaks", "Next", "Cancel");
@@ -4598,14 +4587,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				format(string, sizeof(string),
 				"{F0A45D}[1]{FFFFFF} - Deagle + Choose\n\
 				{F0A45D}[2]{FFFFFF} - Deagle");
-				ShowPlayerDialog(playerid, 605, DIALOG_STYLE_LIST, "{FFFFFF}DeathMatch | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");				
+				ShowPlayerDialog(playerid, 605, DIALOG_STYLE_LIST, "{FFFFFF}DeathMatch", string, "Next", "Cancel");				
 			}
 			else return true;
 		}
 		case 605: {
 			if(response) {
 				switch(listitem) {
-					case 0: ShowPlayerDialog(playerid, 606, DIALOG_STYLE_INPUT, "{FFFFFF}DeathMatch | {F0A45D}[ Iaragi ]",
+					case 0: ShowPlayerDialog(playerid, 606, DIALOG_STYLE_INPUT, "{FFFFFF}DeathMatch",
 					"{FFFFFF}- Airchiet meore iaragi romelic gindat gqondet -\n\n\
 					{FFFFFF}Miutitet tqventvis sasurveli iaragis ID:\n\
 					1 - Deagle | 2 - Shotgun | 3 - M4 | 4 - AK-47 | 5 - Country rifle | 6 - MP5\n\n\
@@ -4660,7 +4649,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		            	\n{FFFFFF}Sawyobshi materialebis raodenoba: {F0A45D}[ %d ]\
 		            	\n{FFFFFF}Materialebis sawyobi aris: {F0A45D}[ %s ]\
 		            	\n{FFFFFF}Fraqciis wevrebis raodenoba: {F0A45D}[ %d ]", GetFractionName(fracid), FractionData[fracid][wBank], FractionData[fracid][wAmmo], FractionData[fracid][wStatus]?("gaxsnili"):("chaketili"), LoadMemberData(fracid));
-		      			ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Leader Menu | {F0A45D}[ Informacia ]", string, "Cancel", "");
+		      			ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Leader Menu", string, "Cancel", "");
 					}
 					case 1: return PC_EmulateCommand(playerid, "/members");
 					case 2: {
@@ -4669,7 +4658,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 						\n\n{FFFFFF}Daaweset tu ramden ranks sheedzlos migeba tqvens fraqciashi\
 					    \n{FFFFFF}Gaitvaliswinet, ecadet miutitot gonivruli ranki\
 					    \n\n{7C91A9}* Rodesac miutitebt cifrs daachiret 'Next' gilaks");
-						ShowPlayerDialog(playerid, 704, DIALOG_STYLE_INPUT, "{FFFFFF}Leader Menu | {F0A45D}[ Chaweret ]", string, "Next", "Cancel");
+						ShowPlayerDialog(playerid, 704, DIALOG_STYLE_INPUT, "{FFFFFF}Leader Menu", string, "Next", "Cancel");
 					}
 					case 3: {
 						new string[500];
@@ -4684,7 +4673,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 						FractionData[fracid][wSkin][0], FractionData[fracid][wSkin][1], 
 						FractionData[fracid][wSkin][2], FractionData[fracid][wSkin][3], 
 						FractionData[fracid][wSkin][4], FractionData[fracid][wSkin][5]);
-						ShowPlayerDialog(playerid, 705, DIALOG_STYLE_LIST, "{FFFFFF}Leader Menu | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");	
+						ShowPlayerDialog(playerid, 705, DIALOG_STYLE_LIST, "{FFFFFF}Leader Menu", string, "Next", "Cancel");	
 					}
 				}
 			}
@@ -4727,7 +4716,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				\n\n{FFFFFF}Miutitet romeli skinis dayeneba sheedzlot fraqciis wevrebs\
 				\n{FFFFFF}Gaitvaliswinet, miutitet swori skinis id\
 				\n\n{7C91A9}* Rodesac miutitebt skinis id's daachiret 'Next' gilaks");
-				ShowPlayerDialog(playerid, 706, DIALOG_STYLE_INPUT, "{FFFFFF}Leader Menu | {F0A45D}[ Chaweret ]", string, "Next", "Cancel");
+				ShowPlayerDialog(playerid, 706, DIALOG_STYLE_INPUT, "{FFFFFF}Leader Menu", string, "Next", "Cancel");
 			}
 			else return true;
 		}
@@ -4885,6 +4874,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	    	}
 	    	else PC_EmulateCommand(playerid, "/mm");
 	    }
+
 	}
 	return 1;
 }
@@ -5428,7 +5418,7 @@ CMD:gotp(playerid, params[]) {
 }
 CMD:gps(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-    ShowPlayerDialog(playerid, 900, DIALOG_STYLE_LIST, "GPS | {F0A45D}[Airchiet adgili]", "{F0A45D}[1] {FFFFFF}- Mnishvnelovani adgilebi\n{F0A45D}[2] {FFFFFF}- Samushao adgilebi\n{F0A45D}[3] {FFFFFF}- Auto servisebi", "Archeva", "Daxurva");
+    ShowPlayerDialog(playerid, 900, DIALOG_STYLE_LIST, "Global Positioning System", "{F0A45D}[1] {FFFFFF}- Mnishvnelovani adgilebi\n{F0A45D}[2] {FFFFFF}- Samushao adgilebi\n{F0A45D}[3] {FFFFFF}- Auto servisebi", "Archeva", "Daxurva");
 	return true;
 }
 CMD:setwammo(playerid, params[]) {
@@ -5532,20 +5522,16 @@ CMD:addcar(playerid,params[])
 
 	return 1;
 }
-CMD:cars(playerid) {
+CMD:mycar(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	new string[256],str[32],cars;
-	for(new i = 0; i < OWNABLECARS; i++) {
-		new number = OwnableCar[i];
-		if(IsPlayersCar(playerid,number)) {
-			ShowCar[playerid][cars] = number;
-		    format(str,sizeof(str),"%s {F0A45D}[%d]\n",VehicleNames[GetVehicleModel(number)-400],number);
-		    strcat(string,str);
-		    cars++;
-		}
-	}
-	if(!cars) return SendErrorMessage(playerid, "Tkven ar gkavt transporti");
-	ShowPlayerDialog(playerid, 5011, DIALOG_STYLE_LIST, "Cars | {F0A45D}[ Chemi transporti ]", string, "Choose", "");
+    ShowCarMenu(playerid);
+    return true;
+}
+CMD:givecar(playerid, params[])
+{
+	if(Login[playerid] == false) return true;
+	if(sscanf(params, "d", params[0])) return SendFormatMessage(playerid, "/givecar [Car ID]");
+    GivePlayerCar(playerid, params[0]);
 	return 1;
 }
 CMD:sellcar(playerid) {
@@ -5553,7 +5539,7 @@ CMD:sellcar(playerid) {
     new carid = GetPlayerVehicleID(playerid);
 	if(!IsAOwnableCar(carid)) return 1;
 	if(!IsPlayerInOwnedVehicle(playerid)) return SendClientMessage(playerid, -1, "Tqven ar zixart tqvens transportshi");
-	ShowPlayerDialog(playerid,5015,0,"Sellcar | {F0A45D}[ Manqanis gakidva]","{FFFFFF}Namdvilad gsurt transportis gayidva?","Sell","Cancel");
+	ShowPlayerDialog(playerid,5015,0,"Sellcar","{FFFFFF}Namdvilad gsurt transportis gayidva?","Sell","Cancel");
 	return 1;
 }
 CMD:pm(playerid, params[]) {
@@ -6211,7 +6197,7 @@ CMD:admins(playerid, params[]) {
 		format(string, sizeof(string), "{FFFFFF}%s[%d]\t{FFFFFF}%d\n", Name(i), i, UserData[i][pAdmin]);
 		strcat(dialog, string);
 	}
-	ShowPlayerDialog(playerid, 0, DIALOG_STYLE_TABLIST_HEADERS, "{FFFFFF}Administrators | {F0A45D}[ List ]", dialog, "Okay", "");
+	ShowPlayerDialog(playerid, 0, DIALOG_STYLE_TABLIST_HEADERS, "{FFFFFF}Administrators", dialog, "Okay", "");
     return true;
 }
 CMD:aadmins(playerid, params[])
@@ -6232,7 +6218,7 @@ CMD:aadmins(playerid, params[])
 		format(YCMDstr, sizeof(YCMDstr), "{FFFFFF}%s\t%d\t%s\t%s\n",Names, Rank, IsOnline(Names) ? ("{7EDF17}Online{FFFFFF}") : ("{DF1717}Offline{FFFFFF}"));
 		strcat(AadminsDialogString, YCMDstr);
 	}
-	ShowPlayerDialog(playerid, 7979, DIALOG_STYLE_TABLIST_HEADERS, "{FFFFFF}Administrators | {F0A45D}[ List ]", AadminsDialogString, "Close", "");
+	ShowPlayerDialog(playerid, 7979, DIALOG_STYLE_TABLIST_HEADERS, "{FFFFFF}Administrators", AadminsDialogString, "Close", "");
 	return true;
 }
 CMD:alogin(playerid, params[]) {
@@ -6244,7 +6230,7 @@ CMD:alogin(playerid, params[]) {
 		SendSuccesMessage(playerid, "Tqven agar gaqvt gavlili admin login");
 		return true;
 	}
-	ShowPlayerDialog(playerid, 201, DIALOG_STYLE_PASSWORD, "{FFFFFF}Admin Login | {F0A45D}[ Avtorizacia ]",
+	ShowPlayerDialog(playerid, 201, DIALOG_STYLE_PASSWORD, "{FFFFFF}Alogin",
 	"{FFFFFF}- Mogesalmebat administration system -\n\n\
 	{FFFFFF}Uflebebis misagebat sachiroa gaiarot avtorizacia\n\n\
 	{7C91A9}* Miutitet tqveni admin paroli da daachiret 'Next' gilaks",
@@ -6605,7 +6591,7 @@ CMD:makeleader(playerid, params[]) {
 	{F0A45D}[2]{FFFFFF} - Hospital Departament\n\
 	{F0A45D}[3]{FFFFFF} - City Hall\n\
 	{F0A45D}[4]{FFFFFF} - Armed Forces\n");
-	ShowPlayerDialog(playerid, 203, DIALOG_STYLE_LIST, "{FFFFFF}Makeleader | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");	
+	ShowPlayerDialog(playerid, 203, DIALOG_STYLE_LIST, "{FFFFFF}Makeleader", string, "Next", "Cancel");	
 	SetPVarInt(playerid, "LeaderID", params[0]);
 	return true;
 }
@@ -6622,7 +6608,7 @@ CMD:makegang(playerid, params[]) {
 	{F0A45D}[9]{FFFFFF} - Grove\n\
 	{F0A45D}[10]{FFFFFF} - Aztecas\n\
 	{F0A45D}[11]{FFFFFF} - Rifa\n");
-	ShowPlayerDialog(playerid, 204, DIALOG_STYLE_LIST, "{FFFFFF}Makegang | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");	
+	ShowPlayerDialog(playerid, 204, DIALOG_STYLE_LIST, "{FFFFFF}Makegang", string, "Next", "Cancel");	
 	SetPVarInt(playerid, "LeaderID", params[0]);
 	return true;
 }
@@ -6636,7 +6622,7 @@ CMD:makedonate(playerid, params[]) {
 	format(string, sizeof(string),
 	"{F0A45D}[1]{FFFFFF} - Sacra Dennaro Unita\n\
 	{F0A45D}[1]{FFFFFF} - Sheriff Station\n");
-	ShowPlayerDialog(playerid, 205, DIALOG_STYLE_LIST, "{FFFFFF}Makedonate | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");	
+	ShowPlayerDialog(playerid, 205, DIALOG_STYLE_LIST, "{FFFFFF}Makedonate", string, "Next", "Cancel");	
 	SetPVarInt(playerid, "LeaderID", params[0]);
 	return true;
 }
@@ -7017,7 +7003,7 @@ CMD:changeskin(playerid, params[]) {
 	FractionData[fracid][wSkin][2], FractionData[fracid][wSkin][3], 
 	FractionData[fracid][wSkin][4], FractionData[fracid][wSkin][5]);
 	SetPVarInt(playerid, "ChangeSkinUser", playerid);
-	ShowPlayerDialog(playerid, 710, DIALOG_STYLE_LIST, "{FFFFFF}Change Skin | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");	
+	ShowPlayerDialog(playerid, 710, DIALOG_STYLE_LIST, "{FFFFFF}Change Skin", string, "Next", "Cancel");	
 	return true;
 }
 CMD:lpanel(playerid) {
@@ -7029,7 +7015,7 @@ CMD:lpanel(playerid) {
 	{F0A45D}[2]{FFFFFF} - Fraqciis aqtiuri wevrebi\n\
 	{F0A45D}[3]{FFFFFF} - Migebis minimaluri ranki\n\
 	{F0A45D}[4]{FFFFFF} - Fraqciis skinebis archeva");
-	ShowPlayerDialog(playerid, 700, DIALOG_STYLE_LIST, "{FFFFFF}Leader Menu | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");	
+	ShowPlayerDialog(playerid, 700, DIALOG_STYLE_LIST, "{FFFFFF}Leader Menu", string, "Next", "Cancel");	
 	return true;
 }
 CMD:time(playerid) {
@@ -7089,7 +7075,7 @@ CMD:dm(playerid) {
 	"{F0A45D}[1]{FFFFFF} - 160 HP\n\
 	{F0A45D}[2]{FFFFFF} - 100 HP\n\
 	{F0A45D}[3]{FFFFFF} - 50 HP");
-	ShowPlayerDialog(playerid, 604, DIALOG_STYLE_LIST, "{FFFFFF}DeathMatch | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");	
+	ShowPlayerDialog(playerid, 604, DIALOG_STYLE_LIST, "{FFFFFF}DeathMatch", string, "Next", "Cancel");	
     return true;
 }
 CMD:exitdm(playerid) {
@@ -7199,7 +7185,7 @@ CMD:offmembers(playerid) {
     if(Login[playerid] == false) return true;
 	if(UserData[playerid][pLeader] == 0) return SendErrorMessage(playerid, "Tkven ar gakvt am brdzanebis gamoyenebis ufleba");
     format(YCMDstr, sizeof(YCMDstr), "SELECT * FROM `accounts` WHERE `pMember` = '%d'",UserData[playerid][pMember]);
-	mysql_tquery(connects, YCMDstr, "Offline Members | {F0A45D}[Araaqtiuri wevrebi]", "i",playerid);
+	mysql_tquery(connects, YCMDstr, "Offline Members", "i",playerid);
 	return true;
 }
 CMD:offuninvite(playerid, params[])
@@ -7285,7 +7271,7 @@ CMD:mm(playerid, params[]) {
 	{F0A45D}[4]{FFFFFF} - Report\n\
 	{F0A45D}[5]{FFFFFF} - Promocode\n\
 	{F0A45D}[6]{FFFFFF} - Quest");
-	ShowPlayerDialog(playerid, 800, DIALOG_STYLE_LIST, "{FFFFFF}Mainmenu | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");	
+	ShowPlayerDialog(playerid, 800, DIALOG_STYLE_LIST, "{FFFFFF}Mainmenu", string, "Next", "Cancel");	
 	return true;
 }
 CMD:hpanel(playerid, params[]) {
@@ -7298,7 +7284,7 @@ CMD:hpanel(playerid, params[]) {
 	{F0A45D}[2]{FFFFFF} - Karebis gageba/chaketva\n\
 	{F0A45D}[3]{FFFFFF} - Saxlis gayidva\n\
 	{F0A45D}[4]{FFFFFF} - Saxlis gaumjobeseba");
-	ShowPlayerDialog(playerid, 404, DIALOG_STYLE_LIST, "{FFFFFF}Saxli | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");
+	ShowPlayerDialog(playerid, 404, DIALOG_STYLE_LIST, "{FFFFFF}Saxli", string, "Next", "Cancel");
 	return true;
 }
 CMD:bpanel(playerid, params[]) {
@@ -7311,7 +7297,7 @@ CMD:bpanel(playerid, params[]) {
 	{F0A45D}[2]{FFFFFF} - Biznesis gageba/chaketva\n\
 	{F0A45D}[3]{FFFFFF} - Biznesis gayidva\n\
 	{F0A45D}[4]{FFFFFF} - Produqtebis shekveta");
-	ShowPlayerDialog(playerid, 412, DIALOG_STYLE_LIST, "{FFFFFF}Business | {F0A45D}[ Airchiet ]", string, "Next", "Cancel");
+	ShowPlayerDialog(playerid, 412, DIALOG_STYLE_LIST, "{FFFFFF}Business", string, "Next", "Cancel");
 	return true;
 }
 CMD:sellhouse(playerid) {
@@ -7324,7 +7310,7 @@ CMD:sellhouse(playerid) {
 	\n\n{FFFFFF}Namdvilad gsurt gayidot tqveni saxli?\
 	\n{FFFFFF}Tqveni saxlis girebuleba aris: {F0A45D}%d${FFFFFF}, tqven dagibrundebat - {F0A45D}75 procenti\
 	\n\n{7C91A9}* Tu namdvilad gusrt saxlis gayidva daachiret 'Next' gilaks", HouseData[h][hID], HouseData[h][hPrice]);
-	ShowPlayerDialog(playerid, 403, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli | {F0A45D}[ Gayidva ]", string, "Next", "Cancel");
+	ShowPlayerDialog(playerid, 403, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli", string, "Next", "Cancel");
 	return true;
 }
 CMD:sellbizz(playerid) {
@@ -7337,7 +7323,7 @@ CMD:sellbizz(playerid) {
 	\n\n{FFFFFF}Namdvilad gsurt gayidot tqveni biznesi?\
 	\n{FFFFFF}Tqveni biznesis girebuleba aris: {F0A45D}%d${FFFFFF}, tqven dagibrundebat - {F0A45D}75 procenti\
 	\n\n{7C91A9}* Tu namdvilad gusrt biznesis gayidva daachiret 'Next' gilaks", BizzData[h][bID], BizzData[h][bPrice]);
-	ShowPlayerDialog(playerid, 413, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business | {F0A45D}[ Gayidva ]", string, "Next", "Cancel");
+	ShowPlayerDialog(playerid, 413, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business", string, "Next", "Cancel");
 	return true;
 }
 CMD:fbullet(playerid, params[]) {
@@ -7354,7 +7340,7 @@ CMD:fbullet(playerid, params[]) {
 	{FFFFFF}Tqven gaqvt archevani, an gaanadgurot vazna an gamoikvliot\n\n\
 	{7C91A9}* Tu gsurt ganadgureba daachiret 'Destroy' gilaks\n\
 	{7C91A9}* Tu gsurt chaatarot eqspertiza daachiret 'Research' gilaks", params[0]);
-	ShowPlayerDialog(playerid, 500, DIALOG_STYLE_MSGBOX, "{FFFFFF}Bullet | {F0A45D}[ Menu ]", string, "Research", "Destroy");	
+	ShowPlayerDialog(playerid, 500, DIALOG_STYLE_MSGBOX, "{FFFFFF}Bullet", string, "Research", "Destroy");	
 	SetPVarInt(playerid, "Bullet", params[0]);
 	return true;
 }
@@ -7480,14 +7466,14 @@ CMD:quest(playerid) {
 	\n{FFFFFF}Mtvirtavi\t[ %s ]\t[ 20000$ ]"
 
 	,qtext[0], qtext[1], qtext[2]);
-	ShowPlayerDialog(playerid, 0, DIALOG_STYLE_TABLIST_HEADERS, "{FFFFFF}MainMenu | {F0A45D}[ Quest ]", string, "Cancel", "");	
+	ShowPlayerDialog(playerid, 0, DIALOG_STYLE_TABLIST_HEADERS, "{FFFFFF}Quest", string, "Cancel", "");
 	return true;
 }
 CMD:capture(playerid, params[]) {
 	if(Login[playerid] == false) return true;
 	if(!IsAGang(playerid)) return SendErrorMessage(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
   	if(!startcapture) return SendErrorMessage(playerid,"Am dros teritoriis dapyroba daushvebelia, daelodet paydays");
-  	ShowPlayerDialog(playerid, 9000, DIALOG_STYLE_MSGBOX, "{FFFFFF}Gang | {F0A45D}[ Capture ]",
+  	ShowPlayerDialog(playerid, 9000, DIALOG_STYLE_MSGBOX, "{FFFFFF}Capture",
   	"{FFFFFF}- Tqven iwyebt teritoriis dapyrobas -\
   	\n\n{FFFFFF}Imisatvis, rom chaigdot xelshi teritoria, sachiroa ebrdzolot teritoriis mflobel bandas\
   	\n{FFFFFF}Teritoriisatvis brdzola gagrdzeldeba {F0A45D}- 15 wuti\
