@@ -1,0 +1,33 @@
+[17:21:59] : [sv:dbg:network:init] : module initializing...
+[17:21:59] : [dbg:raknet:init] : module initializing...
+[17:21:59] : [dbg:raknet:init] : installed hook to 'GetRakServerInterface' function (ptr:0044FAD0)
+[17:21:59] : [dbg:raknet:init] : installed hook to 'OnPlayerDisconnect' function (ptr:0046D970)
+[17:21:59] : [dbg:raknet:init] : module initialized
+[17:21:59] : [sv:dbg:network:init] : module initialized
+[17:21:59] : [sv:dbg:pawn:init] : module initializing...
+[17:21:59] : [sv:dbg:pawn:init] : module initialized
+[17:21:59] :  -------------------------------------------    
+[17:21:59] :    ___                __   __    _              
+[17:21:59] :   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[17:21:59] :   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[17:21:59] :   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[17:21:59] :                   |_|                           
+[17:21:59] :  -------------------------------------------    
+[17:21:59] :            SampVoice by MOR loaded              
+[17:21:59] :  -------------------------------------------    
+[17:21:59] : [sv:dbg:main:AmxLoad] : net game pointer (value:02519CA8) received
+[17:21:59] : [sv:dbg:network:bind] : voice server running on port 51640
+[17:21:59] : [sv:dbg:pawn:register] : finding 'OnPlayerActivationKeyPress' callback function...
+[17:21:59] : [sv:dbg:pawn:register] : finded 'OnPlayerActivationKeyPress' callback function (index:43)
+[17:21:59] : [sv:dbg:pawn:register] : finding 'OnPlayerActivationKeyRelease' callback function...
+[17:21:59] : [sv:dbg:pawn:register] : finded 'OnPlayerActivationKeyRelease' callback function (index:44)
+[17:24:37] :  -------------------------------------------
+[17:24:37] :            SampVoice unloading...           
+[17:24:37] :  -------------------------------------------
+[17:24:37] : [sv:dbg:pawn:free] : module releasing...
+[17:24:37] : [sv:dbg:pawn:free] : module released
+[17:24:37] : [dbg:raknet:free] : module releasing...
+[17:24:37] : [sv:dbg:network:connect] : disconnecting player (0) ...
+[17:24:37] : [dbg:raknet:free] : module released
+[17:24:37] : [sv:dbg:network:free] : module releasing...
+[17:24:37] : [sv:dbg:network:free] : module released

@@ -399,7 +399,6 @@ new VehicleNames[212][] = {
 
 #define MAX_OWNABLECARS 1000
 
-new AddVehicle;
 
 stock ShowCarMenu(playerid) {
     new query[256];
@@ -417,10 +416,10 @@ stock ShowCarMenu(playerid) {
     new DialogStr[256], dialogstr[100];
     DialogStr = "{ffffff}FixCar Menu\n";
     for(new i = 0; i < listCount; i ++) {
-        format(dialogstr, sizeof(dialogstr),  "[%d] - %s\n",(i+1),VehicleNames[MyCarID[playerid][i]-400]);
+        format(dialogstr, sizeof(dialogstr),  "{F0A45D}[%d] {FFFFFF}- %s\n",(i+1),VehicleNames[MyCarID[playerid][i]-400]);
         strcat(DialogStr, dialogstr);
     }
-    ShowPlayerDialog(playerid, 9955, DIALOG_STYLE_TABLIST_HEADERS, "Cars Menu", DialogStr, "Spawn", "Gasvla");
+    ShowPlayerDialog(playerid, 9955, DIALOG_STYLE_TABLIST_HEADERS, "Cars", DialogStr, "Spawn", "Gasvla");
     return true;
 }
 stock GivePlayerCar(playerid, carid) {
@@ -1169,7 +1168,7 @@ stock ShowLoginDialog(playerid) {
     format(string, sizeof(string), "{FFFFFF}- Mogesalmebit serverze - {F0A45D}San Andreas Life\
     \n\n{FFFFFF}Sasiamovnoa tqveni naxva isev serverze\
     \n{FFFFFF}Avtorizaciisatvis gtxovt miutitot paroli, romelic daayenet registraciis dros\
-    \n\n{7C91A9}* Rodesac miutitebt parols daachiret 'Next' gilaks");
+    \n\n{F0A45D}* Rodesac miutitebt parols daachiret 'Next' gilaks");
 	ShowPlayerDialog(playerid, 100, DIALOG_STYLE_PASSWORD, "{FFFFFF}Avtorizacia", string, "Next", "Cancel");
 }
 stock ShowRegisterDialog(playerid) {
@@ -1180,7 +1179,7 @@ stock ShowRegisterDialog(playerid) {
     \n{F0A45D}[1]{FFFFFF} Paroli unda iyos daculi da dzlieri\
     \n{F0A45D}[2]{FFFFFF} Paroli unda iyos latinuri asoebit\
     \n{F0A45D}[3]{FFFFFF} Parolis sigrdze unda iyos 8'dan 32 simbolomde\
-    \n\n{7C91A9}* Rodesac miutitebt parols daachiret 'Next' gilaks");
+    \n\n{F0A45D}* Rodesac miutitebt parols daachiret 'Next' gilaks");
 	ShowPlayerDialog(playerid, 101, DIALOG_STYLE_INPUT, "{FFFFFF}Registracia", string, "Next", "Cancel");
 }
 stock ShowEmailDialog(playerid) {
@@ -1188,14 +1187,14 @@ stock ShowEmailDialog(playerid) {
     format(string, sizeof(string), "{FFFFFF}- Tqven imyofebit serverze - {F0A45D}San Andreas Life\
 	\n\n{FFFFFF}Tu tqveni account gatyda shegedzlebat agdgena Email'is sashualebit\
     \n{FFFFFF}Usafrtxoebistvis savaldebuloa moqmedi Email'is mititeba\
-    \n\n{7C91A9}* Rodesac miutitebt emails daachiret 'Next' gilaks");
+    \n\n{F0A45D}* Rodesac miutitebt emails daachiret 'Next' gilaks");
 	ShowPlayerDialog(playerid, 102, DIALOG_STYLE_INPUT, "{FFFFFF}Registracia | {F0A45D}[ Email ]", string, "Next", "Cancel");
 }
 stock ShowAdminDialog(playerid) {
 	ShowPlayerDialog(playerid, 202, DIALOG_STYLE_INPUT, "{FFFFFF}Alogin",
 	"{FFFFFF}- Mogesalmebat administration system -\n\n\
 	{FFFFFF}Uflebebis misagebat sachiroa airchiot admin paroli\n\n\
-	{7C91A9}* Miutitet tqveni sasurveli paroli da daachiret 'Next' gilaks",
+	{F0A45D}* Miutitet tqveni sasurveli paroli da daachiret 'Next' gilaks",
 	"Next", "Cancel");
 }
 stock UpdateUserData(playerid, field [], data) {
@@ -3264,14 +3263,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 					ShowPlayerDialog(playerid, 301, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven iwyebt mushaobas - {F0A45D}Dasuftavebis samsaxurshi\
 	    			\n\n{FFFFFF}Tqveni movaleobaa daasuftovot qalaqi, amistvis miyevit witel checkpointebs\
-	    			\n\n{7C91A9}* Tu gsurt mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
+	    			\n\n{F0A45D}* Tu gsurt mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
 					return true;
 				}
 				if(CleanerJob[playerid] == 1) {
 					ShowPlayerDialog(playerid, 301, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven asrulebt mushaobas - {F0A45D}Dasuftavebis samsaxurshi\
 	    			\n\n{FFFFFF}Tu tvlit rom daasrulet daasuftaveba, gamoicvalet tansacmeli da aiget avansi\
-	    			\n\n{7C91A9}* Tu gsurt daasrulot mushaoba daachiret 'Next' gilaks", "Next", "Cancel");	
+	    			\n\n{F0A45D}* Tu gsurt daasrulot mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
 	    			return true;			
 				}
 			}
@@ -3280,14 +3279,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 					ShowPlayerDialog(playerid, 305, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven iwyebt mushaobas - {F0A45D}Materialebis dammzadebeli\
 		    		\n\n{FFFFFF}Tqveni movaleobaa gaaketot materialebi, amistvis midit pickuptan da daachiret 'ALT's\
-		    		\n\n{7C91A9}* Tu gsurt mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
+		    		\n\n{F0A45D}* Tu gsurt mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
 		    		return true;
 	    		}
 	    		if(WarehouseJob[playerid] == 1) {
 					ShowPlayerDialog(playerid, 305, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven asrulebt mushaobas - {F0A45D}Materialebis dammzadebeli\
 		    		\n\n{FFFFFF}Tu tvlit rom daasrulet materialebis gaketeba, gamoicvalet tansacmeli da aiget avansi\
-		    		\n\n{7C91A9}* Tu gsurt daasrulot mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
+		    		\n\n{F0A45D}* Tu gsurt daasrulot mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
 		    		return true;
 	    		}
 			}
@@ -3296,14 +3295,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 					ShowPlayerDialog(playerid, 306, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven iwyebt mushaobas - {F0A45D}Mtvirtavi\
 		    		\n\n{FFFFFF}Tqveni movaleobaa gadazidot tvirti, amistvis midit pickuptan da daachiret 'ALT's\
-		    		\n\n{7C91A9}* Tu gsurt mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
+		    		\n\n{F0A45D}* Tu gsurt mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
 		    		return true;
 	    		}
 	    		if(MtvirtaviJob[playerid] == 1) {
 					ShowPlayerDialog(playerid, 306, DIALOG_STYLE_MSGBOX, "{FFFFFF}Samsaxuri",
 					"{FFFFFF}- Tqven asrulebt mushaobas - {F0A45D}Mtvirtavi\
 		    		\n\n{FFFFFF}Tu tvlit rom daasrulet materialebis gaketeba, gamoicvalet tansacmeli da aiget avansi\
-		    		\n\n{7C91A9}* Tu gsurt daasrulot mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
+		    		\n\n{F0A45D}* Tu gsurt daasrulot mushaoba daachiret 'Next' gilaks", "Next", "Cancel");
 		    		return true;
 	    		}
 			}
@@ -3314,7 +3313,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 		            	format(string, sizeof(string), "{FFFFFF} - Saxlis informacia - {F0A45D}[ %d ]\
 		            	\n\n{FFFFFF}Namdvilad gsurt sheidzinot mocemuli saxli?\
 		            	\n{FFFFFF}Tqven mogiwevt gadaixadot: {F0A45D}[ %d$ ]{FFFFFF}\
-		            	\n\n{7C91A9}* Tu gsurt sheidzinot saxli daachiret 'Next' gilaks", HouseData[i][hID], HouseData[i][hPrice]);
+		            	\n\n{F0A45D}* Tu gsurt sheidzinot saxli daachiret 'Next' gilaks", HouseData[i][hID], HouseData[i][hPrice]);
 		 				ShowPlayerDialog(playerid, 401, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli", string, "Next", "Cancel");
 			    	}
 				    else {
@@ -3326,7 +3325,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 		            	\n\n{FFFFFF}Gsurt shexvidet mocemul saxlshi?\
 		            	\n{FFFFFF}Saxli mflobeli aris: {F0A45D}[ %s ]{FFFFFF}\
 		            	\n{FFFFFF}Saxlis karebi aris: {F0A45D}[ %s ]{FFFFFF}\
-		            	\n\n{7C91A9}* Tu gsurt shexvidet saxlshi daachiret 'Next' gilaks", HouseData[i][hID], HouseData[i][hOwner], dour_status[HouseData[i][hLock]]);
+		            	\n\n{F0A45D}* Tu gsurt shexvidet saxlshi daachiret 'Next' gilaks", HouseData[i][hID], HouseData[i][hOwner], dour_status[HouseData[i][hLock]]);
 		      			ShowPlayerDialog(playerid, 402, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli", string, "Next", "Cancel");
 				    }
 				}
@@ -3346,14 +3345,14 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 		            	format(string, sizeof(string), "{FFFFFF} - Biznesis informacia - {F0A45D}[ %d ]\
 		            	\n\n{FFFFFF}Namdvilad gsurt sheidzinot mocemuli biznesi?\
 		            	\n{FFFFFF}Tqven mogiwevt gadaixadot: {F0A45D}[ %d$ ]{FFFFFF}\
-		            	\n\n{7C91A9}* Tu gsurt sheidzinot biznesi daachiret 'Next' gilaks", BizzData[i][bID], BizzData[i][bPrice]);
+		            	\n\n{F0A45D}* Tu gsurt sheidzinot biznesi daachiret 'Next' gilaks", BizzData[i][bID], BizzData[i][bPrice]);
 		 				ShowPlayerDialog(playerid, 410, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business", string, "Next", "Cancel");
 			    	}
 				    else {
 				    	format(string, sizeof(string), "{FFFFFF} - Biznesis informacia - {F0A45D}[ %d ]\
 		            	\n\n{FFFFFF}Mflobeli aris: {F0A45D}[ %s ]{FFFFFF}\
 		            	\n{FFFFFF}Shesvlis fasi: {F0A45D}[ 500$ ]{FFFFFF}\
-		            	\n\n{7C91A9}* Tu gsurt shexvidet daachiret 'Next' gilaks", BizzData[i][bID], BizzData[i][bOwner]);
+		            	\n\n{F0A45D}* Tu gsurt shexvidet daachiret 'Next' gilaks", BizzData[i][bID], BizzData[i][bOwner]);
 		      			ShowPlayerDialog(playerid, 411, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business", string, "Next", "Cancel");
 				    }
 				}
@@ -3967,7 +3966,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		 		ShowPlayerDialog(playerid, 103, DIALOG_STYLE_MSGBOX, "{FFFFFF}Registracia",
 		 		"{FFFFFF}- Tqven imyofebit serverze - {F0A45D}San Andreas Life\n\n\
 		 		{FFFFFF}Airchiet tqveni personajis sqesi\n\n\
-		 		{7C91A9}* Mamakaci - Male | Qalbatoni - Female",
+		 		{F0A45D}* Mamakaci - Male | Qalbatoni - Female",
 		 		"Male", "Female");
 			}
 			else srvKick(playerid);
@@ -3986,7 +3985,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		 	ShowPlayerDialog(playerid, 104, DIALOG_STYLE_MSGBOX, "{FFFFFF}Registracia",
 			"{FFFFFF}- Tqven imyofebit serverze - {F0A45D}San Andreas Life\n\n\
 		 	{FFFFFF}Aris tu ara tqvens mier mititebuli informacia swori?\n\n\
-		 	{7C91A9}* Tu yvelaferi sworad miutetet daachiret 'Yes'",
+		 	{F0A45D}* Tu yvelaferi sworad miutetet daachiret 'Yes'",
 		 	"Yes", "No");
 		}
 		case 104: {
@@ -4514,13 +4513,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 						ShowPlayerDialog(playerid, 601, DIALOG_STYLE_INPUT, "{FFFFFF}Gang",
 						"{FFFFFF} - Materialebis ageba -\
 		            	\n\n{FFFFFF} Chaweret im materialebis raodenoba ramdenis agebac gsurt\
-		            	\n\n{7C91A9}* Miutitet materialebis raodenoba da daachiret 'Next' gilaks", "Next", "Cancel");
+		            	\n\n{F0A45D}* Miutitet materialebis raodenoba da daachiret 'Next' gilaks", "Next", "Cancel");
 					}
 					case 1: {
 						ShowPlayerDialog(playerid, 602, DIALOG_STYLE_INPUT, "{FFFFFF}Gang",
 						"{FFFFFF} - Narkotikebis ageba -\
 		            	\n\n{FFFFFF} Chaweret im materialebis raodenoba ramdenis agebac gsurt\
-		            	\n\n{7C91A9}* Miutitet materialebis raodenoba da daachiret 'Next' gilaks", "Next", "Cancel");
+		            	\n\n{F0A45D}* Miutitet materialebis raodenoba da daachiret 'Next' gilaks", "Next", "Cancel");
 					}
 				}
 			}
@@ -4598,7 +4597,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					"{FFFFFF}- Airchiet meore iaragi romelic gindat gqondet -\n\n\
 					{FFFFFF}Miutitet tqventvis sasurveli iaragis ID:\n\
 					1 - Deagle | 2 - Shotgun | 3 - M4 | 4 - AK-47 | 5 - Country rifle | 6 - MP5\n\n\
-					{7C91A9}* Rodesac airchevt iarags daachiret 'Next' gilaks", "Next", "Cancel");
+					{F0A45D}* Rodesac airchevt iarags daachiret 'Next' gilaks", "Next", "Cancel");
 					case 1: {
 						DMArena[playerid] = 1;
 						SetPVarInt(playerid, "DMGun1", 24);
@@ -4657,7 +4656,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					    format(string, sizeof(string), "{FFFFFF}- Shecvalet migebis minimaluri ranki -\
 						\n\n{FFFFFF}Daaweset tu ramden ranks sheedzlos migeba tqvens fraqciashi\
 					    \n{FFFFFF}Gaitvaliswinet, ecadet miutitot gonivruli ranki\
-					    \n\n{7C91A9}* Rodesac miutitebt cifrs daachiret 'Next' gilaks");
+					    \n\n{F0A45D}* Rodesac miutitebt cifrs daachiret 'Next' gilaks");
 						ShowPlayerDialog(playerid, 704, DIALOG_STYLE_INPUT, "{FFFFFF}Leader Menu", string, "Next", "Cancel");
 					}
 					case 3: {
@@ -4715,7 +4714,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				format(string, sizeof(string), "{FFFFFF}- Shecvalet tqveni fraqciis skinebi -\
 				\n\n{FFFFFF}Miutitet romeli skinis dayeneba sheedzlot fraqciis wevrebs\
 				\n{FFFFFF}Gaitvaliswinet, miutitet swori skinis id\
-				\n\n{7C91A9}* Rodesac miutitebt skinis id's daachiret 'Next' gilaks");
+				\n\n{F0A45D}* Rodesac miutitebt skinis id's daachiret 'Next' gilaks");
 				ShowPlayerDialog(playerid, 706, DIALOG_STYLE_INPUT, "{FFFFFF}Leader Menu", string, "Next", "Cancel");
 			}
 			else return true;
@@ -5505,24 +5504,7 @@ CMD:lock(playerid, params[]) {
 	}
 	return 1;
 }
-CMD:addcar(playerid,params[])
-{
-	if(Login[playerid] == false) return true;
-	if(sscanf(params, "id",params[0], params[1])) return SendClientMessage(playerid, -1, "/addcar [car id] [raodenoba]");
-
-	for(new i; i < params[1]; i++)
-	{
-		new string[1024];
-		format(string,sizeof(string),"INSERT INTO `cars`(`ID`,`Model`,`Pos_X`,`Pos_Y`,`Pos_Z`,`Pos_A`,`Color_1`,`Color_2`,`Owner`, `PaintJob`) VALUES ('%d','%d','0.0','0.0','0.0','0.0','1','1','Iyideba','-1')", AddVehicle+1,params[0]);
-		mysql_tquery(connects, string);
-        AddVehicle++;
-	}
-	format(YCMDstr, sizeof(YCMDstr), "Restartis mere avtosalonshi daemateba %d transporti. Modeli: {e7e7e7}%d{ffffff}.",params[1],params[0]);
-	SendClientMessage(playerid, -1, YCMDstr);
-
-	return 1;
-}
-CMD:mycar(playerid, params[]) {
+CMD:cars(playerid, params[]) {
 	if(Login[playerid] == false) return true;
     ShowCarMenu(playerid);
     return true;
@@ -5726,8 +5708,8 @@ CMD:setskin(playerid, params[]) {
 	SetPlayerSkin(params[0], params[1]);
 	UserData[params[0]][pSkin] = params[1];
 	UpdateUserData(params[0], "pSkin", UserData[params[0]][pSkin]);
-	format(YCMDstr, sizeof(YCMDstr), "{7C91A9}Administratorma %s'm(a) shegicvalat skin", Name(playerid)); SendClientMessage(params[0], -1, YCMDstr);
-	format(YCMDstr, sizeof(YCMDstr), "{7C91A9}Tqven %s's shecvalet skin", Name(params[0])); SendClientMessage(playerid, -1, YCMDstr);
+	format(YCMDstr, sizeof(YCMDstr), "{F0A45D}Administratorma %s'm(a) shegicvalat skin", Name(playerid)); SendClientMessage(params[0], -1, YCMDstr);
+	format(YCMDstr, sizeof(YCMDstr), "{F0A45D}Tqven %s's shecvalet skin", Name(params[0])); SendClientMessage(playerid, -1, YCMDstr);
 	return true;
 }
 CMD:setlvl(playerid, params[]) {
@@ -5738,8 +5720,8 @@ CMD:setlvl(playerid, params[]) {
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return SendErrorMessage(playerid, "Motamashe aseti id'it ver moidzebna serverze");
 	UserData[params[0]][pLevel] = params[1];
 	UpdateUserData(params[0], "pLevel", UserData[params[0]][pLevel]);
-	format(YCMDstr, sizeof(YCMDstr), "{7C91A9}Administratorma %s'm(a) shegicvalat lvl, tqveni lvl gaxda: %d", Name(playerid), params[1]); SendClientMessage(params[0], -1, YCMDstr);
-	format(YCMDstr, sizeof(YCMDstr), "{7C91A9}Tqven %s's shecvalet level", Name(params[0])); SendClientMessage(playerid, -1, YCMDstr);
+	format(YCMDstr, sizeof(YCMDstr), "{F0A45D}Administratorma %s'm(a) shegicvalat lvl, tqveni lvl gaxda: %d", Name(playerid), params[1]); SendClientMessage(params[0], -1, YCMDstr);
+	format(YCMDstr, sizeof(YCMDstr), "{F0A45D}Tqven %s's shecvalet level", Name(params[0])); SendClientMessage(playerid, -1, YCMDstr);
 	return true;
 }
 CMD:unsampban(playerid, params[]) {
@@ -6233,7 +6215,7 @@ CMD:alogin(playerid, params[]) {
 	ShowPlayerDialog(playerid, 201, DIALOG_STYLE_PASSWORD, "{FFFFFF}Alogin",
 	"{FFFFFF}- Mogesalmebat administration system -\n\n\
 	{FFFFFF}Uflebebis misagebat sachiroa gaiarot avtorizacia\n\n\
-	{7C91A9}* Miutitet tqveni admin paroli da daachiret 'Next' gilaks",
+	{F0A45D}* Miutitet tqveni admin paroli da daachiret 'Next' gilaks",
 	"Next", "Cancel");
 	return true;
 }
@@ -6555,7 +6537,7 @@ CMD:spawn(playerid, params[]) {
 	SpawnPlayer(params[0]);
 	SendSuccesMessage(playerid, "Tqven warmatebit gauketet respawn motamashes");
 	new string[500];
-	format(string, sizeof(string), "{7C91A9}Tqven giqnat respawn administratorma: %s", Name(playerid));
+	format(string, sizeof(string), "{F0A45D}Tqven giqnat respawn administratorma: %s", Name(playerid));
 	SendClientMessage(params[0], -1, string);
 	if(KnocInfo[params[0]][kActive] > 0) {
 		KnocInfo[params[0]][kID] = 0;
@@ -7309,7 +7291,7 @@ CMD:sellhouse(playerid) {
 	format(string, sizeof(string), "{FFFFFF}Tqven gsurt saxlis gayidva - {F0A45D}ID: %d{FFFFFF}\
 	\n\n{FFFFFF}Namdvilad gsurt gayidot tqveni saxli?\
 	\n{FFFFFF}Tqveni saxlis girebuleba aris: {F0A45D}%d${FFFFFF}, tqven dagibrundebat - {F0A45D}75 procenti\
-	\n\n{7C91A9}* Tu namdvilad gusrt saxlis gayidva daachiret 'Next' gilaks", HouseData[h][hID], HouseData[h][hPrice]);
+	\n\n{F0A45D}* Tu namdvilad gusrt saxlis gayidva daachiret 'Next' gilaks", HouseData[h][hID], HouseData[h][hPrice]);
 	ShowPlayerDialog(playerid, 403, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli", string, "Next", "Cancel");
 	return true;
 }
@@ -7322,7 +7304,7 @@ CMD:sellbizz(playerid) {
 	format(string, sizeof(string), "{FFFFFF}Tqven gsurt Biznesis gayidva - {F0A45D}ID: %d{FFFFFF}\
 	\n\n{FFFFFF}Namdvilad gsurt gayidot tqveni biznesi?\
 	\n{FFFFFF}Tqveni biznesis girebuleba aris: {F0A45D}%d${FFFFFF}, tqven dagibrundebat - {F0A45D}75 procenti\
-	\n\n{7C91A9}* Tu namdvilad gusrt biznesis gayidva daachiret 'Next' gilaks", BizzData[h][bID], BizzData[h][bPrice]);
+	\n\n{F0A45D}* Tu namdvilad gusrt biznesis gayidva daachiret 'Next' gilaks", BizzData[h][bID], BizzData[h][bPrice]);
 	ShowPlayerDialog(playerid, 413, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business", string, "Next", "Cancel");
 	return true;
 }
@@ -7338,8 +7320,8 @@ CMD:fbullet(playerid, params[]) {
 	new string[500];
 	format(string, sizeof(string), "{FFFFFF}Tqven ipovet iaragis tyvia - {F0A45D}ID: %d{FFFFFF}\n\n\
 	{FFFFFF}Tqven gaqvt archevani, an gaanadgurot vazna an gamoikvliot\n\n\
-	{7C91A9}* Tu gsurt ganadgureba daachiret 'Destroy' gilaks\n\
-	{7C91A9}* Tu gsurt chaatarot eqspertiza daachiret 'Research' gilaks", params[0]);
+	{F0A45D}* Tu gsurt ganadgureba daachiret 'Destroy' gilaks\n\
+	{F0A45D}* Tu gsurt chaatarot eqspertiza daachiret 'Research' gilaks", params[0]);
 	ShowPlayerDialog(playerid, 500, DIALOG_STYLE_MSGBOX, "{FFFFFF}Bullet", string, "Research", "Destroy");	
 	SetPVarInt(playerid, "Bullet", params[0]);
 	return true;
@@ -7477,7 +7459,7 @@ CMD:capture(playerid, params[]) {
   	"{FFFFFF}- Tqven iwyebt teritoriis dapyrobas -\
   	\n\n{FFFFFF}Imisatvis, rom chaigdot xelshi teritoria, sachiroa ebrdzolot teritoriis mflobel bandas\
   	\n{FFFFFF}Teritoriisatvis brdzola gagrdzeldeba {F0A45D}- 15 wuti\
-  	\n\n{7C91A9}* Tu gsurt daiwyot brdzola daachiret 'Start' gilaks", "Cancel", "Start");
+  	\n\n{F0A45D}* Tu gsurt daiwyot brdzola daachiret 'Start' gilaks", "Cancel", "Start");
     return true;
 }
 // ======================== < [ Trash ] >
