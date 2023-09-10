@@ -146,6 +146,7 @@ enum houses {
 	Float:hSpawnY,
 	Float:hSpawnZ,
 	Float:hSpawnF,
+	hGarage,
 }
 new HouseData[990][houses];
 //------------------------------
@@ -504,20 +505,20 @@ stock ShowCarMenu(playerid) {
     mysql_query(connects, query);
     new rows;
     cache_get_row_count(rows);
-    if(!rows) return SendClientMessage(playerid, -1, "Mankanebi ver moidzebna");
+    if(!rows) return error(playerid, "Tkven ar gyavt manqana");
     new CarCount = 0, listCount = 0;
     for new i = 0;i < rows; i++ do {
         cache_get_value_name_int(i, "Model", MyCarID[playerid][CarCount]);
         CarCount ++;
     }
     for(new i = 0; i < 25; i ++) if(MyCarID[playerid][i]) listCount ++;
-    new DialogStr[256], dialogstr[100];
+    new DialogStr[2056], dialogstr[2056];
     DialogStr = "{ffffff}FixCar Menu\n";
     for(new i = 0; i < listCount; i ++) {
         format(dialogstr, sizeof(dialogstr),  "{F0A45D}[%d] {FFFFFF}- %s\n",(i+1),VehicleNames[MyCarID[playerid][i]-400]);
         strcat(DialogStr, dialogstr);
     }
-    ShowPlayerDialog(playerid, 9955, DIALOG_STYLE_TABLIST_HEADERS, "Cars", DialogStr, "Spawn", "Gasvla");
+    ShowPlayerDialog(playerid, 9955, DIALOG_STYLE_TABLIST_HEADERS, "Cars", DialogStr, "Spawn", "Cancel");
     return true;
 }
 stock GivePlayerCar(playerid, carid) {
@@ -1201,7 +1202,7 @@ stock GetGZColorF(fnumber) {
 stock StopSpectate(playerid) {
 	SpawnPlayer(playerid);
 
-    SetPlayerPos(playerid, TeleportDest[playerid][0],TeleportDest[playerid][1],TeleportDest[playerid][2]);
+    SetPlayerPosEx(playerid, TeleportDest[playerid][0],TeleportDest[playerid][1],TeleportDest[playerid][2]);
     SetPlayerInterior(playerid, TeleportDestNoFloat[playerid][0]);
     SetPlayerVirtualWorld(playerid, TeleportDestNoFloat[playerid][1]);
     SetCameraBehindPlayer(playerid);
@@ -1543,7 +1544,7 @@ stock ResetPlayer(playerid) {
 }
 stock SetPlayerSpawn(playerid) {
 	if(GetPVarInt(playerid, "RegisterSpawn") == 1) {
-		SetPlayerPos(playerid, 0.6863,25.3015,1199.5938);
+		SetPlayerPosEx(playerid, 0.6863,25.3015,1199.5938);
 		SetPlayerFacingAngle(playerid, 358.3350);
 		SetPlayerInterior(playerid, 1);
 		SetPlayerVirtualWorld(playerid, 0);
@@ -1560,7 +1561,7 @@ stock SetPlayerSpawn(playerid) {
 		SetTimerEx("RegistrationComplate", 10000, false, "i", playerid);
 	}
 	else if(KnocInfo[playerid][kActive] > 0) {
-		SetPlayerPos(playerid, KnocInfo[playerid][kX], KnocInfo[playerid][kY], KnocInfo[playerid][kZ]);
+		SetPlayerPosEx(playerid, KnocInfo[playerid][kX], KnocInfo[playerid][kY], KnocInfo[playerid][kZ]);
 		SetPlayerInterior(playerid, KnocInfo[playerid][kInt]);
 		SetPlayerVirtualWorld(playerid, KnocInfo[playerid][kVW]);
 
@@ -1577,7 +1578,7 @@ stock SetPlayerSpawn(playerid) {
 	}
 	else if(DMArena[playerid] == 1) {
  		new rand = random(sizeof(DmRandom));
-		SetPlayerPos(playerid, DmRandom[rand][0], DmRandom[rand][1], DmRandom[rand][2]);
+		SetPlayerPosEx(playerid, DmRandom[rand][0], DmRandom[rand][1], DmRandom[rand][2]);
 		SetPlayerInterior(playerid, 0);
 		SetPlayerVirtualWorld(playerid, GetPVarInt(playerid, "dmVW"));
 
@@ -1683,7 +1684,7 @@ stock SetPlayerSpawn(playerid) {
 }
 stock SetPlayerPosEx(playerid, Float:x, Float:y, Float:z) {
     TogglePlayerControllable(playerid, 0);
-	SetPlayerPos(playerid, x, y, z);
+	SetPlayerPosEx(playerid, x, y, z);
 	SetTimerEx("UnFreeze", 2000, false, "i", playerid);
 	SetCameraBehindPlayer(playerid);
 }
@@ -1716,6 +1717,7 @@ stock LoadPlayerTextdraws(playerid) {
 stock LoadMaps() {
 	#include "../../library/map/spray"
 	#include "../../library/map/grotti"
+	#include "../../library/map/garage"
 	#include "../../library/map/police"
 	#include "../../library/map/hospital"
 
@@ -1864,6 +1866,7 @@ stock SaveHouse(house) {
 	acc_float_strcat(query, sizeof(query), "hSpawnY", HouseData[house][hSpawnY]);
 	acc_float_strcat(query, sizeof(query), "hSpawnZ", HouseData[house][hSpawnZ]);
 	acc_float_strcat(query, sizeof(query), "hSpawnF", HouseData[house][hSpawnF]);
+	acc_int_strcat(query, sizeof(query), "hGarage", HouseData[house][hGarage]);
 	strdel(query, strlen(query)-1, strlen(query));
 	format(string,sizeof(string),"WHERE `hID` = '%d'", HouseData[house][hID]);
 	strcat(query, string);
@@ -2165,11 +2168,15 @@ stock ExitCar(playerid) {
 }
 
 stock SetPosAutos(playerid,Float:x,Float:y,Float:z,Float:angle,Interiorid,worldid) {
-	SetPlayerPos(playerid,x,y,z);
+    TogglePlayerControllable(playerid, 0);
+	SetTimerEx("UnFreeze", 2000, false, "i", playerid);
+	SetCameraBehindPlayer(playerid);
+	SetPlayerPosEx(playerid,x,y,z);
 	SetPlayerInterior(playerid,Interiorid);
 	SetPlayerVirtualWorld(playerid,worldid);
     SetPlayerFacingAngle(playerid,angle);
 	SetCameraBehindPlayer(playerid);
+
 	return 1;
 }
 // ======================== < [ Publics ] >
@@ -2551,7 +2558,7 @@ publics: Fresh() {
 	    	KnocInfo[i][dTimer]++;
 	    	// Textdraw
 			if(!PlayerToPoint(5.0, i, KnocInfo[i][kX], KnocInfo[i][kY], KnocInfo[i][kZ])) {
-		 		SetPlayerPos(i, KnocInfo[i][kX], KnocInfo[i][kY], KnocInfo[i][kZ]);
+		 		SetPlayerPosEx(i, KnocInfo[i][kX], KnocInfo[i][kY], KnocInfo[i][kZ]);
 				SetPlayerInterior(i, KnocInfo[i][kInt]);
 				SetPlayerVirtualWorld(i, KnocInfo[i][kVW]);
 
@@ -2738,6 +2745,7 @@ public LoadHouse() {
 			cache_get_value_name_float(i, "hSpawnY", HouseData[i][hSpawnY]);
 			cache_get_value_name_float(i, "hSpawnZ", HouseData[i][hSpawnZ]);
 			cache_get_value_name_float(i, "hSpawnF", HouseData[i][hSpawnF]);
+   			cache_get_value_name_int(i, "hGarage", HouseData[i][hGarage]);
             if(!HouseData[i][hOwned]) {
 				HouseData[i][hIcon] = CreateDynamicMapIcon(HouseData[i][hEnterX], HouseData[i][hEnterY], HouseData[i][hEnterZ], 31, 0);
 				HouseCP[i] = CreateDynamicPickup(1273, 23, HouseData[i][hEnterX], HouseData[i][hEnterY], HouseData[i][hEnterZ], 0, -1, -1, 50.0);
@@ -2915,7 +2923,7 @@ public OnGameModeInit() {
 
 	AutoShopText[9] = TextDrawCreate(522.000000, 211.000000, "SELECT CAR");
 	AutoShopText[10] = TextDrawCreate(537.000000, 251.000000, "COLOR");
-	AutoShopText[11] = TextDrawCreate(541.000000, 165.000000, "CUSTOMIZE");
+	AutoShopText[11] = TextDrawCreate(541.000000, 165.000000, "VEHICLE");
 
 	for(new r = 9; r < 12; r++)
 	{
@@ -3289,7 +3297,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger) {
 	    if(CarInfo[carid][cLock])
 		{
 		   	ClearAnimations(playerid);
-		   	SendClientMessage(playerid,-1,"Transporti daketilia!");
+		   	error(playerid,"Transporti daketilia");
 		}
 	}
 	return 1;
@@ -3626,9 +3634,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 				}
 				if(PlayerToPoint(2.0, playerid, HouseData[i][hExitX], HouseData[i][hExitY], HouseData[i][hExitZ])) {
 					if(GetPlayerVirtualWorld(playerid) == i + 50) {
-						SetPlayerInterior(playerid, 0);
-						SetPlayerVirtualWorld(playerid, 0);
-						SetPlayerPosEx(playerid, HouseData[i][hEnterX], HouseData[i][hEnterY], HouseData[i][hEnterZ]);
+						ShowPlayerDialog(playerid, 406, DIALOG_STYLE_LIST, "{FFFFFF}Saxlidan gasvla", "{F0A45D}[1]{FFFFFF} - Garet\n{F0A45D}[2]{FFFFFF} - Garaji", "Next", "Close");
 						return true;
 					}
 				}
@@ -3671,7 +3677,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 			   				return true;
 			      		}
 			      		if(BizzData[i][bType] == 2) {
-					 		SetPlayerPos(playerid, 206.5813,-4.0898,1001.2109);
+					 		SetPlayerPosEx(playerid, 206.5813,-4.0898,1001.2109);
 					 		SetPlayerFacingAngle(playerid, 213.4595);
 							SetPlayerInterior(playerid, 5);
 							SetPlayerVirtualWorld(playerid, i + 550);
@@ -3720,7 +3726,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 			}
 			// 1 = Y || 2 = H || 3 = N
 			if(PlayerToPoint(1.0, playerid, 2558.5356,-1295.8503,1044.1250) && WarehouseJob[playerid] == 1) {		
-				SetPlayerPos(playerid, 2558.5356,-1295.8503,1044.1250);
+				SetPlayerPosEx(playerid, 2558.5356,-1295.8503,1044.1250);
 				SetPlayerFacingAngle(playerid, 356.2001);
 				MomentWarehouse(playerid);
 				for(new i = 0; i < 7; i++) PlayerTextDrawShow(playerid, PressTD[playerid][i]);
@@ -3730,7 +3736,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 				return true;
 			}
 			if(PlayerToPoint(1.0, playerid, 2556.1470,-1295.8507,1044.1250) && WarehouseJob[playerid] == 1) {
-				SetPlayerPos(playerid, 2556.1470,-1295.8507,1044.1250);
+				SetPlayerPosEx(playerid, 2556.1470,-1295.8507,1044.1250);
 				SetPlayerFacingAngle(playerid, 357.1401);
 				MomentWarehouse(playerid);
 				for(new i = 0; i < 7; i++) PlayerTextDrawShow(playerid, PressTD[playerid][i]);
@@ -3740,7 +3746,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
 				return true;
 			}
 			if(PlayerToPoint(1.0, playerid, 2553.7817,-1295.8510,1044.1250) && WarehouseJob[playerid] == 1) {
-				SetPlayerPos(playerid, 2553.7817,-1295.8510,1044.1250);
+				SetPlayerPosEx(playerid, 2553.7817,-1295.8510,1044.1250);
 				SetPlayerFacingAngle(playerid, 1.2135);
 				MomentWarehouse(playerid);
 				for(new i = 0; i < 7; i++) PlayerTextDrawShow(playerid, PressTD[playerid][i]);
@@ -4626,9 +4632,16 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 							"Gaxsnili",
 							"Daxuruli"
 						};
-				    	format(string, sizeof(string), "{FFFFFF} - Saxlis informacia - {F0A45D}[ %d ]\
-		            	\n\n{FFFFFF}Saxlis fasi aris: {F0A45D}[ %d$ ]{FFFFFF}\
-		            	\n{FFFFFF}Saxlis karebi aris: {F0A45D}[ %s ]{FFFFFF}", HouseData[i][hID], HouseData[i][hPrice], dour_status[HouseData[i][hLock]]);
+						
+						static const garage_status[2][40 + 1] = {
+							"Ar aqvs",
+							"Aqvs"
+						};
+
+				    	format(string, sizeof(string), "{F0A45D}[1] {FFFFFF}- Saxlis ID: {F0A45D}[ %d ]\
+		            	\n{F0A45D}[2] {FFFFFF}- Saxlis fasi aris: {F0A45D}[ %d$ ]{FFFFFF}\
+		            	\n{F0A45D}[3] {FFFFFF}- Saxlis karebi aris: {F0A45D}[ %s ]{FFFFFF}\
+						\n{F0A45D}[4] {FFFFFF}- Garajis statusi: {F0A45D}[ %s ]{FFFFFF}", HouseData[i][hID], HouseData[i][hPrice], dour_status[HouseData[i][hLock]], garage_status[HouseData[i][hGarage]]);
 		      			ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli", string, "Cancel", "");
 					}
 					case 1: {
@@ -4653,10 +4666,53 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					case 2: {
 						PC_EmulateCommand(playerid, "/sellhouse");
 					}
-					case 3: error(playerid, "Es funqcia ar aris jer damatebuli");
+					case 3: {
+						ShowPlayerDialog(playerid, 405, DIALOG_STYLE_MSGBOX, "{FFFFFF}Garajis yidva",
+						"{F0A45D}- [ Jonathan ] {FFFFFF}- garajis yidva namdvilad kargi gadawyvetilebaa\
+		    			\n\t\t{FFFFFF}Garajis yidva dagijdebat: {F0A45D}50.000{FFFFFF}$\
+		    			\n\n\n{F0A45D}* Tu gsurt sheidzinot garaji daachiret {FFFFFF}'Next' {F0A45D}ghilaks", "Next", "Cancel");
+						return true;
+					}
 				}
 			}
 			else return true;
+		}
+		case 405: {
+			if(response) {
+				new h = UserData[playerid][pHouse];
+				if(HouseData[h][hGarage] == 1) return error(playerid, "Am saxls ukve aqvs garaji, veghar sheisyidit mas");
+				if(UserData[playerid][pCash] < 50000) return error(playerid, "Tkven ar gakvt sakmarisi tanxa garajis shesadzenad");
+				GiveUserMoney(playerid, -50000);
+				HouseData[h][hGarage] = 1;
+				SaveHouse(h);
+				success(playerid, "Gilocavt, tkven axla shegidzliat daayenot manqana garajshi");
+				return true;
+			}
+		}
+		case 406:
+	    {
+	        if(response)
+	        {
+				switch(listitem)
+				{
+				    case 0:{
+				    	new h = UserData[playerid][pHouse];
+                        SetPlayerInterior(playerid, 0);
+						SetPlayerVirtualWorld(playerid, 0);
+						SetPlayerPosEx(playerid, HouseData[h][hEnterX], HouseData[h][hEnterY], HouseData[h][hEnterZ]);
+					}
+				    case 1:
+				    {
+    					new h = UserData[playerid][pHouse];
+					    if(HouseData[h][hGarage] == 0) return error(playerid, "Tkvens Saxls Ar Akvs Garaji!");
+		        		SetPlayerPosEx(playerid, 1382.9139,-20.1116,1000.8630);
+		        		SetPlayerFacingAngle(playerid, 179.9181);
+		        		SetPlayerVirtualWorld(playerid, playerid);
+		        		SetPlayerInterior(playerid, 1);
+					}
+				}
+	        }
+
 		}
 		case 410: {
 			if(response) {
@@ -4674,7 +4730,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 						new bizz = UserData[playerid][pBizz];
 					    SaveBizz(bizz);
 
-					    success(playerid, "Tqven warmatebit sheidzinet biznesi. Ar dagaviwyet produqciis shevseba");
+					    success(playerid, "Tqven warmatebit sheidzinet biznesi. Ar dagaviwyet produqtis shevseba");
 						success(playerid, "Biznesis panelis samartavad gamoiyenet brdzaneba: {2ECC71}/bpanel");
 					}	
 				}
@@ -4697,7 +4753,6 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			}
 			else return true;
 		}
-
 		case 412: {
 			if(response) {
 				switch(listitem) {
@@ -5192,7 +5247,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			if(response) {
 				if(UserData[playerid][pCash] < ShopCar[GetPVarInt(playerid, "SelectAvto")][1]) return error(playerid,"Tkvens angarishze ar aris sakmarisi tanxa");
 				GivePlayerCar(playerid,ShopCar[GetPVarInt(playerid, "SelectAvto")][0]);
-				GivePlayerMoney(playerid, -ShopCar[GetPVarInt(playerid, "SelectAvto")][1]);
+				GiveUserMoney(playerid, -ShopCar[GetPVarInt(playerid, "SelectAvto")][1]);
 				ExitCar(playerid);
 				PlayerPlaySound(playerid, 20801, 0.0, 0.0, 0.0);
 				success(playerid, "Gilocavt axal shenadzens, sul mwvaneze gevlot ! {F0A45D}[ USAGE: '/cars' ]");
@@ -5212,7 +5267,7 @@ public OnPlayerClickPlayer(playerid, clickedplayerid, source) {
 
 public OnPlayerClickMap(playerid, Float:fX, Float:fY, Float:fZ) {
     if(UserData[playerid][pAdmin] > 0) {
-		SetPlayerPos(playerid, fX, fY, fZ);
+		SetPlayerPosEx(playerid, fX, fY, fZ);
   		SetPlayerInterior(playerid, 0);
 		SetPlayerVirtualWorld(playerid, 0);
 	}
@@ -5274,7 +5329,7 @@ publics: OnPlayerClickTextDraw(playerid, Text:clickedid) {
    			SaveBizz(bizid);
 			TogglePlayerControllable(playerid,true);
 
-   			SetPlayerPos(playerid, BizzData[bizid][bBuyX], BizzData[bizid][bBuyY], BizzData[bizid][bBuyZ]);
+   			SetPlayerPosEx(playerid, BizzData[bizid][bBuyX], BizzData[bizid][bBuyY], BizzData[bizid][bBuyZ]);
 			SetPlayerVirtualWorld(playerid, GetPlayerVirtualWorld(playerid) - 500);
 			SetPlayerInterior(playerid, BizzData[bizid][bInt]);
 
@@ -5290,7 +5345,7 @@ publics: OnPlayerClickTextDraw(playerid, Text:clickedid) {
 	        new bizid = GetPVarInt(playerid, "BUSINESS_ID");
 		    TogglePlayerControllable(playerid,true);
 
-   			SetPlayerPos(playerid, BizzData[bizid][bBuyX], BizzData[bizid][bBuyY], BizzData[bizid][bBuyZ]);
+   			SetPlayerPosEx(playerid, BizzData[bizid][bBuyX], BizzData[bizid][bBuyY], BizzData[bizid][bBuyZ]);
 
 			SetPlayerVirtualWorld(playerid, GetPlayerVirtualWorld(playerid) - 500);
 			SetPlayerInterior(playerid, BizzData[bizid][bInt]);
@@ -5730,7 +5785,8 @@ publics: OnPlayerClickTextDraw(playerid, Text:clickedid) {
 }
 // ======================== < [ CMD ] >
 CMD:tp(playerid){
-	SetPlayerPos(playerid, 562.2836,-1291.9972,17.2482);
+    SetPlayerPosEx(playerid,1383.0369,-19.4702,1000.8313);
+    SetPlayerInterior(playerid, 0);
 }
 CMD:buycar(playerid, params[])
 {
@@ -5763,7 +5819,7 @@ CMD:event(playerid, params[]) {
 CMD:gotp(playerid, params[]) {
     if(Login[playerid] == false) return true;
 	if(eventtime <= 0) return error(playerid, "Am dros ar tardeba event");
-	SetPlayerPos(playerid, eventpos[0], eventpos[1], eventpos[2]);
+	SetPlayerPosEx(playerid, eventpos[0], eventpos[1], eventpos[2]);
 	SetPlayerInterior(playerid, eventint);
 	SetPlayerVirtualWorld(playerid, eventvw);
 	success(playerid, "Tqven mixvedit event'ze");
@@ -6284,7 +6340,7 @@ CMD:slap(playerid, params[]) {
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
 	new Float:slx, Float:sly, Float:slz;
 	GetPlayerPos(params[0], slx, sly, slz);
-	SetPlayerPos(params[0], slx, sly, slz+5);
+	SetPlayerPosEx(params[0], slx, sly, slz+5);
 	PlayerPlaySound(params[0], 1130, slx, sly, slz+5);
 	format(YCMDstr, sizeof(YCMDstr), "[A] Administratorma %s'm(a) uqna slap %s's",Name(playerid), Name(params[0]));
 	SendAdminMessage(0x7C91A9FF, YCMDstr);
@@ -6374,7 +6430,7 @@ CMD:goto(playerid, params[]) {
 		SetVehiclePos(tmpcar, plocx, plocy+4, plocz);
 	}
 	else {
-		SetPlayerPos(playerid,plocx,plocy+2, plocz);
+		SetPlayerPosEx(playerid,plocx,plocy+2, plocz);
 		SetPlayerVirtualWorld(playerid, GetPlayerVirtualWorld(params[0]));
 		SetPlayerInterior(playerid, GetPlayerInterior(params[0]));
 	}
@@ -6629,7 +6685,7 @@ CMD:jetpack(playerid, params[]) {
 		
 		new Float:X,Float:Y,Float:Z;
 		GetPlayerPos(playerid,X,Y,Z);
-		SetPlayerPos(playerid,X,Y,Z);
+		SetPlayerPosEx(playerid,X,Y,Z);
 		success(playerid, "Jetpack off");
 	}
 	else {
@@ -7619,7 +7675,7 @@ CMD:hpanel(playerid, params[]) {
 	"{F0A45D}[1]{FFFFFF} - Saxlis informacia\n\
 	{F0A45D}[2]{FFFFFF} - Karebis gageba/chaketva\n\
 	{F0A45D}[3]{FFFFFF} - Saxlis gayidva\n\
-	{F0A45D}[4]{FFFFFF} - Saxlis gaumjobeseba");
+	{F0A45D}[4]{FFFFFF} - Garajis yidva");
 	ShowPlayerDialog(playerid, 404, DIALOG_STYLE_LIST, "{FFFFFF}Saxli", string, "Next", "Cancel");
 	return true;
 }
