@@ -1,8 +1,8 @@
 
 
 new OWNABLECARS = 0;
-new ShowCar[MAX_PLAYERS][MAX_VEHICLES];
-new ShowVeh[MAX_PLAYERS];
+
+new caridhouse[MAX_PLAYERS];
 
 #define MAX_OWNABLECARS 1000
 new OwnableCar[MAX_OWNABLECARS];
