@@ -148,6 +148,10 @@ enum houses {
 	Float:hSpawnZ,
 	Float:hSpawnF,
 	hGarage,
+	Float:hCarx,
+	Float:hCary,
+	Float:hCarz,
+	Float:hCarc,
 
 }
 new HouseData[990][houses];
@@ -1863,6 +1867,10 @@ stock SaveHouse(house) {
 	acc_float_strcat(query, sizeof(query), "hSpawnZ", HouseData[house][hSpawnZ]);
 	acc_float_strcat(query, sizeof(query), "hSpawnF", HouseData[house][hSpawnF]);
 	acc_int_strcat(query, sizeof(query), "hGarage", HouseData[house][hGarage]);
+	acc_float_strcat(query, sizeof(query), "hCarx", HouseData[house][hCarx]);
+	acc_float_strcat(query, sizeof(query), "hCary", HouseData[house][hCary]);
+	acc_float_strcat(query, sizeof(query), "hCarz", HouseData[house][hCarz]);
+	acc_float_strcat(query, sizeof(query), "hCarc", HouseData[house][hCarc]);
 	strdel(query, strlen(query)-1, strlen(query));
 	format(string,sizeof(string),"WHERE `hID` = '%d'", HouseData[house][hID]);
 	strcat(query, string);
@@ -2738,6 +2746,10 @@ public LoadHouse() {
 			cache_get_value_name_float(i, "hSpawnZ", HouseData[i][hSpawnZ]);
 			cache_get_value_name_float(i, "hSpawnF", HouseData[i][hSpawnF]);
 			cache_get_value_name_int(i, "hGarage", HouseData[i][hGarage]);
+			cache_get_value_name_float(i, "hCarx", HouseData[i][hCarx]);
+			cache_get_value_name_float(i, "hCary", HouseData[i][hCary]);
+			cache_get_value_name_float(i, "hCarz", HouseData[i][hCarz]);
+			cache_get_value_name_float(i, "hCarc", HouseData[i][hCarc]);
             if(!HouseData[i][hOwned]) {
 				HouseData[i][hIcon] = CreateDynamicMapIcon(HouseData[i][hEnterX], HouseData[i][hEnterY], HouseData[i][hEnterZ], 31, 0);
 				HouseCP[i] = CreateDynamicPickup(1273, 23, HouseData[i][hEnterX], HouseData[i][hEnterY], HouseData[i][hEnterZ], 0, -1, -1, 50.0);
@@ -3365,6 +3377,18 @@ public OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid) {
 }
 
 public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
+	if(newkeys == KEY_CROUCH)
+	{
+		if(PlayerToPoint(50.0, playerid, 2355.1125,789.9174,1009.1552)) {
+	
+        	SetVehiclePos(caridhouse[playerid], HouseData[UserData[playerid][pHouse]][hCarx], HouseData[UserData[playerid][pHouse]][hCary], HouseData[UserData[playerid][pHouse]][hCarz]);
+            SetVehicleZAngle(caridhouse[playerid], HouseData[UserData[playerid][pHouse]][hCarc]);
+		   	LinkVehicleToInterior(caridhouse[playerid], 0);
+		   	SetPlayerInterior(playerid, 0);
+        	SetVehicleVirtualWorld(caridhouse[playerid], 0);
+        	SetPlayerVirtualWorld(playerid, 0);
+        }
+   	}
     if(newkeys == KEY_SUBMISSION) { // 2
 	    if(GetPlayerState(playerid) == PLAYER_STATE_DRIVER) {
 			PC_EmulateCommand(playerid, "/engine");
@@ -5767,12 +5791,22 @@ CMD:cars(playerid, params[]) {
     ShowCarMenu(playerid);
     return true;
 }
-CMD:givecar(playerid, params[])
+CMD:park(playerid, params[])
 {
 	if(Login[playerid] == false) return true;
-	if(sscanf(params, "d", params[0])) return formatmsg(playerid, "/givecar [Car ID]");
-    GivePlayerCar(playerid, params[0]);
-	return 1;
+	if (UserData[playerid][pHouse] != -1) {
+		if(!PlayerToPoint(100.0, playerid, HouseData[UserData[playerid][pHouse]][hEnterX], HouseData[UserData[playerid][pHouse]][hEnterY], HouseData[UserData[playerid][pHouse]][hEnterZ])) return error(playerid, "Shearchiet adgili saxltan axlos");
+		new Float: lwx, Float:lwy, Float:lwz,Float:a;
+		GetPlayerPos(playerid, lwx, lwy, lwz);
+		GetPlayerFacingAngle(playerid, a);
+		HouseData[UserData[playerid][pHouse]][hCarx] = lwx;
+		HouseData[UserData[playerid][pHouse]][hCary]= lwy;
+		HouseData[UserData[playerid][pHouse]][hCarz] = lwz;
+		HouseData[UserData[playerid][pHouse]][hCarc] = a;
+		success(playerid, "Tkven warmatebit shearchiet garajidan manqanis gamoyvanis adgili");
+		SaveHouse(UserData[playerid][pHouse]);
+	}
+	return true;
 }
 CMD:sellcar(playerid) {
 	if(Login[playerid] == false) return true;
@@ -5879,7 +5913,7 @@ CMD:ban(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "uds[64]", params[0], params[1], params[2])) return formatmsg(playerid, "/ban [ID] [Day] [Reason]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 
 	UserData[params[0]][pBan] = 1;
 	UserData[params[0]][pBanDay] = getdate();
@@ -5951,7 +5985,7 @@ CMD:getip(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "d",params[0])) return formatmsg(playerid, "/getip [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti ar moidzebna");
 	new ip[15]; GetPlayerIp(params[0],ip,15);
 	format(YCMDstr, sizeof(YCMDstr), "Saxeli: %s | IP misamarti: %s | registraciis ip misamarti: %s",Name(params[0]), ip, UserData[params[0]][pRegIP]); SendClientMessage(playerid, 0xEF545DFF, YCMDstr);
 	return true;
@@ -5961,7 +5995,7 @@ CMD:setskin(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ud", params[0], params[1])) return formatmsg(playerid, "/setskin [ID] [Skin ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(params[1] > 311 || params[1] < 1 || params[1] == 74) return error(playerid, "Tqven miutitet araswori skinis id");
 	SetPlayerSkin(params[0], params[1]);
 	UserData[params[0]][pSkin] = params[1];
@@ -5975,7 +6009,7 @@ CMD:setlvl(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 6) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ud",params[0], params[1])) return formatmsg(playerid, "/setlvl [ID] [LVL]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	UserData[params[0]][pLevel] = params[1];
 	UpdateUserData(params[0], "pLevel", UserData[params[0]][pLevel]);
 	format(YCMDstr, sizeof(YCMDstr), "{F0A45D}Administratorma %s'm(a) shegicvalat lvl, tqveni lvl gaxda: %d", Name(playerid), params[1]); SendClientMessage(params[0], -1, YCMDstr);
@@ -6160,7 +6194,7 @@ CMD:mute(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "uds[128]",params[0],params[1],params[2])) return	formatmsg(playerid, "/mute [ID] [Time] [Reason]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(UserData[params[0]][pMute] == 1) {
 		format(YCMDstr, sizeof(YCMDstr), "%s[%d] moxsna chatis bani motamashes %s",Name(playerid),playerid,Name(params[0]));
 		SendAdminMessage(0xEF545DFF, YCMDstr);
@@ -6185,7 +6219,7 @@ CMD:slap(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 2) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/slap [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	new Float:slx, Float:sly, Float:slz;
 	GetPlayerPos(params[0], slx, sly, slz);
 	SetPlayerPosEx(params[0], slx, sly, slz+5);
@@ -6267,7 +6301,7 @@ CMD:goto(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/goto [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(UserData[params[0]][pAdmin] > UserData[playerid][pAdmin]) return error(playerid, "Tqvenze magal leveltan ver mixvalt");
 	new Float:plocx,Float:plocy,Float:plocz;
 	if(GetPlayerState(params[0]) != 1 && GetPlayerState(params[0]) != 2 && GetPlayerState(params[0]) != 3) return error(playerid, "Motamashe ar daspawnebula");
@@ -6289,7 +6323,7 @@ CMD:gethere(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/gethere [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(UserData[params[0]][pAdmin] > UserData[playerid][pAdmin]) return error(playerid, "Tqvenze magal levels ver uzamt teleports");
 	new Float:tpx, Float:tpy, Float:tpz;
 	GetPlayerPos(playerid, tpx, tpy, tpz);
@@ -6305,7 +6339,7 @@ CMD:sethp(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
     if(sscanf(params, "ud",params[0],params[1])) return	formatmsg(playerid, "/sethp [ID] [HP]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
     if(params[1] < 0 || params[1] > 160) return true;
 	SetPlayerHealth(params[0], params[1]);
 	success(playerid, "Motamashes dauyenda mititebuli sicocxle");
@@ -6316,7 +6350,7 @@ CMD:setarm(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
     if(sscanf(params, "ud",params[0],params[1])) return	formatmsg(playerid, "/setarm [ID] [Value]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
     if(params[1] < 0 || params[1] > 100) return true;
 	SetPlayerArmourAC(params[0], params[1]);
 	success(playerid, "Motamashes dauyenda mititebuli armori");
@@ -6327,7 +6361,7 @@ CMD:auninvite(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "d",params[0])) return formatmsg(playerid, "/auninvite [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	
 	new id = params[0];
 	UserData[id][pLeader] = 0; UserData[id][pMember] = 0; UserData[id][pRank] = 0; UserData[id][pForma] = 0;
@@ -6348,7 +6382,7 @@ CMD:recon(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "d",params[0])) return formatmsg(playerid, "/re(con) [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(params[0] == playerid) return error(playerid, "Tqven tavs ver daakvirdebit");
 	if(!IsPlayerConnected(params[0])) return true;
 	if(GetPlayerState(params[0]) == PLAYER_STATE_SPECTATING && gSpectateID[params[0]] != INVALID_PLAYER_ID) return error(playerid, "Motamashes ukve akvirdebian");
@@ -6380,7 +6414,7 @@ CMD:kick(playerid, params[]) {
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "us[256]",params[0],params[1])) return formatmsg(playerid, "/kick [ID] [Reason]");
 	UsingAdress(playerid, params[1]);
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(UserData[params[0]][pAdmin] > 0) return error(playerid, "Administrators ver gaagdebt serveridan");
 	new kickstr[256];
 	format(kickstr, sizeof(kickstr), "%s'm(a) gaagdo serveridan %s. mizezi: %s", Name(playerid), Name(params[0]), params[1]);
@@ -6405,7 +6439,7 @@ CMD:givemoney(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ud", params[0], params[1])) return formatmsg(playerid, "/givemoney [ID] [Value]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	GiveUserMoney(params[0], params[1]);
 	// [ Log ]
 	new year, month, day, hour, minuite, second, data[100], time[100];
@@ -6726,7 +6760,7 @@ CMD:makeadmin(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 6) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ud", params[0], params[1])) return formatmsg(playerid, "/makeadmin [ID] [Level]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(params[1] > 6 || params[1] < 0) return error(playerid, "Maqsimum 6 leveli, minimum 0 leveli");
 	if(params[1] == 0) {
 		success(playerid, "Tqven moxsenit motamashe administratoris poziciidan");
@@ -6793,7 +6827,7 @@ CMD:spawn(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/spawn [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	SpawnPlayer(params[0]);
 	success(playerid, "Tqven warmatebit gauketet respawn motamashes");
 	new string[500];
@@ -6826,7 +6860,7 @@ CMD:makeleader(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/makeleader [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	new string[500];
 	format(string, sizeof(string),
 	"{F0A45D}[1]{FFFFFF} - Police Departament\n\
@@ -6842,7 +6876,7 @@ CMD:makegang(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/makegang [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	new string[500];
 	format(string, sizeof(string),
 	"{F0A45D}[7]{FFFFFF} - Ballas\n\
@@ -6859,7 +6893,7 @@ CMD:makedonate(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 7) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/makeleader [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	new string[500];
 	format(string, sizeof(string),
 	"{F0A45D}[1]{FFFFFF} - Sacra Dennaro Unita\n\
@@ -6873,7 +6907,7 @@ CMD:acure(playerid, params[]) {
 	if(UserData[playerid][pAdmin] < 2) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
     if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/acure [ID]");
-    if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+    if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
     if(KnocInfo[params[0]][kActive] == 0) return error(playerid, "Es motamashe ar aris danokili");
     SetTimerEx("UnFreeze", 1000, false, "i", params[0]);
 	SetTimerEx("KnockAnimation", 1000, false, "i", params[0]);
@@ -6906,7 +6940,7 @@ CMD:arrest(playerid, params[]) {
 		if(PlayerToPoint(10.0, playerid, 222.2287,120.7666,999.0542)) {
 		    new prsid;
 			if(sscanf(params, "u", prsid)) return formatmsg(playerid, "/arrest [ID]");
-			if(params[0] == INVALID_PLAYER_ID) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+			if(params[0] == INVALID_PLAYER_ID) return error(playerid, "Motamashe ar moidzebna");
 			if(KnocInfo[prsid][kActive] == 1) return error(playerid, "Motamashe aris danokili");
 	        if(UserData[prsid][pWantedLevel] < 1) return error(playerid, "Motamashes ar adevs arc erti wanted done");
 
@@ -6944,7 +6978,7 @@ CMD:clearsuspect(playerid, params[]) {
 	if(UserData[playerid][pMember] == 1) {
 		new prsid;
 		if(sscanf(params, "u", prsid)) return formatmsg(playerid, "/clearsuspect [ID]");
-		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");	    if(UserData[prsid][pWantedLevel] < 1) return error(playerid, "Motamashes ar adevs arc erti wanted done");
+		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");	    if(UserData[prsid][pWantedLevel] < 1) return error(playerid, "Motamashes ar adevs arc erti wanted done");
 		
 		UserData[prsid][pWantedLevel] = 0;
 		UpdateUserData(prsid, "pWantedLevel", UserData[prsid][pWantedLevel]);
@@ -6958,7 +6992,7 @@ CMD:gotome(playerid, params[]) {
 	if(Login[playerid] == false) return true;
 	if(UserData[playerid][pMember] == 1) {
 	    if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/gotome [ID]");
-	    if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	    if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
  		new Float:x, Float:y, Float:z;
     	GetPlayerPos(params[0], x, y, z);
     	if(!PlayerToPoint(3.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tqventan axlos");
@@ -6995,7 +7029,7 @@ CMD:ceject(playerid, params[]) {
 	if(UserData[playerid][pMember] == 1) {
 	    new giveplayerid, sendername[MAX_PLAYER_NAME], giveplayer[MAX_PLAYER_NAME];
 		if(sscanf(params, "u",giveplayerid)) return  formatmsg(playerid, "/ceject [ID]");
-		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 		if(GetPlayerVehicleID(playerid) != GetPlayerVehicleID(giveplayerid)) return error(playerid, "Motamashe ar zis tqvens manqanashi");
 		GetPlayerName(giveplayerid, giveplayer, sizeof(giveplayer));
 		GetPlayerName(playerid, sendername, sizeof(sendername));
@@ -7012,7 +7046,7 @@ CMD:cuff(playerid, params[]) {
 	if(Login[playerid] == false) return true;
 	if(UserData[playerid][pMember] == 1) {
 		if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/cuff [ID]");
-		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 		if(UserData[params[0]][pMember] == 1) return error(playerid, "Tqven ver gauketebt borkilebs policiis tanamshromels");
 		if(PlayerCuffed[params[0]] == 2) return error(playerid, "Motamashes ukve adevs borkilebi");
 		if(Tazed[params[0]] == true) return error(playerid, "Scadet borkilebis dadeba ramodenime wamshi");
@@ -7045,7 +7079,7 @@ CMD:uncuff(playerid, params[]) {
 	if(Login[playerid] == false) return true;
 	if(UserData[playerid][pMember] == 1) {
 		if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/uncuff [ID]");
-		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 		if(PlayerCuffed[params[0]] != 2) return error(playerid, "Motamashes ar uketia borkilebi");
  		
  		new Float:x, Float:y, Float:z;
@@ -7075,7 +7109,7 @@ CMD:auncuff(playerid, params[]) {
 		if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
 
 		if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/auncuff [ID]");
-		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 		if(PlayerCuffed[params[0]] != 2) return error(playerid, "Motamashes ar uketia borkilebi");
 
 		AnimOn[params[0]] = false; 
@@ -7099,7 +7133,7 @@ CMD:cput(playerid, params[]) {
 		new tacha = GetPlayerVehicleID(playerid);
 		if(!IsAPlane(tacha) && !IsABoat(tacha) && !IsABike(tacha)) {
 	  		if(sscanf(params, "u",params[0], params[1])) return formatmsg(playerid, "/cput [ID]");
-			if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+			if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 			
 			new Float:x, Float:y, Float:z;
     		GetPlayerPos(params[0], x, y, z);
@@ -7150,7 +7184,7 @@ CMD:invite(playerid, params[]) {
 	if(fracid == 0) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pRank] < FractionData[UserData[playerid][pMember]][wInviteRank]) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/invite [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(UserData[params[0]][pMember] != 0) return error(playerid, "Es motamashe ukve aris fraqciashi");
     new Float:x, Float:y, Float:z;
     GetPlayerPos(params[0], x, y, z);
@@ -7188,7 +7222,7 @@ CMD:giverank(playerid, params[]) {
 	if(fracid == 0) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pRank] < FractionData[UserData[playerid][pMember]][wInviteRank]) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(sscanf(params, "ud", params[0], params[1])) return formatmsg(playerid, "/giverank [ID] [Rank]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(UserData[playerid][pRank] <= params[1]) return error(playerid, "Tqven ver gascemt tqven rankze mets");
 	if(UserData[params[0]][pMember] != UserData[playerid][pMember]) return error(playerid, "Es motamashe ar aris tqvens fraqciashi");
 	if(params[0] == playerid) return error(playerid, "Tqven ver sheucvlit tqven tavs ranks");
@@ -7209,7 +7243,7 @@ CMD:uninvite(playerid, params[]) {
 	if(fracid == 0) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pRank] < FractionData[UserData[playerid][pMember]][wInviteRank]) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/uninvite [ID]");
-	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(UserData[playerid][pRank] <= UserData[params[0]][pRank]) return error(playerid, "Tqven ver gaagdebt fraqciidan am motamashes");
 	if(UserData[params[0]][pMember] != UserData[playerid][pMember]) return error(playerid, "Es motamashe ar aris tqvens fraqciashi");
 	if(params[0] == playerid) return error(playerid, "Tqven ver gaagdebt tqven tavs");
@@ -7487,7 +7521,7 @@ CMD:cure(playerid,params[]) {
 	if(Login[playerid] == false) return true;
     if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/cure [ID]");
     if(UserData[playerid][pMember] != 2) return error(playerid, "Gacocxleba sheudzliat mxolod hospital tanamshromlebs");
-    if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti id'it ver moidzebna serverze");
+    if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
     if(KnocInfo[params[0]][kActive] == 0) return error(playerid, "Es motamashe ar aris danokili");
     new Float:x, Float:y, Float:z;
     GetPlayerPos(params[0], x, y, z);
