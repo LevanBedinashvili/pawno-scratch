@@ -2494,16 +2494,6 @@ publics: AdminReturn(playerid, password) {
 	}
 	return true;
 }
-publics: CheckRegister(playerid) {
-	new rows;
-	cache_get_row_count(rows);
-	if(rows) {
-		ShowLoginDialog(playerid);
-	}
-	else {
-		ShowRegisterDialog(playerid);
-	}
-}
 publics: ClosePDGate0() { MoveObject(policedoor[0], 253.16051, 109.06970, 1003.45581, 0.7, 0.00000, 0.00000, 90.00000); }
 publics: ClosePDGate1() { MoveObject(policedoor[1], 253.21300, 125.25500, 1003.45581, 0.7, 0.00000, 0.00000, 90.00000); }
 publics: ClosePDGate2() { MoveObject(policedoor[2], 239.54539, 125.07250, 1003.45581, 0.7, 0.00000, 0.00000, 90.00000); }
@@ -2902,21 +2892,27 @@ public OnPlayerRequestClass(playerid, classid) {
 	format(hgh, sizeof(hgh), "SELECT * FROM `banip` WHERE `IP` = '%s'", pup);
 	mysql_tquery(connects, hgh, "checkBan", "i", playerid);
 	// --------- //
+	InterpolateCameraPos(playerid, 768.572875, 2642.529785, 16.942920, 948.353942, 2583.556640, 12.205818, 8000);
+	InterpolateCameraLookAt(playerid, 773.501037, 2642.359130, 16.115917, 952.617919, 2580.950195, 12.362361, 8000);
 	UserData[playerid][pCash] = 0;
     GivePlayerMoney(playerid, -GetPlayerMoney(playerid));
 	SetPlayerInterior(playerid,0);
 	SetPlayerVirtualWorld(playerid,  playerid);
 	TogglePlayerControllable(playerid,0);
-
-	InterpolateCameraPos(playerid, 768.572875, 2642.529785, 16.942920, 948.353942, 2583.556640, 12.205818, 8000);
-	InterpolateCameraLookAt(playerid, 773.501037, 2642.359130, 16.115917, 952.617919, 2580.950195, 12.362361, 8000);
     ResetPlayer(playerid);
 
-	// ---------- //
-	static const fmt_query[] = "SELECT `pID` FROM `accounts` WHERE `pName` = '%s'";
-	new query[sizeof(fmt_query)+(-2+MAX_PLAYER_NAME)];
-	format(query, sizeof(query), fmt_query, Name(playerid));
-	mysql_tquery(connects, query, "CheckRegister", "i", playerid);
+	new get_player_info_string[256];
+	format(get_player_info_string, sizeof(get_player_info_string), "SELECT `pID` FROM `accounts` WHERE `pName` = '%s'",Name(playerid));
+	mysql_query(connects,get_player_info_string);
+	new rows;
+	cache_get_row_count(rows);
+	if(rows) {
+		ShowLoginDialog(playerid);
+	}
+	else {
+		ShowRegisterDialog(playerid);
+	}
+
 	return 1;
 }
 
