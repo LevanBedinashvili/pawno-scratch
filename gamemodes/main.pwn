@@ -4454,7 +4454,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					    SaveHouse(house);
 
 					    success(playerid, "Tkven warmatebit sheidzinet saxli. Ar dagaviwyet saxlis angarishis shevseba");
-						success(playerid, "Saxlis panelis samartavad gamoiyenet brdzaneba: {2ECC71}/hpanel");
+						success(playerid, "Saxlis panelis samartavad gamoiyenet brdzaneba: {2ECC71}'/hpanel'");
+						success(playerid, "Garajidan manqanis gamoyvanisatvis shearchiet adgili: {2ECC71}'/park'");
 					}	
 				}
 			}
