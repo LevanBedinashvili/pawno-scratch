@@ -26,10 +26,10 @@ AntiDeAMX2() {
 #include <dropgun>
 #pragma dynamic 9999
 // ======================== < [ Defines ] > ================================ //
-#define 	dbHost							"localhost"
-#define 	dbBase 							"zero"
-#define 	dbUser 							"root"
-#define 	dbPass 							""
+#define 	dbHost							"host.csworld.ge"
+#define 	dbBase 							"user29739"
+#define 	dbUser 							"user29739"
+#define 	dbPass 							"58sMVEZAdeep"
 
 #define 	srvMode 						"[Zer0] v0.0.2"
 
@@ -759,7 +759,7 @@ stock GetCarPrice(carid) {
 		case 522: cost = 180000;
 		case 480: cost = 130000;
 		case 603: cost = 60000;
-		case 402: cost = 85000;
+  		case 402: cost = 85000;
 		case 602: cost = 52500;
 		case 489: cost = 29000;
 		case 554: cost = 6000;
@@ -1269,7 +1269,7 @@ stock DataConnect() {
 stock ShowLoginDialog(playerid) {
     new string[1300];
     format(string, sizeof(string), "{FFFFFF}- Mogesalmebit serverze - {F0A45D}Genuine Role Play\
-    \n\n{FFFFFF}Sasiamovnoa tqveni naxva isev serverze\
+    \n\n{FFFFFF}Sasiamovnoa tkveni naxva isev serverze\
     \n{FFFFFF}Avtorizaciisatvis gtxovt miutitot paroli, romelic daayenet registraciis dros\
     \n\n{F0A45D}* Rodesac miutitebt parols daachiret 'Next' gilaks");
 	ShowPlayerDialog(playerid, 100, DIALOG_STYLE_PASSWORD, "{FFFFFF}Avtorizacia", string, "Next", "Cancel");
@@ -1288,16 +1288,16 @@ stock ShowRegisterDialog(playerid) {
 stock ShowEmailDialog(playerid) {
     new string[1300];
     format(string, sizeof(string), "{FFFFFF}- Tkven imyofebit serverze - {F0A45D}Genuine Role Play\
-	\n\n{FFFFFF}Tu tqveni account gatyda shegedzlebat agdgena Email'is sashualebit\
+	\n\n{FFFFFF}Tu tkveni account gatyda shegedzlebat agdgena Email'is sashualebit\
     \n{FFFFFF}Usafrtxoebistvis savaldebuloa moqmedi Email'is mititeba\
     \n\n{F0A45D}* Rodesac miutitebt emails daachiret 'Next' gilaks");
-	ShowPlayerDialog(playerid, 102, DIALOG_STYLE_INPUT, "{FFFFFF}Registracia | {F0A45D}[ Email ]", string, "Next", "Cancel");
+	ShowPlayerDialog(playerid, 102, DIALOG_STYLE_INPUT, "{FFFFFF}Registracia", string, "Next", "Cancel");
 }
 stock ShowAdminDialog(playerid) {
 	ShowPlayerDialog(playerid, 202, DIALOG_STYLE_INPUT, "{FFFFFF}Alogin",
 	"{FFFFFF}- Mogesalmebat administration system -\n\n\
 	{FFFFFF}Uflebebis misagebat sachiroa airchiot admin paroli\n\n\
-	{F0A45D}* Miutitet tqveni sasurveli paroli da daachiret 'Next' gilaks",
+	{F0A45D}* Miutitet tkveni sasurveli paroli da daachiret 'Next' gilaks",
 	"Next", "Cancel");
 }
 stock UpdateUserData(playerid, field [], data) {
@@ -1571,7 +1571,7 @@ stock SetPlayerSpawn(playerid) {
 		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFFFF}Status",
 		"{FFFFFF}- Tkven xart {EF545D}sasikvdilod dachrili -\
 	    \n\n{FFFFFF}Tkveni informacia daafiqsires kamerebma da sheuvidat hospitalshi\
-	    \n\n{EF545D}Tu saswrafo daxmarebam ver mogiswrot tqven daiclebit sisxlisgan\
+	    \n\n{EF545D}Tu saswrafo daxmarebam ver mogiswrot tkven daiclebit sisxlisgan\
 	    \n\n{FFFFFF}Tkven sisxlisgan daiclebit - {EF545D}3 wutshi", "Cancel", "");
 	    return true;
 	}
@@ -2257,7 +2257,7 @@ publics: start_capture() {
     foreach(new i:Player) {
         if(UserData[i][pMember] == 7 || UserData[i][pMember] == 8 || UserData[i][pMember] == 9 || UserData[i][pMember] == 10 || UserData[i][pMember] == 11) {
             startcapture = 1;
-            success(i, "Am wamidan tqven shegedzlebat daiwyot teritoriisatvis brdzola bandebtan");
+            success(i, "Am wamidan tkven shegedzlebat daiwyot teritoriisatvis brdzola bandebtan");
 		}
 	}
 	return true;
@@ -2306,8 +2306,8 @@ publics: GzCheck() {
 							CaptureOn[x] = 0;
 						}
 					}
-					SendFractionMessage(ZoneInfo[i][gFrakVlad], "{FFFFFF}Gilocavt, tqven sheinarchunet tqveni {F0A45D}teritoria");
-					SendFractionMessage(ZoneInfo[i][gNapad], "{FFFFFFF}Samwuxarod tqven ver daipyarit axali {F0A45D}teritoria");
+					SendFractionMessage(ZoneInfo[i][gFrakVlad], "{FFFFFF}Gilocavt, tkven sheinarchunet tkveni {F0A45D}teritoria");
+					SendFractionMessage(ZoneInfo[i][gNapad], "{FFFFFFF}Samwuxarod tkven ver daipyarit axali {F0A45D}teritoria");
 					format(YCMDstr, 256, "Capture's sauketeso motamashe iyo: %s[%d]. man mokla %d kaci", Name(highscoreowner), highscoreowner, highscore);
 					SendFractionMessage(ZoneInfo[i][gFrakVlad], YCMDstr);
 					SendFractionMessage(ZoneInfo[i][gNapad], YCMDstr);
@@ -2325,8 +2325,8 @@ publics: GzCheck() {
 					}
 					CountOnZone[ZoneInfo[i][gFrakVlad]] = 0;
 					CountOnZone[ZoneInfo[i][gNapad]] = 0;
-					SendFractionMessage(ZoneInfo[i][gNapad], "{FFFFFF}Gilocavt, tqven daipyarit axali {F0A45D}teritoria");
-					SendFractionMessage(ZoneInfo[i][gFrakVlad] ,"{FFFFFF}Samwuxarod tqven dakarget kontroli tqven {F0A45D}teritoriaze");
+					SendFractionMessage(ZoneInfo[i][gNapad], "{FFFFFF}Gilocavt, tkven daipyarit axali {F0A45D}teritoria");
+					SendFractionMessage(ZoneInfo[i][gFrakVlad] ,"{FFFFFF}Samwuxarod tkven dakarget kontroli tkven {F0A45D}teritoriaze");
 					format(YCMDstr, 256, "{ffffff}Teritoriisatvis brdzolashi sauketeso motamashe iyo: {F0A45D}%s[%d], {FFFFFF}man mokla {F0A45D}%d {FFFFFF}kaci", Name(highscoreowner), highscoreowner, highscore);
 					SendFractionMessage(ZoneInfo[i][gFrakVlad] ,YCMDstr);
 					SendFractionMessage(ZoneInfo[i][gNapad] ,YCMDstr);
@@ -2565,7 +2565,7 @@ publics: Fresh() {
 				KnocInfo[i][kInt] = 0;
 				KnocInfo[i][kVW] = 0;
 				Delete3DTextLabel(KnocText[i]);
-				SendClientMessage(i, -1, "{F0A45D}- Tkven aravin gadagarchinat, amitomac tqven mokvdit");
+				SendClientMessage(i, -1, "{F0A45D}- Tkven aravin gadagarchinat, amitomac tkven mokvdit");
 				SpawnPlayer(i);
 			}
     	}
@@ -3375,30 +3375,33 @@ public OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid) {
 }
 
 public OnPlayerKeyStateChange(playerid, newkeys, oldkeys) {
-	if(newkeys == KEY_CROUCH)
-	{
-		if(PlayerToPoint(50.0, playerid, 2355.1125,789.9174,1009.1552)) {
-	
-        	SetVehiclePos(caridhouse[playerid], HouseData[UserData[playerid][pHouse]][hCarx], HouseData[UserData[playerid][pHouse]][hCary], HouseData[UserData[playerid][pHouse]][hCarz]);
-            SetVehicleZAngle(caridhouse[playerid], HouseData[UserData[playerid][pHouse]][hCarc]);
-		   	LinkVehicleToInterior(caridhouse[playerid], 0);
-		   	SetPlayerInterior(playerid, 0);
-        	SetVehicleVirtualWorld(caridhouse[playerid], 0);
-        	SetPlayerVirtualWorld(playerid, 0);
-        	SetCameraBehindPlayer(playerid);
-        	success(playerid, "Tkven gamoxvedit garajidan");
-        }
-		if(PlayerToPoint(10.0, playerid, HouseData[UserData[playerid][pHouse]][hCarx], HouseData[UserData[playerid][pHouse]][hCary], HouseData[UserData[playerid][pHouse]][hCarz])) {
-			new h = UserData[playerid][pHouse];
-			SetVehiclePos(caridhouse[playerid], 2355.1125,789.9174,1009.1552);
-            SetVehicleZAngle(caridhouse[playerid], 90.2700);
-            SetPlayerInterior(playerid, h);
-            SetPlayerVirtualWorld(playerid, h);
-		 	LinkVehicleToInterior(caridhouse[playerid], h);
-		 	SetVehicleVirtualWorld(caridhouse[playerid], h);
-		 	SetCameraBehindPlayer(playerid);
-		 	success(playerid, "Tkven shexvedit garajshi");
-        }
+	if(newkeys == 2) {
+		if(GetPlayerState(playerid) == PLAYER_STATE_DRIVER) {
+			if(PlayerToPoint(50.0, playerid, 2355.1125,789.9174,1009.1552)) {
+	        	SetVehiclePos(caridhouse[playerid], HouseData[UserData[playerid][pHouse]][hCarx], HouseData[UserData[playerid][pHouse]][hCary], HouseData[UserData[playerid][pHouse]][hCarz]);
+	            SetVehicleZAngle(caridhouse[playerid], HouseData[UserData[playerid][pHouse]][hCarc]);
+			   	LinkVehicleToInterior(caridhouse[playerid], 0);
+			   	SetPlayerInterior(playerid, 0);
+	        	SetVehicleVirtualWorld(caridhouse[playerid], 0);
+	        	SetPlayerVirtualWorld(playerid, 0);
+	        	SetCameraBehindPlayer(playerid);
+	        	success(playerid, "Tkven gamoxvedit garajidan");
+	        }
+			if(PlayerToPoint(10.0, playerid, HouseData[UserData[playerid][pHouse]][hCarx], HouseData[UserData[playerid][pHouse]][hCary], HouseData[UserData[playerid][pHouse]][hCarz])) {
+				new h = UserData[playerid][pHouse];
+				RemovePlayerFromVehicleAC(playerid);
+ 				SetPlayerPosEx(playerid, 2370.6304,789.5767,1013.4380);
+        		SetPlayerFacingAngle(playerid, 95.1928);
+        		SetPlayerVirtualWorld(playerid, h);
+        		SetPlayerInterior(playerid, h);
+				SetVehiclePos(caridhouse[playerid], 2355.1125,789.9174,1009.1552);
+	            SetVehicleZAngle(caridhouse[playerid], 90.2700);
+			 	LinkVehicleToInterior(caridhouse[playerid], h);
+			 	SetVehicleVirtualWorld(caridhouse[playerid], h);
+			 	SetCameraBehindPlayer(playerid);
+			 	success(playerid, "Tkven shexvedit garajshi");
+	        }
+		}
    	}
     if(newkeys == KEY_SUBMISSION) { // 2
 	    if(GetPlayerState(playerid) == PLAYER_STATE_DRIVER) {
@@ -4055,8 +4058,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 						if(UserData[m][pMember] == ZoneInfo[i][gFrakVlad]) playerss++;
 						if(UserData[m][pMember] == UserData[playerid][pMember]) playeri++;
 					}
-					if(FrakCD[ZoneInfo[i][gFrakVlad]] != 0) return error(playerid,"Bandam romelsac tqven captavt ukve ibrdzola am saatshi");
-					if(FrakCD[ZoneInfo[i][gFrakVlad]] != 0) return error(playerid,"Bandam romelsac tqven captavt ukve ibrdzola am saatshi");
+					if(FrakCD[ZoneInfo[i][gFrakVlad]] != 0) return error(playerid,"Bandam romelsac tkven captavt ukve ibrdzola am saatshi");
+					if(FrakCD[ZoneInfo[i][gFrakVlad]] != 0) return error(playerid,"Bandam romelsac tkven captavt ukve ibrdzola am saatshi");
 	    			FrakCD[ZoneInfo[i][gFrakVlad]] = 1;
 					FrakCD[UserData[playerid][pMember]] = 1;
 					GZSafeTime[i] = 901;
@@ -4151,7 +4154,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		 		UpdateUserData(playerid, "pMail", UserData[playerid][pMail]);
 		 		ShowPlayerDialog(playerid, 103, DIALOG_STYLE_MSGBOX, "{FFFFFF}Registracia",
 		 		"{FFFFFF}- Tkven imyofebit serverze - {F0A45D}Genuine Role Play\n\n\
-		 		{FFFFFF}Airchiet tqveni personajis sqesi\n\n\
+		 		{FFFFFF}Airchiet tkveni personajis sqesi\n\n\
 		 		{F0A45D}* Mamakaci - Male | Qalbatoni - Female",
 		 		"Male", "Female");
 			}
@@ -4169,8 +4172,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			UpdateUserData(playerid, "pSkin", UserData[playerid][pSkin]);
 
 		 	ShowPlayerDialog(playerid, 104, DIALOG_STYLE_MSGBOX, "{FFFFFF}Registracia",
-			"{FFFFFF}- Tqven imyofebit serverze - {F0A45D}Genuine Role Play\n\n\
-		 	{FFFFFF}Aris tu ara tqvens mier mititebuli informacia swori?\n\n\
+			"{FFFFFF}- tkven imyofebit serverze - {F0A45D}Genuine Role Play\n\n\
+		 	{FFFFFF}Aris tu ara tkvens mier mititebuli informacia swori?\n\n\
 		 	{F0A45D}* Tu yvelaferi sworad miutetet daachiret 'Yes'",
 		 	"Yes", "No");
 		}
@@ -4191,7 +4194,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	            TogglePlayerSpectating(playerid, 0);
 	            SpawnPlayer(playerid);
 
-	            success(playerid, "Gilocavt, tqven warmatebit gaiaret registracia");
+	            success(playerid, "Gilocavt, tkven warmatebit gaiaret registracia");
 	            printf("<> %s - new account created", Name(playerid));
 	        }
 	        else ShowRegisterDialog(playerid);	
@@ -4243,7 +4246,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				format(query, sizeof(query), "UPDATE `accounts` SET `pDostup` = '%s' WHERE `pName` = '%s' LIMIT 1", inputtext, Name(playerid));
 				mysql_tquery(connects, query, "", "");
 
-				success(playerid, "Tqven warmatebit sheiyvanet admin paroli");
+				success(playerid, "Tkven warmatebit sheiyvanet admin paroli");
 				PC_EmulateCommand(playerid, "/alogin");
 			}
 			else return true;
@@ -4265,7 +4268,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				new string[500];
 				format(string, sizeof(string), "Administratorma: {F0A45D}%s{FFFFFF}'m(a) dagnishnat {F0A45D}%s{FFFFFF}'is liderad", Name(playerid), GetFractionName(UserData[id][pLeader]));
 				SendClientMessage(id, -1, string);
-				format(string, sizeof(string), "Tqven danishnet motamashe {F0A45D}%s[%d]{FFFFFF} - {F0A45D}%s{FFFFFF}'is liderad", Name(id), id, GetFractionName(UserData[id][pLeader]));
+				format(string, sizeof(string), "Tkven danishnet motamashe {F0A45D}%s[%d]{FFFFFF} - {F0A45D}%s{FFFFFF}'is liderad", Name(id), id, GetFractionName(UserData[id][pLeader]));
 				SendClientMessage(playerid, -1, string);
 
 				SpawnPlayer(id);
@@ -4290,7 +4293,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				new string[500];
 				format(string, sizeof(string), "Administratorma: {F0A45D}%s{FFFFFF}'m(a) dagnishnat {F0A45D}%s{FFFFFF}'is liderad", Name(playerid), GetFractionName(UserData[id][pLeader]));
 				SendClientMessage(id, -1, string);
-				format(string, sizeof(string), "Tqven danishnet motamashe {F0A45D}%s[%d]{FFFFFF} - {F0A45D}%s{FFFFFF}'is liderad", Name(id), id, GetFractionName(UserData[id][pLeader]));
+				format(string, sizeof(string), "Tkven danishnet motamashe {F0A45D}%s[%d]{FFFFFF} - {F0A45D}%s{FFFFFF}'is liderad", Name(id), id, GetFractionName(UserData[id][pLeader]));
 				SendClientMessage(playerid, -1, string);
 
 				SpawnPlayer(id);
@@ -4312,7 +4315,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				new string[500];
 				format(string, sizeof(string), "Administratorma: {F0A45D}%s{FFFFFF}'m(a) dagnishnat {F0A45D}%s{FFFFFF}'is liderad", Name(playerid), GetFractionName(UserData[id][pLeader]));
 				SendClientMessage(id, -1, string);
-				format(string, sizeof(string), "Tqven danishnet motamashe {F0A45D}%s[%d]{FFFFFF} - {F0A45D}%s{FFFFFF}'is liderad", Name(id), id, GetFractionName(UserData[id][pLeader]));
+				format(string, sizeof(string), "Tkven danishnet motamashe {F0A45D}%s[%d]{FFFFFF} - {F0A45D}%s{FFFFFF}'is liderad", Name(id), id, GetFractionName(UserData[id][pLeader]));
 				SendClientMessage(playerid, -1, string);
 
 				SpawnPlayer(id);
@@ -4322,7 +4325,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		case 301: {
 			if(response) {
 				if(CleanerJob[playerid] == 0) {
-					if(UserData[playerid][pMember] > 0) return error(playerid, "Tqven xart gawevrianebuli organizaciashi, amitom ar shegidzliat mushaoba");
+					if(UserData[playerid][pMember] > 0) return error(playerid, "Tkven xart gawevrianebuli organizaciashi, amitom ar shegidzliat mushaoba");
 					success(playerid, "Rodesac daamtavrebt samsaxurs dabrundit ukan da gamoicvalet forma");
 					
 					SetPlayerSkin(playerid, 42);
@@ -4350,7 +4353,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					return true;
 				}
 				if(CleanerJob[playerid] == 1) {
-					success(playerid, "Tqven daasrulet mushaoba dasuftavebis samsaxurshi");
+					success(playerid, "Tkven daasrulet mushaoba dasuftavebis samsaxurshi");
 					CleanerJob[playerid] = 0;
 					CleanerCP[playerid] = 0;
 
@@ -4372,8 +4375,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		case 305: {
 			if(response) {
 				if(WarehouseJob[playerid] == 0) {
-					if(UserData[playerid][pMember] > 0) return error(playerid, "Tqven xart gawevrianebuli organizaciashi, amitom ar shegidzliat mushaoba");
-					success(playerid, "Tqven daiwyet mushaoba materialebis dammzadeblad, midit pickuptan da daachiret 'ALT's");
+					if(UserData[playerid][pMember] > 0) return error(playerid, "Tkven xart gawevrianebuli organizaciashi, amitom ar shegidzliat mushaoba");
+					success(playerid, "Tkven daiwyet mushaoba materialebis dammzadeblad, midit pickuptan da daachiret 'ALT's");
 					success(playerid, "Rodesac daamtavrebt samsaxurs dabrundit ukan da gamoicvalet forma");
 
 					SetPlayerSkin(playerid, 27);
@@ -4388,7 +4391,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					return true;
 				}
 				if(WarehouseJob[playerid] == 1) {
-					success(playerid, "Tqven daasrulet mushaoba rogorc materialebis dammzadebeli");
+					success(playerid, "Tkven daasrulet mushaoba rogorc materialebis dammzadebeli");
 					WarehouseJob[playerid] = 0;
 
 					GiveUserMoney(playerid, Payment[playerid]);
@@ -4404,8 +4407,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		case 306: {
 			if(response) {
 				if(MtvirtaviJob[playerid] == 0) {
-					if(UserData[playerid][pMember] > 0) return error(playerid, "Tqven xart gawevrianebuli organizaciashi, amitom ar shegidzliat mushaoba");
-					success(playerid, "Tqven daiwyet mushaoba mtvirtavad, midit pickuptan da daachiret 'ALT's");
+					if(UserData[playerid][pMember] > 0) return error(playerid, "Tkven xart gawevrianebuli organizaciashi, amitom ar shegidzliat mushaoba");
+					success(playerid, "Tkven daiwyet mushaoba mtvirtavad, midit pickuptan da daachiret 'ALT's");
 					success(playerid, "Rodesac daamtavrebt samsaxurs dabrundit ukan da gamoicvalet forma");
 
 					SetPlayerSkin(playerid, 27);
@@ -4420,7 +4423,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					return true;
 				}
 				if(MtvirtaviJob[playerid] == 1) {
-					success(playerid, "Tqven daasrulet mushaoba mtvirtavad");
+					success(playerid, "Tkven daasrulet mushaoba mtvirtavad");
 					MtvirtaviJob[playerid] = 0;
 
 					GiveUserMoney(playerid, Payment[playerid]);
@@ -4437,8 +4440,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			if(response) {
 				for(new h = 0; h <= TotalHouse; h ++) {
 					if(PlayerToPoint(2.0, playerid, HouseData[h][hEnterX], HouseData[h][hEnterY], HouseData[h][hEnterZ])) {
-						if(UserData[playerid][pHouse] != -1 && strcmp(Name(playerid), HouseData[UserData[playerid][pHouse]][hOwner], true) == 0) return error(playerid, "Tqven ukve gaqvt shedzenili saxli");
-						if(UserData[playerid][pCash] < HouseData[h][hPrice]) return error(playerid, "Tqven ar gaqvt sakmarisi tanxa");
+						if(UserData[playerid][pHouse] != -1 && strcmp(Name(playerid), HouseData[UserData[playerid][pHouse]][hOwner], true) == 0) return error(playerid, "Tkven ukve gaqvt shedzenili saxli");
+						if(UserData[playerid][pCash] < HouseData[h][hPrice]) return error(playerid, "Tkven ar gaqvt sakmarisi tanxa");
 
 						UserData[playerid][pHouse] = h;
 					    UpdateUserData(playerid, "pHouse", UserData[playerid][pHouse]);
@@ -4450,7 +4453,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					    UpdateHouse(house);
 					    SaveHouse(house);
 
-					    success(playerid, "Tqven warmatebit sheidzinet saxli. Ar dagaviwyet saxlis angarishis shevseba");
+					    success(playerid, "Tkven warmatebit sheidzinet saxli. Ar dagaviwyet saxlis angarishis shevseba");
 						success(playerid, "Saxlis panelis samartavad gamoiyenet brdzaneba: {2ECC71}/hpanel");
 					}	
 				}
@@ -4463,7 +4466,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					if(PlayerToPoint(2.0, playerid, HouseData[h][hEnterX], HouseData[h][hEnterY], HouseData[h][hEnterZ])) {
 						if(UserData[playerid][pHouse] == h || HouseData[h][hLock] == 0) {
              				SetPlayerInterior(playerid, HouseData[h][hInt]);
-							SetPlayerVirtualWorld(playerid, h + 50);
+							SetPlayerVirtualWorld(playerid, h);
 							SetPlayerPosEx(playerid, HouseData[h][hExitX], HouseData[h][hExitY], HouseData[h][hExitZ]);
 						}
 						else return GameTextForPlayer(playerid, "~r~Locked", 1000, 1);
@@ -4475,16 +4478,17 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		case 403: {
 			if(response) {
 				new h = UserData[playerid][pHouse];
-				if(h == -1) return error(playerid, "Tqven ar gaqvt saxli");
+				if(h == -1) return error(playerid, "Tkven ar gaqvt saxli");
 	    	    HouseData[h][hLock] = 0;
 	    	    HouseData[h][hOwned] = 0;
+	    	    HouseData[h][hGarage] = 0;
 	    	    strmid(HouseData[h][hOwner], "The State", 0, strlen("The State"), 15);
 	    	    GiveUserMoney(playerid, HouseData[h][hPrice]*3/4);
 	    	    UpdateHouse(h);
 	    	    SaveHouse(h);
 	    	    UserData[playerid][pHouse] = -1;
 	    	    UpdateUserData(playerid, "pHouse", UserData[playerid][pHouse]);	
-	    	    success(playerid, "Tqven gayidet tqveni saxli");
+	    	    success(playerid, "Tkven gayidet tkveni saxli");
 			}
 			else return true;
 		}
@@ -4580,8 +4584,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 			if(response) {
 				for(new h = 0; h <= TotalBizz; h ++) {
 					if(PlayerToPoint(2.0, playerid, BizzData[h][bEnterX], BizzData[h][bEnterY], BizzData[h][bEnterZ])) {
-						if(UserData[playerid][pBizz] != -1 && strcmp(Name(playerid), BizzData[UserData[playerid][pBizz]][bOwner], true) == 0) return error(playerid, "Tqven ukve gaqvt shedzenili saxli");
-						if(UserData[playerid][pCash] < BizzData[h][bPrice]) return error(playerid, "Tqven ar gaqvt sakmarisi tanxa");
+						if(UserData[playerid][pBizz] != -1 && strcmp(Name(playerid), BizzData[UserData[playerid][pBizz]][bOwner], true) == 0) return error(playerid, "Tkven ukve gaqvt shedzenili saxli");
+						if(UserData[playerid][pCash] < BizzData[h][bPrice]) return error(playerid, "Tkven ar gaqvt sakmarisi tanxa");
 
 						UserData[playerid][pBizz] = h;
 					    UpdateUserData(playerid, "pBizz", UserData[playerid][pBizz]);
@@ -4592,7 +4596,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 						new bizz = UserData[playerid][pBizz];
 					    SaveBizz(bizz);
 
-					    success(playerid, "Tqven warmatebit sheidzinet biznesi. Ar dagaviwyet produqciis shevseba");
+					    success(playerid, "Tkven warmatebit sheidzinet biznesi. Ar dagaviwyet produqciis shevseba");
 						success(playerid, "Biznesis panelis samartavad gamoiyenet brdzaneba: {2ECC71}/bpanel");
 					}	
 				}
@@ -4660,7 +4664,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		case 413: {
 			if(response) {
 				new h = UserData[playerid][pBizz];
-				if(h == -1) return error(playerid, "Tqven ar gaqvt biznesi");
+				if(h == -1) return error(playerid, "Tkven ar gaqvt biznesi");
 	    	    BizzData[h][bLock] = 0;
 	    	    BizzData[h][bOwned] = 0;
 	    	    strmid(BizzData[h][bOwner], "The State", 0, strlen("The State"), 15);
@@ -4668,7 +4672,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	    	    SaveBizz(h);
 	    	    UserData[playerid][pBizz] = -1;
 	    	    UpdateUserData(playerid, "pBizz", UserData[playerid][pBizz]);
-	    	    success(playerid, "Tqven gayidet tqveni biznesi");
+	    	    success(playerid, "Tkven gayidet tkveni biznesi");
 			}
 			else return true;
 		}
@@ -4679,12 +4683,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 						for(new h = 0; h <= TotalBizz; h ++) {
 							if(PlayerToPoint(2.0, playerid, BizzData[h][bBuyX], BizzData[h][bBuyY], BizzData[h][bBuyZ])) {
 								if(GetPlayerVirtualWorld(playerid) == h + 50) {
-									if(UserData[playerid][pCash] < 1000) return error(playerid, "Tqven ar gaqvt sakmarisi tanxa");
-									if(UserData[playerid][pMobile] > 0) return error(playerid, "Tqven ukve nayidi gaqvt mobiluri telefoni");
+									if(UserData[playerid][pCash] < 1000) return error(playerid, "Tkven ar gaqvt sakmarisi tanxa");
+									if(UserData[playerid][pMobile] > 0) return error(playerid, "Tkven ukve nayidi gaqvt mobiluri telefoni");
 									GiveUserMoney(playerid, -1000);
 									UserData[playerid][pMobile] = 1;
 									UpdateUserData(playerid, "pMobile", UserData[playerid][pMobile]);
-									success(playerid, "Tqven sheidzinet mobiluri telefoni");
+									success(playerid, "Tkven sheidzinet mobiluri telefoni");
 
 									BizzData[h][bBank] += 1000*3/4;
 									SaveBizz(h);
@@ -4696,12 +4700,12 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 						for(new h = 0; h <= TotalBizz; h ++) {
 							if(PlayerToPoint(2.0, playerid, BizzData[h][bBuyX], BizzData[h][bBuyY], BizzData[h][bBuyZ])) {
 								if(GetPlayerVirtualWorld(playerid) == h + 50) {
-									if(UserData[playerid][pCash] < 700) return error(playerid, "Tqven ar gaqvt sakmarisi tanxa");
-									if(UserData[playerid][pClock] > 0) return error(playerid, "Tqven ukve nayidi gaqvt saati");
+									if(UserData[playerid][pCash] < 700) return error(playerid, "Tkven ar gaqvt sakmarisi tanxa");
+									if(UserData[playerid][pClock] > 0) return error(playerid, "Tkven ukve nayidi gaqvt saati");
 									GiveUserMoney(playerid, -700);
 									UserData[playerid][pClock] = 1;
 									UpdateUserData(playerid, "pClock", UserData[playerid][pClock]);
-									success(playerid, "Tqven sheidzinet saati");
+									success(playerid, "Tkven sheidzinet saati");
 
 									BizzData[h][bBank] += 700*3/4;
 									SaveBizz(h);
@@ -4739,7 +4743,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 		}
 		case 600: {
 			if(response) {
-				if(!IsInAllowed(playerid)) return error(playerid, "Tqven ar xart bandis wevri");
+				if(!IsInAllowed(playerid)) return error(playerid, "Tkven ar xart bandis wevri");
 				switch(listitem) {
 					case 0: {
 						ShowPlayerDialog(playerid, 601, DIALOG_STYLE_INPUT, "{FFFFFF}Gang",
@@ -4767,7 +4771,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	        	}
 	        	new ammo = strval(inputtext);
 				if(FractionData[UserData[playerid][pMember]][wAmmo] < ammo) return error(playerid, "Sawyobshi ar aris sakmarisi materiali");
-				if(Materials[playerid] + ammo > 600) return error(playerid, "Tqven vegar dagetevat mititebuli materialebis raodenoba, max: 600");
+				if(Materials[playerid] + ammo > 600) return error(playerid, "Tkven vegar dagetevat mititebuli materialebis raodenoba, max: 600");
 				
 				FractionData[UserData[playerid][pMember]][wAmmo] -= ammo;
 				SaveFraction(UserData[playerid][pMember]);
@@ -4791,7 +4795,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	        	}
 	        	new ammo = strval(inputtext);
 				if(FractionData[UserData[playerid][pMember]][wDrug] < ammo) return error(playerid, "Sawyobshi ar aris sakmarisi materiali");
-				if(Drugs[playerid] + ammo > 100) return error(playerid, "Tqven vegar dagetevat mititebuli gramebis raodenoba, max: 100");
+				if(Drugs[playerid] + ammo > 100) return error(playerid, "Tkven vegar dagetevat mititebuli gramebis raodenoba, max: 100");
 				
 				FractionData[UserData[playerid][pMember]][wDrug] -= ammo;
 				SaveFraction(UserData[playerid][pMember]);
@@ -4827,7 +4831,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				switch(listitem) {
 					case 0: ShowPlayerDialog(playerid, 606, DIALOG_STYLE_INPUT, "{FFFFFF}DeathMatch",
 					"{FFFFFF}- Airchiet meore iaragi romelic gindat gqondet -\n\n\
-					{FFFFFF}Miutitet tqventvis sasurveli iaragis ID:\n\
+					{FFFFFF}Miutitet tkventvis sasurveli iaragis ID:\n\
 					1 - Deagle | 2 - Shotgun | 3 - M4 | 4 - AK-47 | 5 - Country rifle | 6 - MP5\n\n\
 					{F0A45D}* Rodesac airchevt iarags daachiret 'Next' gilaks", "Next", "Cancel");
 					case 1: {
@@ -4886,7 +4890,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					case 2: {
 					    new string[1300];
 					    format(string, sizeof(string), "{FFFFFF}- Shecvalet migebis minimaluri ranki -\
-						\n\n{FFFFFF}Daaweset tu ramden ranks sheedzlos migeba tqvens fraqciashi\
+						\n\n{FFFFFF}Daaweset tu ramden ranks sheedzlos migeba tkvens fraqciashi\
 					    \n{FFFFFF}Gaitvaliswinet, ecadet miutitot gonivruli ranki\
 					    \n\n{F0A45D}* Rodesac miutitebt cifrs daachiret 'Next' gilaks");
 						ShowPlayerDialog(playerid, 704, DIALOG_STYLE_INPUT, "{FFFFFF}Leader Menu", string, "Next", "Cancel");
@@ -4921,13 +4925,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	        	}
 				new value = strval(inputtext);
 				new fracid = UserData[playerid][pMember];
-				if(value >= UserData[playerid][pRank]) return error(playerid, "Tqven ranks an tqvenze magals ver daayenebt");
-				if(value < 4) return error(playerid, "Tqven miutitet zedmetad dabali ranki");
+				if(value >= UserData[playerid][pRank]) return error(playerid, "Tkven ranks an tkvenze magals ver daayenebt");
+				if(value < 4) return error(playerid, "Tkven miutitet zedmetad dabali ranki");
 
 				FractionData[fracid][wInviteRank] = value;
 				SaveFraction(fracid);
 
-				success(playerid, "Tqven daayenet migebis minimaluri ranki");
+				success(playerid, "Tkven daayenet migebis minimaluri ranki");
 			}
 			else return true;	
 		}
@@ -4943,7 +4947,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 					case 5: SetPVarInt(playerid, "FractionSkinID", 5);
 				}
 				new string[1300];
-				format(string, sizeof(string), "{FFFFFF}- Shecvalet tqveni fraqciis skinebi -\
+				format(string, sizeof(string), "{FFFFFF}- Shecvalet tkveni fraqciis skinebi -\
 				\n\n{FFFFFF}Miutitet romeli skinis dayeneba sheedzlot fraqciis wevrebs\
 				\n{FFFFFF}Gaitvaliswinet, miutitet swori skinis id\
 				\n\n{F0A45D}* Rodesac miutitebt skinis id's daachiret 'Next' gilaks");
@@ -4961,14 +4965,14 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	        	}
 	        	new fracid = UserData[playerid][pMember];
 				new value = strval(inputtext);
-				if(value > 311 || value < 1 || value == 74) return error(playerid, "Tqven miutitet araswori skinis id");
+				if(value > 311 || value < 1 || value == 74) return error(playerid, "Tkven miutitet araswori skinis id");
 
 				new skinid = GetPVarInt(playerid, "FractionSkinID");
 
 				FractionData[fracid][wSkin][skinid] = value;
 				SaveFraction(fracid);
 
-				success(playerid, "Tqven shecvalet tqveni fraqciis skinis id");
+				success(playerid, "Tkven shecvalet tkveni fraqciis skinis id");
 			}
 			else return true;
 		}
@@ -4999,7 +5003,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	    			case 0: ShowStats(playerid, playerid);
 	    			case 1: ShowPlayerDialog(playerid, 801, DIALOG_STYLE_LIST, "Personajis parametrebi", "Sqesis shecvla\nParolis shecvla\nDacvis dayeneba", "Next", "Back");
 	    			case 2: ShowPlayerDialog(playerid, 802, DIALOG_STYLE_LIST, "Serveris brdzanebebi", "Chveulebrivi\nChat\nChemi Brdzanebebi\nLeader\nSaxli\nBiznesi\nAvtomobili", "Next", "Back");
-	    			case 3: ShowPlayerDialog(playerid, 803, DIALOG_STYLE_INPUT, "Gaagzavne text admintan", "Tqven gzavnit reports\nReporti gamoiyenet danishnulemisamebr\nReportshi ganixileba mxolod rac aris servertan kavshirshi", "Next", "Back");
+	    			case 3: ShowPlayerDialog(playerid, 803, DIALOG_STYLE_INPUT, "Gaagzavne text admintan", "Tkven gzavnit reports\nReporti gamoiyenet danishnulemisamebr\nReportshi ganixileba mxolod rac aris servertan kavshirshi", "Next", "Back");
 	    			case 4: return true;
 	    			case 5: PC_EmulateCommand(playerid, "/quest");
 	    		}
@@ -5019,9 +5023,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 						    UserData[playerid][pSex] = 1;
 						}
 						UpdateUserData(playerid, "pSex", UserData[playerid][pSex]);
-						success(playerid, "Tqven sheicvalet sqesi");
+						success(playerid, "Tkven sheicvalet sqesi");
 	    			}
-	    			case 1: ShowPlayerDialog(playerid, 810, DIALOG_STYLE_INPUT, "Tqveni parolis shecvla", "{FFFFFF}Miutitet Tkventvis Misagebi Axali Paroli\nParoli Unda Shedgebodes Minimum: {FF9900}6{FFFFFF} Da Maxsimum: {FF9900}10{FFFFFF}Simbolosgan", "Next", "Back");
+	    			case 1: ShowPlayerDialog(playerid, 810, DIALOG_STYLE_INPUT, "Tkveni parolis shecvla", "{FFFFFF}Miutitet Tkventvis Misagebi Axali Paroli\nParoli Unda Shedgebodes Minimum: {FF9900}6{FFFFFF} Da Maxsimum: {FF9900}10{FFFFFF}Simbolosgan", "Next", "Back");
 	    			case 2: return true;
 	    		}
 	    	}
@@ -5037,7 +5041,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 				mysql_tquery(connects, query);
 
 				new string[500];
-				format(string, sizeof(string), "{63BD4E}[Main Menu] {FFFFFF}Tqveni accountis moqmedi parolia: {63BD4E}%s", inputtext);
+				format(string, sizeof(string), "{63BD4E}[Main Menu] {FFFFFF}tkveni accountis moqmedi parolia: {63BD4E}%s", inputtext);
 				SendClientMessage(playerid, -1, string);
 				return true;
 			}
@@ -5076,7 +5080,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 							SendClientMessage(playerid,0x83BFBFAA, "<> /lpanel /invite /uninvite /giverank /offmembers /offuninvite");
 						}
 						else {
-							error(playerid, "Tqven ar xart arcerti organizaciis lideri");
+							error(playerid, "Tkven ar xart arcerti organizaciis lideri");
 						}
 					}
 					case 4: {
@@ -5101,7 +5105,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]) {
 	    		new string[500];
 	    		format(string, sizeof(string), "[REPORT] - %s(%d) : %s", Name(playerid),playerid,inputtext);
 	    		SendAdminMessage(0xECFF00FF, string);
-	    		success(playerid, "Tqven gaagzavnet report administratortan");
+	    		success(playerid, "Tkven gaagzavnet report administratortan");
 	    	}
 	    	else PC_EmulateCommand(playerid, "/mm");
 	    }
@@ -5202,7 +5206,7 @@ publics: OnPlayerClickTextDraw(playerid, Text:clickedid) {
 			
 			for(new i; i < 8; i++) TextDrawHideForPlayer(playerid, enable_skin_TD[i]);
 		    CancelSelectTextDraw(playerid), SetPVarInt(playerid, "Choose_Skin", 0);
-		   	success(playerid, "Tqven sheidzinet axali tansacmeli");
+		   	success(playerid, "Tkven sheidzinet axali tansacmeli");
 		}
 	    if(clickedid == enable_skin_TD[4] || (clickedid == Text:INVALID_TEXT_DRAW)) {
 	        new bizid = GetPVarInt(playerid, "BUSINESS_ID");
@@ -5604,10 +5608,10 @@ publics: OnPlayerClickTextDraw(playerid, Text:clickedid) {
 	}
 	if(clickedid == RentTD_G[0]) {
 		if(GetPVarInt(playerid, "veh_rent") != -1) {
-			return error(playerid, "Tqven ukve naqiravebi gyavt avtomobili");
+			return error(playerid, "Tkven ukve naqiravebi gyavt avtomobili");
 		}
 		if(UserData[playerid][pCash] < Rent_Price[playerid])
-			return error(playerid, "Tqven ar gaqvt sakmarisi tanxa");
+			return error(playerid, "Tkven ar gaqvt sakmarisi tanxa");
 		rentID[playerid] = CreateVehicle(Rent_Choose[playerid], 1685.9121,-2316.9607,-3.1776,89.2909, 145, 145, 86400);
 		PutPlayerInVehicle(playerid, rentID[playerid], 0);
 		GiveUserMoney(playerid, -Rent_Price[playerid]);
@@ -5620,7 +5624,7 @@ publics: OnPlayerClickTextDraw(playerid, Text:clickedid) {
 		CancelSelectTextDraw(playerid);
         Rent_Choose[playerid] = 0;
 		Rent_Price[playerid] = 0;
-        success(playerid, "Tqven iqiravet manqana");
+        success(playerid, "Tkven iqiravet manqana");
 	}
 	if(GetPVarInt(playerid, "SelectAvto") != -1)
 	{
@@ -5675,7 +5679,7 @@ CMD:buycar(playerid, params[])
 CMD:event(playerid, params[]) {
 	if(Login[playerid] == false) return true;
 	if(UserData[playerid][pAdmin] < 3) return 1;
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(eventtime > 0) return error(playerid, "Event ukve tardeba");
     if(sscanf(params, "ds[100]",params[0],params[1])) return formatmsg(playerid, "/event [Second] [Name]");
     if(params[0] > 180 || params[0] < 20) return error(playerid, "Wamebi 20'dan 180'me");
@@ -5695,7 +5699,7 @@ CMD:gotp(playerid, params[]) {
 	SetPlayerPosEx(playerid, eventpos[0], eventpos[1], eventpos[2]);
 	SetPlayerInterior(playerid, eventint);
 	SetPlayerVirtualWorld(playerid, eventvw);
-	success(playerid, "Tqven mixvedit event'ze");
+	success(playerid, "Tkven mixvedit event'ze");
 	return 1;
 }
 CMD:gps(playerid, params[]) {
@@ -5761,7 +5765,7 @@ CMD:leave(playerid) {
 			SetPlayerSkin(playerid, UserData[playerid][pSkin]);
 		}
 		else {
-		    error(playerid, "Tqven xart organizaciis lideri, gtxovt tavis moxsnamde miswerot administracias");
+		    error(playerid, "Tkven xart organizaciis lideri, gtxovt tavis moxsnamde miswerot administracias");
 		}
 	}
 	return true;
@@ -5769,7 +5773,7 @@ CMD:leave(playerid) {
 CMD:lock(playerid, params[]) {
 	if(Login[playerid] == false) return true;
 	if(sscanf(params,"d",params[0])) return SendClientMessage(playerid,-1,"Gamoiyenet: /lock [transportis id]");
-	if(!IsPlayersCar(playerid,params[0])) return SendClientMessage(playerid,-1,"Es transporti ar gekutvnit tqven.");
+	if(!IsPlayersCar(playerid,params[0])) return SendClientMessage(playerid,-1,"Es transporti ar gekutvnit tkven.");
 	new Float:X,Float:Y,Float:Z;
 	GetVehiclePos(params[0],X,Y,Z);
 	if(!IsPlayerInRangeOfPoint(playerid,8.0,X,Y,Z)) return SendClientMessage(playerid,-1,"Ar xart transporttan axlos");
@@ -5812,14 +5816,14 @@ CMD:sellcar(playerid) {
 	if(Login[playerid] == false) return true;
     new carid = GetPlayerVehicleID(playerid);
 	if(!IsAOwnableCar(carid)) return 1;
-	if(!IsPlayerInOwnedVehicle(playerid)) return SendClientMessage(playerid, -1, "Tqven ar zixart tqvens transportshi");
+	if(!IsPlayerInOwnedVehicle(playerid)) return SendClientMessage(playerid, -1, "Tkven ar zixart tkvens transportshi");
 	ShowPlayerDialog(playerid,5015,0,"Sellcar","{FFFFFF}Namdvilad gsurt transportis gayidva?","Sell","Cancel");
 	return 1;
 }
 CMD:pm(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ds[64]",params[0], params[1])) return formatmsg(playerid, "/pm [ID] [Text]");
 
 	new string[500];
@@ -5831,8 +5835,8 @@ CMD:pm(playerid, params[]) {
 }
 CMD:unbanip(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "s[64]", params[0])) return formatmsg(playerid, "/unbanip [IP]");
 
 	// ---------- //
@@ -5852,8 +5856,8 @@ CMD:unbanip(playerid, params[]) {
 }
 CMD:banip(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ds[32]",params[0], params[1])) return formatmsg(playerid, "/banip [Day] [IP]");
 
 	format(YCMDstr, sizeof(YCMDstr), "%s'm(a) daado banip %d dgit ip: %s's", Name(playerid), params[0], params[1]);
@@ -5870,8 +5874,8 @@ CMD:banip(playerid, params[]) {
 CMD:banlist(playerid) {
 	new AleadersString[8000], Names[MAX_PLAYER_NAME], GetBan;
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
     format(YCMDstr, sizeof(YCMDstr), "SELECT * FROM `accounts` WHERE `pBan` = '1'");
 	mysql_query(connects,YCMDstr);
 	new bnacc = 0, banstr[120];
@@ -5891,8 +5895,8 @@ CMD:banlist(playerid) {
 }
 CMD:unban(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "s[128]",params[0])) return formatmsg(playerid, "/unban [Username]");
 	// ---------- //
 	format(YCMDstr,sizeof(YCMDstr),"SELECT `pName` FROM `accounts` WHERE `pName` = '%s' ", params[0]);
@@ -5910,8 +5914,8 @@ CMD:unban(playerid, params[]) {
 }
 CMD:ban(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "uds[64]", params[0], params[1], params[2])) return formatmsg(playerid, "/ban [ID] [Day] [Reason]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 
@@ -5929,15 +5933,15 @@ CMD:ban(playerid, params[]) {
 	new ip[15]; GetPlayerIp(params[0], ip, 15);
 	format(YCMDstr, sizeof(YCMDstr), "Saxeli: %s | IP misamarti: %s |",Name(params[0]), ip); SendAdminMessage(0xEF545DFF, YCMDstr);	
 
-	SendClientMessage(params[0], 0xEF545DFF, "Tqven dagedot ban! tu tvlit, rom arasworad dagades gadaiget screen da atvirtet jgufshi - {FFFFFF}[ F8 ]");
+	SendClientMessage(params[0], 0xEF545DFF, "Tkven dagedot ban! tu tvlit, rom arasworad dagades gadaiget screen da atvirtet jgufshi - {FFFFFF}[ F8 ]");
 
 	srvKick(params[0]);
  	return true;
 }
 CMD:offban(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "s[128]",params[0])) return formatmsg(playerid, "/offban [Motamashis Saxeli]");
 	format(YCMDstr,sizeof(YCMDstr),"SELECT `pName` FROM `accounts` WHERE pName = '%s' ", params[0]);
 	mysql_query(connects,YCMDstr);
@@ -5953,8 +5957,8 @@ CMD:offban(playerid, params[]) {
 }
 CMD:offleader(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "s[128]",params[0])) return formatmsg(playerid, "/offleader [Motamashis Saxeli]");
 	format(YCMDstr,sizeof(YCMDstr),"SELECT `pName` FROM `accounts` WHERE pName = '%s' ", params[0]);
 	mysql_query(connects,YCMDstr);
@@ -5982,8 +5986,8 @@ CMD:offadmin(playerid, params[]) {
 }
 CMD:getip(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "d",params[0])) return formatmsg(playerid, "/getip [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe aseti ar moidzebna");
 	new ip[15]; GetPlayerIp(params[0],ip,15);
@@ -5992,11 +5996,11 @@ CMD:getip(playerid, params[]) {
 }
 CMD:setskin(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ud", params[0], params[1])) return formatmsg(playerid, "/setskin [ID] [Skin ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
-	if(params[1] > 311 || params[1] < 1 || params[1] == 74) return error(playerid, "Tqven miutitet araswori skinis id");
+	if(params[1] > 311 || params[1] < 1 || params[1] == 74) return error(playerid, "Tkven miutitet araswori skinis id");
 	SetPlayerSkin(params[0], params[1]);
 	UserData[params[0]][pSkin] = params[1];
 	UpdateUserData(params[0], "pSkin", UserData[params[0]][pSkin]);
@@ -6006,13 +6010,13 @@ CMD:setskin(playerid, params[]) {
 }
 CMD:setlvl(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 6) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 6) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ud",params[0], params[1])) return formatmsg(playerid, "/setlvl [ID] [LVL]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	UserData[params[0]][pLevel] = params[1];
 	UpdateUserData(params[0], "pLevel", UserData[params[0]][pLevel]);
-	format(YCMDstr, sizeof(YCMDstr), "{F0A45D}Administratorma %s'm(a) shegicvalat lvl, tqveni lvl gaxda: %d", Name(playerid), params[1]); SendClientMessage(params[0], -1, YCMDstr);
+	format(YCMDstr, sizeof(YCMDstr), "{F0A45D}Administratorma %s'm(a) shegicvalat lvl, tkveni lvl gaxda: %d", Name(playerid), params[1]); SendClientMessage(params[0], -1, YCMDstr);
 	format(YCMDstr, sizeof(YCMDstr), "{F0A45D}Tqven %s's shecvalet level", Name(params[0])); SendClientMessage(playerid, -1, YCMDstr);
 	return true;
 }
@@ -6106,7 +6110,7 @@ CMD:asetpass(playerid, params[]) {
 		if(sscanf(params, "s[128]s[128]",params[0],params[1])) return formatmsg(playerid, "/asetpass [Saxeli] [Paroli]");
 		format(YCMDstr, sizeof(YCMDstr), "UPDATE accounts SET pPassword = '%s' WHERE pName = '%s'",params[1],params[0]);
 		mysql_query(connects,YCMDstr);
-		format(YCMDstr, sizeof(YCMDstr), "Tqven Sheucvalet %s's Paroli Da Dauyenet: %s",params[0],params[1]);
+		format(YCMDstr, sizeof(YCMDstr), "Tkven Sheucvalet %s's Paroli Da Dauyenet: %s",params[0],params[1]);
 		SendClientMessage(playerid, -1, YCMDstr);
 	}
 	return true;
@@ -6162,8 +6166,8 @@ CMD:trailer(playerid) {
 }
 CMD:payday(playerid) {
 	if(Login[playerid] == false) return true;
-	if(!Developer(playerid)) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(!Developer(playerid)) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	PayDay();
 	return true;
 }
@@ -6172,8 +6176,8 @@ cmd:startcapture(playerid){
 }
 CMD:mutelist(playerid) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	new countmute = 0;
 	foreach(new i:Player) {
 		if(UserData[i][pMute] >= 1 && IsPlayerConnected(i)) {
@@ -6191,8 +6195,8 @@ CMD:mutelist(playerid) {
 }
 CMD:mute(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "uds[128]",params[0],params[1],params[2])) return	formatmsg(playerid, "/mute [ID] [Time] [Reason]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(UserData[params[0]][pMute] == 1) {
@@ -6216,8 +6220,8 @@ CMD:mute(playerid, params[]) {
 }
 CMD:slap(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 2) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 2) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/slap [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	new Float:slx, Float:sly, Float:slz;
@@ -6230,8 +6234,8 @@ CMD:slap(playerid, params[]) {
 }
 CMD:ooc(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 2) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 2) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "s[512]", params[0])) return formatmsg(playerid, "/o(oc) [Text]");
 	UsingAdress(playerid, params[0]);
 	new oocstr[256];
@@ -6249,8 +6253,8 @@ CMD:ooc(playerid, params[]) {
 }
 CMD:gzcolor(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "d",params[0])) return formatmsg(playerid, "/gzcolor [Fraction ID]");
 	for(new i = 0; i < 130; i++) {
 		if(PlayerInZone(playerid,ZoneInfo[i][gCoords][0], ZoneInfo[i][gCoords][1],ZoneInfo[i][gCoords][2],ZoneInfo[i][gCoords][3])) {
@@ -6280,8 +6284,8 @@ CMD:gzcolor(playerid, params[]) {
 }
 CMD:aduty(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	new string[256];
 	if(AdminDuty[playerid] == false) {
 		AdminDuty[playerid] = true;
@@ -6298,11 +6302,11 @@ CMD:aduty(playerid, params[]) {
 }
 CMD:goto(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/goto [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
-	if(UserData[params[0]][pAdmin] > UserData[playerid][pAdmin]) return error(playerid, "Tqvenze magal leveltan ver mixvalt");
+	if(UserData[params[0]][pAdmin] > UserData[playerid][pAdmin]) return error(playerid, "Tkvenze magal leveltan ver mixvalt");
 	new Float:plocx,Float:plocy,Float:plocz;
 	if(GetPlayerState(params[0]) != 1 && GetPlayerState(params[0]) != 2 && GetPlayerState(params[0]) != 3) return error(playerid, "Motamashe ar daspawnebula");
 	if(GetPlayerState(params[0]) == PLAYER_STATE_SPECTATING && gSpectateID[params[0]] != INVALID_PLAYER_ID) return error(playerid, "Admin aris gasuli recon'ze");
@@ -6320,11 +6324,11 @@ CMD:goto(playerid, params[]) {
 }
 CMD:gethere(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/gethere [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
-	if(UserData[params[0]][pAdmin] > UserData[playerid][pAdmin]) return error(playerid, "Tqvenze magal levels ver uzamt teleports");
+	if(UserData[params[0]][pAdmin] > UserData[playerid][pAdmin]) return error(playerid, "Tkvenze magal levels ver uzamt teleports");
 	new Float:tpx, Float:tpy, Float:tpz;
 	GetPlayerPos(playerid, tpx, tpy, tpz);
 	new vw = GetPlayerVirtualWorld(playerid);
@@ -6336,8 +6340,8 @@ CMD:gethere(playerid, params[]) {
 }
 CMD:sethp(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
     if(sscanf(params, "ud",params[0],params[1])) return	formatmsg(playerid, "/sethp [ID] [HP]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
     if(params[1] < 0 || params[1] > 160) return true;
@@ -6347,8 +6351,8 @@ CMD:sethp(playerid, params[]) {
 }
 CMD:setarm(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
     if(sscanf(params, "ud",params[0],params[1])) return	formatmsg(playerid, "/setarm [ID] [Value]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
     if(params[1] < 0 || params[1] > 100) return true;
@@ -6358,8 +6362,8 @@ CMD:setarm(playerid, params[]) {
 }
 CMD:auninvite(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "d",params[0])) return formatmsg(playerid, "/auninvite [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	
@@ -6371,7 +6375,7 @@ CMD:auninvite(playerid, params[]) {
 	new string[500];
 	format(string, sizeof(string), "Administratorma: {F0A45D}%s{FFFFFF}'m(a) mogxsnat organizaciidan", Name(playerid));
 	SendClientMessage(id, -1, string);
-	format(string, sizeof(string), "Tqven moxsenit motamashe {F0A45D}%s[%d]{FFFFFF} organizaciidan", Name(id), id);
+	format(string, sizeof(string), "Tkven moxsenit motamashe {F0A45D}%s[%d]{FFFFFF} organizaciidan", Name(id), id);
 	SendClientMessage(playerid, -1, string);
 
 	SetPlayerSkin(id, UserData[id][pSkin]);
@@ -6379,11 +6383,11 @@ CMD:auninvite(playerid, params[]) {
 }
 CMD:recon(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "d",params[0])) return formatmsg(playerid, "/re(con) [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
-	if(params[0] == playerid) return error(playerid, "Tqven tavs ver daakvirdebit");
+	if(params[0] == playerid) return error(playerid, "Tkven tavs ver daakvirdebit");
 	if(!IsPlayerConnected(params[0])) return true;
 	if(GetPlayerState(params[0]) == PLAYER_STATE_SPECTATING && gSpectateID[params[0]] != INVALID_PLAYER_ID) return error(playerid, "Motamashes ukve akvirdebian");
 	if(GetPlayerState(params[0]) != 1 && GetPlayerState(params[0]) != 2 && GetPlayerState(params[0]) != 3) return error(playerid, "Motamashe ar daspawnebula");
@@ -6392,8 +6396,8 @@ CMD:recon(playerid, params[]) {
 }
 CMD:reconoff(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(GetPlayerState(playerid) != PLAYER_STATE_SPECTATING) return true;
 	StopSpectate(playerid);
 	return true;
@@ -6404,14 +6408,14 @@ CMD:boss(playerid, params[]) {
 		UserData[playerid][pAdmin] = 7;
 		UserData[playerid][pAdminLogin] = 1;
 		UpdateUserData(playerid, "pAdminLogin", UserData[playerid][pAdminLogin]);
-		success(playerid, "Tqven warmatebit gaiaret boss'is avtorizacia");
+		success(playerid, "Tkven warmatebit gaiaret avtorizacia rogorc serveris mflobelma");
 	}
 	return 1;
 }
 CMD:kick(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "us[256]",params[0],params[1])) return formatmsg(playerid, "/kick [ID] [Reason]");
 	UsingAdress(playerid, params[1]);
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
@@ -6425,10 +6429,10 @@ CMD:kick(playerid, params[]) {
 }
 CMD:skin(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "d", params[0])) return formatmsg(playerid, "/skin [Skin ID]");
-	if(params[0] > 311 || params[0] < 1 || params[0] == 74) return error(playerid, "Tqven miutitet araswori skinis id");
+	if(params[0] > 311 || params[0] < 1 || params[0] == 74) return error(playerid, "Tkven miutitet araswori skinis id");
 	SetPlayerSkin(playerid, params[0]);
 	UserData[playerid][pSkin] = params[0];
 	UpdateUserData(playerid, "pSkin", UserData[playerid][pSkin]);
@@ -6436,8 +6440,8 @@ CMD:skin(playerid, params[]) {
 }
 CMD:givemoney(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ud", params[0], params[1])) return formatmsg(playerid, "/givemoney [ID] [Value]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	GiveUserMoney(params[0], params[1]);
@@ -6460,8 +6464,8 @@ CMD:givemoney(playerid, params[]) {
 }
 CMD:admins(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
     new dialog[1024];
 	strcat(dialog, "{FFFFFF}Name[ID]\t{FFFFFF}Level\n");
 	foreach(new i:Player) {
@@ -6497,24 +6501,24 @@ CMD:aadmins(playerid, params[])
 }
 CMD:alogin(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(UserData[playerid][pAdminLogin] == 1) {
 		UserData[playerid][pAdminLogin] = 0;
 		UpdateUserData(playerid, "pAdminLogin", UserData[playerid][pAdminLogin]);
-		success(playerid, "Tqven agar gaqvt gavlili admin login");
+		success(playerid, "Tkven agar gaqvt gavlili admin login");
 		return true;
 	}
 	ShowPlayerDialog(playerid, 201, DIALOG_STYLE_PASSWORD, "{FFFFFF}Alogin",
 	"{FFFFFF}- Mogesalmebat administration system -\n\n\
 	{FFFFFF}Uflebebis misagebat sachiroa gaiarot avtorizacia\n\n\
-	{F0A45D}* Miutitet tqveni admin paroli da daachiret 'Next' gilaks",
+	{F0A45D}* Miutitet tkveni admin paroli da daachiret 'Next' gilaks",
 	"Next", "Cancel");
 	return true;
 }
 CMD:veh(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ddd",params[0], params[1], params[2])) return formatmsg(playerid, "/veh [Veh ID] [Color 1] [Color 2]");
 	new Float:X, Float:Y, Float:Z;
 	GetPlayerPos(playerid, X,Y,Z);
@@ -6528,13 +6532,13 @@ CMD:veh(playerid, params[]) {
 	SetPlayerArmedWeapon(playerid, 0);
 	vehcreat[admincar[playerid]] = 1;
 	CreatedCars[CreatedCar] = admincar[playerid];
-	success(playerid, "Tqven sheqmenit manqana, ar dagaviwydet washla");
+	success(playerid, "Tkven sheqmenit manqana, ar dagaviwydet washla");
 	return true;
 }
 CMD:delveh(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(admincar[playerid] != -1) return DestroyVehicle(admincar[playerid]), success(playerid, "Manqana waishala"), admincar[playerid] = -1;
 	if(GetPlayerState(playerid) != PLAYER_STATE_DRIVER) return true;
 	if(vehcreat[GetPlayerVehicleID(playerid)] != 1) return error(playerid, "Am manqanis washla sheudzlebelia");
@@ -6546,24 +6550,24 @@ CMD:delveh(playerid, params[]) {
 }
 CMD:settime(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
     if(sscanf(params, "d",params[0])) return formatmsg(playerid, "/settime [0-23]");
 	SetWorldTime(params[0]);
 	return true;
 }
 CMD:setweather(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 5) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "d",params[0])) return formatmsg(playerid, "/setweather [0-40]");
 	SetWeather(params[0]);
 	return true;
 }
 CMD:jetpack(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(GetPlayerSpecialAction(playerid) == SPECIAL_ACTION_USEJETPACK) {
 		
 		new Float:X,Float:Y,Float:Z;
@@ -6579,8 +6583,8 @@ CMD:jetpack(playerid, params[]) {
 }
 CMD:addhouse(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(!Developer(playerid)) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(!Developer(playerid)) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
     if(sscanf(params, "d",params[0])) {
 		formatmsg(playerid, "/addhouse [Class]");
 		formatmsg(playerid, "1 - [N] | 2 - [C] | 3 - [B] | 4 - [A]");
@@ -6660,8 +6664,8 @@ CMD:addhouse(playerid, params[]) {
 }
 CMD:addbizz(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(!Developer(playerid)) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(!Developer(playerid)) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
     if(sscanf(params, "d",params[0])) {
 		formatmsg(playerid, "/addbizz [Class]");
 		formatmsg(playerid, "1 - [24/7]");
@@ -6725,15 +6729,15 @@ CMD:addbizz(playerid, params[]) {
 }
 CMD:cc(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	for(new i = 0; i < 100; i++) SendClientMessageToAll(-1, "");
 	return true;
 }
 CMD:hp(playerid) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(IsPlayerInAnyVehicle(playerid)) {
 		AnRepairVehicle(GetPlayerVehicleID(playerid));
 		SetVehicleHealth(GetPlayerVehicleID(playerid), 1300);
@@ -6745,26 +6749,26 @@ CMD:hp(playerid) {
 }
 CMD:givegun(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 3) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "udd", params[0], params[1], params[2])) return formatmsg(playerid, "/givegun [ID] [Gun ID] [Bullet]");
 	if(params[1] < 1 || params[1] > 46) return true;
 	if(params[2] < 1 || params[2] > 500) return error(playerid, "Minimum 1 maqsimum 500 tyvia");
 	if(params[1] == 4 || params[1] == 16 || params[1] == 17 || params[1] == 27 || params[1] == 34 || params[1] == 35 || params[1] == 36 || params[1] == 37 || params[1] == 38 || params[1] == 40 || params[1] == 44 || params[1] == 45) return error(playerid, "Am iaragis gacema ar sheidzleba");
 	GivePlayerServerWeapon(params[0], params[1], params[2]);
-	success(playerid, "Tqvens mier archeuli iaragi gadaeca motamashes");
+	success(playerid, "Tkvens mier archeuli iaragi gadaeca motamashes");
 	return true;
 }
 CMD:makeadmin(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 6) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 6) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "ud", params[0], params[1])) return formatmsg(playerid, "/makeadmin [ID] [Level]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(params[1] > 6 || params[1] < 0) return error(playerid, "Maqsimum 6 leveli, minimum 0 leveli");
 	if(params[1] == 0) {
-		success(playerid, "Tqven moxsenit motamashe administratoris poziciidan");
-		success(params[0], "Tqven mogxsens administratoris poziciidan, amitomac vegar gamoiyenebt adminis brdzanebebs");
+		success(playerid, "Tkven moxsenit motamashe administratoris poziciidan");
+		success(params[0], "Tkven mogxsens administratoris poziciidan, amitomac vegar gamoiyenebt adminis brdzanebebs");
 		ResetPlayerWeapons(params[0]);
 		UserData[params[0]][pAdminLogin] = 0;
 		UserData[params[0]][pAdmin] = 0;
@@ -6788,7 +6792,7 @@ CMD:makeadmin(playerid, params[]) {
 		mysql_query(connects, cmdlogs);
 		return true;
 	}
-	success(playerid, "Tqvens mier archeul motamashes mieca adminis wodeba");
+	success(playerid, "Tkvens mier archeul motamashes mieca adminis wodeba");
 	success(params[0], "Imisatvis, rom gamoiyenot administratoris uflebebi sachiroa miutitot axali admin paroli");
 	SetPVarInt(params[0], "AdminLVL", params[1]);
 	ShowAdminDialog(params[0]);
@@ -6813,7 +6817,7 @@ CMD:spcars(playerid, params[]) {
     if(Login[playerid] == false) return true;
 	if(IsPlayerConnected(playerid)) {
 		if(UserData[playerid][pAdmin] < 3) {
-			error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
+			error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
 			return true;
 		}
 		format(YCMDstr,sizeof(YCMDstr), "Gamouyenebeli manqnebi darespawndeba 15 wamshi. | %s", Name(playerid));
@@ -6824,12 +6828,12 @@ CMD:spcars(playerid, params[]) {
 }
 CMD:spawn(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/spawn [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	SpawnPlayer(params[0]);
-	success(playerid, "Tqven warmatebit gauketet respawn motamashes");
+	success(playerid, "Tkven warmatebit gauketet respawn motamashes");
 	new string[500];
 	format(string, sizeof(string), "Tkven dagarespawnat administratorma {F0A45D}%s", Name(playerid));
 	SendClientMessage(params[0], -1, string);
@@ -6847,8 +6851,8 @@ CMD:spawn(playerid, params[]) {
 }
 CMD:admin(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "s[128]", params[0])) return formatmsg(playerid, "/admin [Text]");
 	new adminchat[256];
 	format(adminchat, sizeof(adminchat), "[A] %s[%d]: %s",Name(playerid), playerid, params[0]);
@@ -6857,8 +6861,8 @@ CMD:admin(playerid, params[]) {
 }
 CMD:makeleader(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/makeleader [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	new string[500];
@@ -6873,8 +6877,8 @@ CMD:makeleader(playerid, params[]) {
 }
 CMD:makegang(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 4) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/makegang [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	new string[500];
@@ -6890,8 +6894,8 @@ CMD:makegang(playerid, params[]) {
 }
 CMD:makedonate(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 7) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 7) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/makeleader [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	new string[500];
@@ -6904,8 +6908,8 @@ CMD:makedonate(playerid, params[]) {
 }
 CMD:acure(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pAdmin] < 2) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+	if(UserData[playerid][pAdmin] < 2) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
     if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/acure [ID]");
     if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
     if(KnocInfo[params[0]][kActive] == 0) return error(playerid, "Es motamashe ar aris danokili");
@@ -6946,7 +6950,7 @@ CMD:arrest(playerid, params[]) {
 
 		  	new Float:x, Float:y, Float:z;
 		    GetPlayerPos(prsid, x, y, z);
-		    if(!PlayerToPoint(2.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(prsid)) return error(playerid, "Motamashe ar imyofeba tqventan axlos");
+		    if(!PlayerToPoint(2.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(prsid)) return error(playerid, "Motamashe ar imyofeba tkventan axlos");
 		    
 
 			if(UserData[prsid][pJailed]) return error(playerid, "Motamashe ukve imyofeba cixeshi");
@@ -6983,8 +6987,8 @@ CMD:clearsuspect(playerid, params[]) {
 		UserData[prsid][pWantedLevel] = 0;
 		UpdateUserData(prsid, "pWantedLevel", UserData[prsid][pWantedLevel]);
 
-		success(playerid, "Tqven moxsenit dzebnidan motamashe");
-		success(prsid, "Tqven agar xart dzebnashi");
+		success(playerid, "Tkven moxsenit dzebnidan motamashe");
+		success(prsid, "Tkven agar xart dzebnashi");
 	}	
 	return true;
 }
@@ -6995,9 +6999,9 @@ CMD:gotome(playerid, params[]) {
 	    if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
  		new Float:x, Float:y, Float:z;
     	GetPlayerPos(params[0], x, y, z);
-    	if(!PlayerToPoint(3.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tqventan axlos");
+    	if(!PlayerToPoint(3.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tkventan axlos");
 
-	    if(GetPlayerState(params[0]) != 1 || GetPlayerState(playerid) != 1) return error(playerid, "Tqven da damnashave ar unda ijdet manqanashi");
+	    if(GetPlayerState(params[0]) != 1 || GetPlayerState(playerid) != 1) return error(playerid, "Tkven da damnashave ar unda ijdet manqanashi");
 	    if(gotome[params[0]] != -1 && gotome[params[0]] != playerid) {
 	    	new stringf[126];
 		    format(stringf, sizeof(stringf), "Am motamashes miatrevs: %s",Name(gotome[params[0]]));
@@ -7008,17 +7012,17 @@ CMD:gotome(playerid, params[]) {
 		    if(GetPlayerSpecialAction(params[0]) != SPECIAL_ACTION_CUFFED) return error(playerid, "Am motamashes ar adevs borkilebi");
 		    gotome[params[0]] = playerid;
 		    new string[126];
-		    format(string, sizeof(string), "Tqven migatrevt officeri: %s",Name(playerid));
+		    format(string, sizeof(string), "Tkven migatrevt officeri: %s",Name(playerid));
 		    SendClientMessage(params[0], -1, string);
 
 		    new string1[126];
-		    format(string1, sizeof(string1), "Tqven miatrevt: %s's",Name(params[0]));
+		    format(string1, sizeof(string1), "Tkven miatrevt: %s's",Name(params[0]));
 		    SendClientMessage(playerid, -1, string1);
 		}
 		else if(gotome[params[0]] == playerid) {
 			gotome[params[0]] = -1;
 		    new string11[126];
-		    format(string11, sizeof(string11), "Tqven agar miatrevt %s's",Name(params[0]));
+		    format(string11, sizeof(string11), "Tkven agar miatrevt %s's",Name(params[0]));
 		    SendClientMessage(playerid, -1, string11);
 		}
 	}
@@ -7030,7 +7034,7 @@ CMD:ceject(playerid, params[]) {
 	    new giveplayerid, sendername[MAX_PLAYER_NAME], giveplayer[MAX_PLAYER_NAME];
 		if(sscanf(params, "u",giveplayerid)) return  formatmsg(playerid, "/ceject [ID]");
 		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
-		if(GetPlayerVehicleID(playerid) != GetPlayerVehicleID(giveplayerid)) return error(playerid, "Motamashe ar zis tqvens manqanashi");
+		if(GetPlayerVehicleID(playerid) != GetPlayerVehicleID(giveplayerid)) return error(playerid, "Motamashe ar zis tkvens manqanashi");
 		GetPlayerName(giveplayerid, giveplayer, sizeof(giveplayer));
 		GetPlayerName(playerid, sendername, sizeof(sendername));
 
@@ -7047,17 +7051,17 @@ CMD:cuff(playerid, params[]) {
 	if(UserData[playerid][pMember] == 1) {
 		if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/cuff [ID]");
 		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
-		if(UserData[params[0]][pMember] == 1) return error(playerid, "Tqven ver gauketebt borkilebs policiis tanamshromels");
+		if(UserData[params[0]][pMember] == 1) return error(playerid, "Tkven ver gauketebt borkilebs policiis tanamshromels");
 		if(PlayerCuffed[params[0]] == 2) return error(playerid, "Motamashes ukve adevs borkilebi");
 		if(Tazed[params[0]] == true) return error(playerid, "Scadet borkilebis dadeba ramodenime wamshi");
-		if(gotome[params[0]] != -1) return error(playerid, "Tqven ar shegidzliat am momentshi borkilebis moxsna");
-		if(params[0] == playerid) return error(playerid, "Tqven tavs ver daadebt borkilebs");
-		if(GetPlayerState(playerid) == 1 && GetPlayerState(params[0]) != 1) return error(playerid, "Tqven ver daadebt borkilebs motamashes radgan igi manqanashi zis");
-		if(GetPlayerState(playerid) != 1 && GetPlayerState(params[0]) == 1) return error(playerid, "Tqven ver daadebt borkilebs motamashes radgan tqven manqanashi zixart");
+		if(gotome[params[0]] != -1) return error(playerid, "Tkven ar shegidzliat am momentshi borkilebis moxsna");
+		if(params[0] == playerid) return error(playerid, "Tkven tavs ver daadebt borkilebs");
+		if(GetPlayerState(playerid) == 1 && GetPlayerState(params[0]) != 1) return error(playerid, "Tkven ver daadebt borkilebs motamashes radgan igi manqanashi zis");
+		if(GetPlayerState(playerid) != 1 && GetPlayerState(params[0]) == 1) return error(playerid, "Tkven ver daadebt borkilebs motamashes radgan tkven manqanashi zixart");
 
  		new Float:x, Float:y, Float:z;
     	GetPlayerPos(params[0], x, y, z);
-    	if(!PlayerToPoint(3.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tqventan axlos");
+    	if(!PlayerToPoint(3.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tkventan axlos");
 
     	AnimOn[params[0]] = true; 
 
@@ -7084,9 +7088,9 @@ CMD:uncuff(playerid, params[]) {
  		
  		new Float:x, Float:y, Float:z;
     	GetPlayerPos(params[0], x, y, z);
-    	if(!PlayerToPoint(3.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tqventan axlos");
+    	if(!PlayerToPoint(3.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tkventan axlos");
 
-		if(params[0] == playerid) return error(playerid, "Tqven ver moxsnit tqven tavs borkilebs");
+		if(params[0] == playerid) return error(playerid, "Tkven ver moxsnit tkven tavs borkilebs");
 
 		AnimOn[params[0]] = false; 
 
@@ -7106,7 +7110,7 @@ CMD:uncuff(playerid, params[]) {
 CMD:auncuff(playerid, params[]) {
 	if(Login[playerid] == false) return true;
 	if(UserData[playerid][pAdmin] > 0) {
-		if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tqven ar gagivliat admin avtorizacia");
+		if(UserData[playerid][pAdminLogin] == 0) return error(playerid, "Tkven ar gagivliat admin avtorizacia");
 
 		if(sscanf(params, "u",params[0])) return formatmsg(playerid, "/auncuff [ID]");
 		if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
@@ -7137,9 +7141,9 @@ CMD:cput(playerid, params[]) {
 			
 			new Float:x, Float:y, Float:z;
     		GetPlayerPos(params[0], x, y, z);
-    		if(!PlayerToPoint(5.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tqventan axlos");
+    		if(!PlayerToPoint(5.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tkventan axlos");
 
-			if(params[0] == playerid) return error(playerid, "Tqven tavs ver chaagdebt manqanashi");
+			if(params[0] == playerid) return error(playerid, "Tkven tavs ver chaagdebt manqanashi");
 			if(GetPlayerState(params[0]) != PLAYER_STATE_ONFOOT) return error(playerid, "Motamashe aris manqanashi");
 			new model = GetVehicleModel(GetPlayerVehicleID(playerid));
 			if(model != 490 && model != 426 && model != 560 && model != 427 && model != 596 && model != 599 && model != 579 && model != 482) return error(playerid, "Am transportshi daushvebelia motamashis chagdeba"); {
@@ -7162,7 +7166,7 @@ CMD:cput(playerid, params[]) {
 CMD:tazer(playerid) {
 	new fracid = UserData[playerid][pMember];
 	if(Login[playerid] == false) return true;
-	if(fracid != 1) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(fracid != 1) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(GetPlayerWeapon(playerid) != 23) return error(playerid, "Am iaragshi ver chadebt tazers");
 	if(Tazer[playerid] == false) {
 		Tazer[playerid] = true;
@@ -7181,14 +7185,14 @@ CMD:tazer(playerid) {
 CMD:invite(playerid, params[]) {
 	new fracid = UserData[playerid][pMember];
 	if(Login[playerid] == false) return true;
-	if(fracid == 0) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pRank] < FractionData[UserData[playerid][pMember]][wInviteRank]) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(fracid == 0) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pRank] < FractionData[UserData[playerid][pMember]][wInviteRank]) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/invite [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
 	if(UserData[params[0]][pMember] != 0) return error(playerid, "Es motamashe ukve aris fraqciashi");
     new Float:x, Float:y, Float:z;
     GetPlayerPos(params[0], x, y, z);
-    if(!PlayerToPoint(10.0, playerid, x, y, z)) return error(playerid, "Es motamashe ar aris tqventan axlos");
+    if(!PlayerToPoint(10.0, playerid, x, y, z)) return error(playerid, "Es motamashe ar aris tkventan axlos");
 	
 	new skinID;
     switch(fracid) {
@@ -7205,7 +7209,7 @@ CMD:invite(playerid, params[]) {
     }
 
 	new string[500];
-	format(string, sizeof(string), "Tqven giwvevt {F0A45D}%s{FFFFFF} fraqciashi({F0A45D}%s{FFFFFF}) gasawevrianeblad", Name(playerid), GetFractionName(fracid));
+	format(string, sizeof(string), "Tkven giwvevt {F0A45D}%s{FFFFFF} fraqciashi({F0A45D}%s{FFFFFF}) gasawevrianeblad", Name(playerid), GetFractionName(fracid));
 	SendClientMessage(params[0], -1, string);
 	success(params[0], "Tu gnebavt gawevrianeba daachiret 'Y' gilaks, xolo tu ar gnebavt 'N' gilaks");
 	
@@ -7213,40 +7217,40 @@ CMD:invite(playerid, params[]) {
 	SetPVarInt(params[0], "InvFractionID", fracid);
 	SetPVarInt(params[0], "InvFractionSkin", skinID);
 
-	success(playerid, "Tqven gaugzavnet motamashes mowveva fraqciashi");
+	success(playerid, "Tkven gaugzavnet motamashes mowveva fraqciashi");
 	return true;
 }
 CMD:giverank(playerid, params[]) {
 	new fracid = UserData[playerid][pMember];
 	if(Login[playerid] == false) return true;
-	if(fracid == 0) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pRank] < FractionData[UserData[playerid][pMember]][wInviteRank]) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(fracid == 0) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pRank] < FractionData[UserData[playerid][pMember]][wInviteRank]) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(sscanf(params, "ud", params[0], params[1])) return formatmsg(playerid, "/giverank [ID] [Rank]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
-	if(UserData[playerid][pRank] <= params[1]) return error(playerid, "Tqven ver gascemt tqven rankze mets");
-	if(UserData[params[0]][pMember] != UserData[playerid][pMember]) return error(playerid, "Es motamashe ar aris tqvens fraqciashi");
-	if(params[0] == playerid) return error(playerid, "Tqven ver sheucvlit tqven tavs ranks");
+	if(UserData[playerid][pRank] <= params[1]) return error(playerid, "Tkven ver gascemt tkven rankze mets");
+	if(UserData[params[0]][pMember] != UserData[playerid][pMember]) return error(playerid, "Es motamashe ar aris tkvens fraqciashi");
+	if(params[0] == playerid) return error(playerid, "Tkven ver sheucvlit tkven tavs ranks");
 
 	UserData[params[0]][pRank] = params[1];
 	UpdateUserData(params[0], "pRank" ,UserData[params[0]][pRank]);
 
 	new string[500];
-	format(string, sizeof(string), "Tqven shegicvalat %s'm(a) rank, axlandeli ranki aris: %d",Name(playerid), params[1]);
+	format(string, sizeof(string), "Tkven shegicvalat %s'm(a) rank, axlandeli ranki aris: %d",Name(playerid), params[1]);
 	SendClientMessage(params[0], -1, string);
 
-	success(playerid, "Tqven sheucvalet motamashes rank");
+	success(playerid, "Tkven sheucvalet motamashes rank");
 	return true;
 }
 CMD:uninvite(playerid, params[]) {
 	new fracid = UserData[playerid][pMember];
 	if(Login[playerid] == false) return true;
-	if(fracid == 0) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
-	if(UserData[playerid][pRank] < FractionData[UserData[playerid][pMember]][wInviteRank]) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(fracid == 0) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pRank] < FractionData[UserData[playerid][pMember]][wInviteRank]) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	if(sscanf(params, "u", params[0])) return formatmsg(playerid, "/uninvite [ID]");
 	if(params[0] == INVALID_PLAYER_ID || !IsPlayerConnected(params[0])) return error(playerid, "Motamashe ar moidzebna");
-	if(UserData[playerid][pRank] <= UserData[params[0]][pRank]) return error(playerid, "Tqven ver gaagdebt fraqciidan am motamashes");
-	if(UserData[params[0]][pMember] != UserData[playerid][pMember]) return error(playerid, "Es motamashe ar aris tqvens fraqciashi");
-	if(params[0] == playerid) return error(playerid, "Tqven ver gaagdebt tqven tavs");
+	if(UserData[playerid][pRank] <= UserData[params[0]][pRank]) return error(playerid, "Tkven ver gaagdebt fraqciidan am motamashes");
+	if(UserData[params[0]][pMember] != UserData[playerid][pMember]) return error(playerid, "Es motamashe ar aris tkvens fraqciashi");
+	if(params[0] == playerid) return error(playerid, "Tkven ver gaagdebt tkven tavs");
 
 	UserData[params[0]][pLeader] = 0;
 	UserData[params[0]][pMember] = 0;
@@ -7259,14 +7263,14 @@ CMD:uninvite(playerid, params[]) {
 	UpdateUserData(params[0], "pRank" ,UserData[params[0]][pRank]);
 
 	SetPlayerSkin(params[0], UserData[playerid][pSkin]);
-	success(playerid, "Tqven gaagdet motamashe fraqciidan");
-	success(params[0], "Tqven gagagdes fraqciidan");
+	success(playerid, "Tkven gaagdet motamashe fraqciidan");
+	success(params[0], "Tkven gagagdes fraqciidan");
 	return true;
 }
 CMD:changeskin(playerid, params[]) {
 	new fracid = UserData[playerid][pMember];
 	if(Login[playerid] == false) return true;
-	if(fracid == 0) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(fracid == 0) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	new string[500];
 	format(string, sizeof(string),
 	"{F0A45D}[1]{FFFFFF} - Pirveli skin - {F0A45D}[ %d ]\n\
@@ -7284,7 +7288,7 @@ CMD:changeskin(playerid, params[]) {
 }
 CMD:lpanel(playerid) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pLeader] == 0) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(UserData[playerid][pLeader] == 0) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
 	new string[500];
 	format(string, sizeof(string),
 	"{F0A45D}[1]{FFFFFF} - Fraqciis informacia\n\
@@ -7296,7 +7300,7 @@ CMD:lpanel(playerid) {
 }
 CMD:time(playerid) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pClock] == 0) return error(playerid, "Tqven ar gaqvt nayidi saati");
+	if(UserData[playerid][pClock] == 0) return error(playerid, "Tkven ar gaqvt nayidi saati");
 
 	if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT && AnimOn[playerid] == false) {
 		AnimOn[playerid] = true;
@@ -7334,18 +7338,18 @@ CMD:time(playerid) {
 }
 CMD:unrent(playerid) {
 	if(Login[playerid] == false) return true;
-	if(rentID[playerid] == -1) return error(playerid, "Tqven ar gyavt manqana naqiravebi");
+	if(rentID[playerid] == -1) return error(playerid, "Tkven ar gyavt manqana naqiravebi");
 	DestroyVehicle(rentID[playerid]);
 	rentID[playerid] = -1;
 	SetPVarInt(playerid, "veh_rent", -1);
-	success(playerid, "Tqven agar gyavt naqiravebi manqana");
+	success(playerid, "Tkven agar gyavt naqiravebi manqana");
 	return true;
 }
 CMD:dm(playerid) {
     if(Login[playerid] == false) return true;
     if(!IsInAllowed(playerid)) return true;
-	if(!PlayerToPoint(3.0,playerid,2695.4736,-1704.6350,11.8438)) return error(playerid, "Tqven ar imyofebit arenastan axlos");
-    if(DMArena[playerid] != 0)return error(playerid, "Tqven ukve imyofebit dm arenaze, gasavlelat - /exitdm");
+	if(!PlayerToPoint(3.0,playerid,2695.4736,-1704.6350,11.8438)) return error(playerid, "Tkven ar imyofebit arenastan axlos");
+    if(DMArena[playerid] != 0)return error(playerid, "Tkven ukve imyofebit dm arenaze, gasavlelat - /exitdm");
 	new string[500];
 	format(string, sizeof(string),
 	"{F0A45D}[1]{FFFFFF} - 160 HP\n\
@@ -7357,7 +7361,7 @@ CMD:dm(playerid) {
 CMD:exitdm(playerid) {
 	if(Login[playerid] == false) return true;
     if(!IsInAllowed(playerid)) return true;
-    if(DMArena[playerid] != 1)return error(playerid, "Tqven ar imyofebit arenaze");
+    if(DMArena[playerid] != 1)return error(playerid, "Tkven ar imyofebit arenaze");
     DeletePVar(playerid, "DMGun1");
     DeletePVar(playerid, "DMGun2");
     DMArena[playerid] = 0;
@@ -7367,7 +7371,7 @@ CMD:exitdm(playerid) {
 CMD:exit(playerid) {
 	if(Login[playerid] == false) return true;
 	new h = UserData[playerid][pHouse];
-	if(h == -1) return error(playerid, "Tqven ar gaqvt saxli");
+	if(h == -1) return error(playerid, "Tkven ar gaqvt saxli");
 	if(PlayerToPoint(2.0, playerid, HouseData[h][hExitX], HouseData[h][hExitY], HouseData[h][hExitZ])) {
 		ShowPlayerDialog(playerid, 406, DIALOG_STYLE_LIST, "{FFFFFF}Saxli", "{F0A45D}[1]{FFFFFF} - Garet\n{F0A45D}[2]{FFFFFF} - Garaji", "Next", "Close");
 		return true;
@@ -7487,7 +7491,7 @@ CMD:offuninvite(playerid, params[])
 CMD:f(playerid, params[]) {
     if(Login[playerid] == false) return true;
     if(!IsInAllowed(playerid) && UserData[playerid][pMember] != 5) return true;
-   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tqven gadevt chatis bani");
+   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tkven gadevt chatis bani");
 	if(sscanf(params, "s[128]", params[0])) return formatmsg(playerid, "/f [text]");
 	new id = UserData[playerid][pMember];
  	new string[256];
@@ -7498,7 +7502,7 @@ CMD:f(playerid, params[]) {
 CMD:r(playerid, params[]) {
     if(Login[playerid] == false) return true;
     if(!IsInGoverement(playerid)) return true;
-   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tqven gadevt chatis bani");
+   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tkven gadevt chatis bani");
 	if(sscanf(params, "s[128]", params[0])) return formatmsg(playerid, "/r [text]");
 	new id = UserData[playerid][pMember];
  	new string[256];
@@ -7509,7 +7513,7 @@ CMD:r(playerid, params[]) {
 CMD:rr(playerid, params[]) {
     if(Login[playerid] == false) return true;
     if(!IsInGoverement(playerid)) return true;
-   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tqven gadevt chatis bani");
+   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tkven gadevt chatis bani");
 	if(sscanf(params, "s[128]", params[0])) return formatmsg(playerid, "/rr [text]");
 	new id = UserData[playerid][pMember];
  	new string[256];
@@ -7520,7 +7524,7 @@ CMD:rr(playerid, params[]) {
 CMD:d(playerid, params[]) {
     if(Login[playerid] == false) return true;
     if(!IsInGoverement(playerid)) return true;
-   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tqven gadevt chatis bani");
+   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tkven gadevt chatis bani");
 	if(sscanf(params, "s[128]", params[0])) return formatmsg(playerid, "/d [text]");
  	new string[256];
 	format(string, sizeof(string), "[D] (%s) %s[%d]: %s",GetFractionName(UserData[playerid][pMember]), Name(playerid), playerid, params[0]);
@@ -7535,8 +7539,8 @@ CMD:cure(playerid,params[]) {
     if(KnocInfo[params[0]][kActive] == 0) return error(playerid, "Es motamashe ar aris danokili");
     new Float:x, Float:y, Float:z;
     GetPlayerPos(params[0], x, y, z);
-    if(!PlayerToPoint(2.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tqventan axlos");
-    if(params[0] == playerid) return error(playerid, "Tqven ver gaacocxlebt tqven tavs");
+    if(!PlayerToPoint(2.0, playerid, x, y, z) || GetPlayerVirtualWorld(playerid) != GetPlayerVirtualWorld(params[0])) return error(playerid, "Motamashe ar imyofeba tkventan axlos");
+    if(params[0] == playerid) return error(playerid, "Tkven ver gaacocxlebt tkven tavs");
     if(UserData[playerid][pMember] == 2) {
     	AnimOn[playerid] = true;
         ApplyAnimation(playerid,"MEDIC","CPR",4.0,0,0,0,0,0);
@@ -7544,7 +7548,7 @@ CMD:cure(playerid,params[]) {
 	    SetTimerEx("KnockAnimation", 5000, false, "i", params[0]);
 	    AnimOn[playerid] = false;
 	}
-	else return error(playerid, "Tqven ar mushaobt hospital departament'shi");
+	else return error(playerid, "Tkven ar mushaobt hospital departament'shi");
 	return true;
 }
 CMD:mm(playerid, params[]) {
@@ -7563,7 +7567,7 @@ CMD:mm(playerid, params[]) {
 CMD:hpanel(playerid, params[]) {
   	if(Login[playerid] == false) return true;
     new h = UserData[playerid][pHouse];
-	if(h == -1 || strcmp(Name(playerid), HouseData[UserData[playerid][pHouse]][hOwner], true) == -1) return error(playerid, "Tqven ar gaqvt saxli");
+	if(h == -1 || strcmp(Name(playerid), HouseData[UserData[playerid][pHouse]][hOwner], true) == -1) return error(playerid, "Tkven ar gaqvt saxli");
 	new string[1500];
 	format(string, sizeof(string),
 	"{F0A45D}[1]{FFFFFF} - Saxlis informacia\n\
@@ -7576,7 +7580,7 @@ CMD:hpanel(playerid, params[]) {
 CMD:bpanel(playerid, params[]) {
   	if(Login[playerid] == false) return true;
     new h = UserData[playerid][pBizz];
-	if(h == -1 || strcmp(Name(playerid), BizzData[UserData[playerid][pBizz]][bOwner], true) == -1) return error(playerid, "Tqven ar gaqvt biznesi");
+	if(h == -1 || strcmp(Name(playerid), BizzData[UserData[playerid][pBizz]][bOwner], true) == -1) return error(playerid, "Tkven ar gaqvt biznesi");
 	new string[1500];
 	format(string, sizeof(string),
 	"{F0A45D}[1]{FFFFFF} - Biznesis informacia\n\
@@ -7589,12 +7593,12 @@ CMD:bpanel(playerid, params[]) {
 CMD:sellhouse(playerid) {
     if(Login[playerid] == false) return true;
     new h = UserData[playerid][pHouse];
-	if(h == -1 || strcmp(Name(playerid), HouseData[UserData[playerid][pHouse]][hOwner], true) == -1) return error(playerid, "Tqven ar gaqvt saxli");
-	if(!PlayerToPoint(10.0, playerid, HouseData[h][hEnterX], HouseData[h][hEnterY], HouseData[h][hEnterZ])) return error(playerid, "Tqven ar xart tqveni saxlis karebtan axlos");
+	if(h == -1 || strcmp(Name(playerid), HouseData[UserData[playerid][pHouse]][hOwner], true) == -1) return error(playerid, "Tkven ar gaqvt saxli");
+	if(!PlayerToPoint(10.0, playerid, HouseData[h][hEnterX], HouseData[h][hEnterY], HouseData[h][hEnterZ])) return error(playerid, "Tkven ar xart tkveni saxlis karebtan axlos");
 	new string[1500];
 	format(string, sizeof(string), "{FFFFFF}Tqven gsurt saxlis gayidva - {F0A45D}ID: %d{FFFFFF}\
-	\n\n{FFFFFF}Namdvilad gsurt gayidot tqveni saxli?\
-	\n{FFFFFF}Tqveni saxlis girebuleba aris: {F0A45D}%d${FFFFFF}, tqven dagibrundebat - {F0A45D}75 procenti\
+	\n\n{FFFFFF}Namdvilad gsurt gayidot tkveni saxli?\
+	\n{FFFFFF}Tqveni saxlis girebuleba aris: {F0A45D}%d${FFFFFF}, tkven dagibrundebat - {F0A45D}75 procenti\
 	\n\n{F0A45D}* Tu namdvilad gusrt saxlis gayidva daachiret 'Next' gilaks", HouseData[h][hID], HouseData[h][hPrice]);
 	ShowPlayerDialog(playerid, 403, DIALOG_STYLE_MSGBOX, "{FFFFFF}Saxli", string, "Next", "Cancel");
 	return true;
@@ -7602,12 +7606,12 @@ CMD:sellhouse(playerid) {
 CMD:sellbizz(playerid) {
     if(Login[playerid] == false) return true;
     new h = UserData[playerid][pBizz];
-	if(h == -1 || strcmp(Name(playerid), BizzData[UserData[playerid][pBizz]][bOwner], true) == -1) return error(playerid, "Tqven ar gaqvt saxli");
-	if(!PlayerToPoint(10.0, playerid, BizzData[h][bEnterX], BizzData[h][bEnterY], BizzData[h][bEnterZ])) return error(playerid, "Tqven ar xart tqveni saxlis karebtan axlos");
+	if(h == -1 || strcmp(Name(playerid), BizzData[UserData[playerid][pBizz]][bOwner], true) == -1) return error(playerid, "Tkven ar gaqvt saxli");
+	if(!PlayerToPoint(10.0, playerid, BizzData[h][bEnterX], BizzData[h][bEnterY], BizzData[h][bEnterZ])) return error(playerid, "Tkven ar xart tkveni saxlis karebtan axlos");
 	new string[1500];
 	format(string, sizeof(string), "{FFFFFF}Tqven gsurt Biznesis gayidva - {F0A45D}ID: %d{FFFFFF}\
-	\n\n{FFFFFF}Namdvilad gsurt gayidot tqveni biznesi?\
-	\n{FFFFFF}Tqveni biznesis girebuleba aris: {F0A45D}%d${FFFFFF}, tqven dagibrundebat - {F0A45D}75 procenti\
+	\n\n{FFFFFF}Namdvilad gsurt gayidot tkveni biznesi?\
+	\n{FFFFFF}Tqveni biznesis girebuleba aris: {F0A45D}%d${FFFFFF}, tkven dagibrundebat - {F0A45D}75 procenti\
 	\n\n{F0A45D}* Tu namdvilad gusrt biznesis gayidva daachiret 'Next' gilaks", BizzData[h][bID], BizzData[h][bPrice]);
 	ShowPlayerDialog(playerid, 413, DIALOG_STYLE_MSGBOX, "{FFFFFF}Business", string, "Next", "Cancel");
 	return true;
@@ -7619,7 +7623,7 @@ CMD:fbullet(playerid, params[]) {
 	if(!BulletInfo[params[0]][BulletID] || BulletInfo[params[0]][bUsed] != 0) return error(playerid, "Aseti tyviis nomeri ar aris dzirs.");
 	
 	if(!PlayerToPoint(1.0, playerid, BulletInfo[params[0]][BulletX], BulletInfo[params[0]][BulletY], BulletInfo[params[0]][BulletZ])
-	|| GetPlayerVirtualWorld(playerid) != BulletInfo[params[0]][bVW]) return error(playerid, "Tqven ar xart am vaznastan axlos");
+	|| GetPlayerVirtualWorld(playerid) != BulletInfo[params[0]][bVW]) return error(playerid, "Tkven ar xart am vaznastan axlos");
 	
 	new string[500];
 	format(string, sizeof(string), "{FFFFFF}Tqven ipovet iaragis tyvia - {F0A45D}ID: %d{FFFFFF}\n\n\
@@ -7633,7 +7637,7 @@ CMD:fbullet(playerid, params[]) {
 CMD:me(playerid, params[]) {
 	if(Login[playerid] == false) return true;
 	if(sscanf(params, "s[64]", params[0])) return formatmsg(playerid, "/me [Text]");
-   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tqven gadevt chatis bani");
+   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tkven gadevt chatis bani");
 	UsingAdress(playerid, params[0]);
 	new mestr[500];
 	format(mestr, sizeof(mestr), "- %s %s",Name(playerid), params[0]);
@@ -7642,7 +7646,7 @@ CMD:me(playerid, params[]) {
 }
 CMD:do(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tqven gadevt chatis bani");
+   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tkven gadevt chatis bani");
 	if(sscanf(params, "s[64]", params[0])) return formatmsg(playerid, "/do [Text]");
 	UsingAdress(playerid, params[0]);
 	new mestr[500];
@@ -7652,7 +7656,7 @@ CMD:do(playerid, params[]) {
 }
 CMD:shout(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(UserData[playerid][pMute] == 1) return error(playerid, "Tqven gadevt chatis bani");
+	if(UserData[playerid][pMute] == 1) return error(playerid, "Tkven gadevt chatis bani");
 	if(sscanf(params, "s[64]", params[0])) return formatmsg(playerid, "/s(hout) [Text]");
 	UsingAdress(playerid, params[0]);
 	new mestr[500];
@@ -7662,7 +7666,7 @@ CMD:shout(playerid, params[]) {
 }
 CMD:b(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tqven gadevt chatis bani");
+   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tkven gadevt chatis bani");
 	if(sscanf(params, "s[64]", params[0])) return formatmsg(playerid, "/do [Text]");
 	UsingAdress(playerid, params[0]);
 	new mestr[500];
@@ -7676,7 +7680,7 @@ CMD:megaphone(playerid, params[]) {
 	if(GetPlayerVehicleID(playerid) == INVALID_VEHICLE_ID) return true;
 	if(GetPlayerState(playerid) != PLAYER_STATE_DRIVER) return true;
 	if(sscanf(params, "s[64]", params[0])) return formatmsg(playerid, "/megaphone [Text]");
-   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tqven gadevt chatis bani");
+   	if(UserData[playerid][pMute] == 1) return error(playerid, "Tkven gadevt chatis bani");
 	UsingAdress(playerid, params[0]);
 	new mestr[500];
 	format(mestr, sizeof(mestr), "{F1C40F}- %s: [ %s ] [MEGAPHONE]",Name(playerid), params[0]);
@@ -7757,10 +7761,10 @@ CMD:quest(playerid) {
 }
 CMD:capture(playerid, params[]) {
 	if(Login[playerid] == false) return true;
-	if(!IsAGang(playerid)) return error(playerid, "Tqven ar gaqvt am brdzanebis gamoyenebis ufleba");
+	if(!IsAGang(playerid)) return error(playerid, "Tkven ar gaqvt am brdzanebis gamoyenebis ufleba");
   	if(!startcapture) return error(playerid,"Am dros teritoriis dapyroba daushvebelia, daelodet paydays");
   	ShowPlayerDialog(playerid, 9000, DIALOG_STYLE_MSGBOX, "{FFFFFF}Capture",
-  	"{FFFFFF}- Tqven iwyebt teritoriis dapyrobas -\
+  	"{FFFFFF}- Tkven iwyebt teritoriis dapyrobas -\
   	\n\n{FFFFFF}Imisatvis, rom chaigdot xelshi teritoria, sachiroa ebrdzolot teritoriis mflobel bandas\
   	\n{FFFFFF}Teritoriisatvis brdzola gagrdzeldeba {F0A45D}- 15 wuti\
   	\n\n{F0A45D}* Tu gsurt daiwyot brdzola daachiret 'Start' gilaks", "Cancel", "Start");
